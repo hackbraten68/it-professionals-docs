@@ -11,8 +11,12 @@ export default defineConfig({
 			},
 			sidebar: [
 				{
-					label: 'Bootcamp',
-					autogenerate: { directory: 'bootcamp' }
+					label: 'Week 1',
+					autogenerate: { directory: 'week-1' }
+				},
+				{
+					label: 'Week 2',
+					autogenerate: { directory: 'week-2' }
 				},
 				{
 					label: 'Guides',
