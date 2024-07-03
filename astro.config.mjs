@@ -26,8 +26,8 @@ export default defineConfig({
 					],
 				},
 				{
-					label: 'Links',
-					autogenerate: { directory: 'links' }
+					label: 'Softskill Course',
+					autogenerate: { directory: 'softskill' }
 				}
 			],
 		}),
