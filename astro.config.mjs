@@ -11,7 +11,7 @@ export default defineConfig({
 			},
 			sidebar: [
 				{
-					label: 'Week 1',
+					label: 'Cloud Foundation',
 					autogenerate: { directory: 'week-1' }
 				},
 				{
