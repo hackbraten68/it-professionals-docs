@@ -5,7 +5,7 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'AWS re/Start course docs',
+			title: 'AWS re/start course docs',
 			social: {
 				github: 'https://github.com/hackbraten68/aws-restart-docs',
 			},
@@ -17,6 +17,10 @@ export default defineConfig({
 				{
 					label: 'Week 2',
 					autogenerate: { directory: 'week-2' }
+				},
+				{
+					label: 'Cheat Sheets',
+					autogenerate: { directory: 'cheatsheets' }
 				},
 				{
 					label: 'Guides',
