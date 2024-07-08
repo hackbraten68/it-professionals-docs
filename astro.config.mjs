@@ -15,7 +15,7 @@ export default defineConfig({
 					autogenerate: { directory: 'week-1' }
 				},
 				{
-					label: 'Week 2',
+					label: 'Linux',
 					autogenerate: { directory: 'week-2' }
 				},
 				{
