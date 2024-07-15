@@ -19,6 +19,10 @@ export default defineConfig({
 					autogenerate: { directory: 'week-2' }
 				},
 				{
+					label: 'Networking',
+					autogenerate: { directory: 'week-3' }
+				},
+				{
 					label: 'Cheat Sheets',
 					autogenerate: { directory: 'cheatsheets' }
 				},
