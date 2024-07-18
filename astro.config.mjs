@@ -36,6 +36,10 @@ export default defineConfig({
 				{
 					label: 'Softskill Course',
 					autogenerate: { directory: 'softskill' }
+				},
+				{
+					label: 'Course Archive',
+					autogenerate: { directory: 'archive' }
 				}
 			],
 		}),
