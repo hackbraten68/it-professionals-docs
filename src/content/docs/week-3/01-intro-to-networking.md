@@ -1,6 +1,8 @@
 ---
 title: Introduction to Networking
 ---
+![Intro](../../../assets/day-12/intro.png)
+
 You will learn how to:
 
 - View and change file permissions
@@ -8,8 +10,6 @@ You will learn how to:
 - Compare symbolic and absolute representations of file permissions
 
 ## What is the Internet
-
-![What is the Internet](../../../assets/day-12/internets.png)
 
 In this section, you will understand how the internet was born.
 
@@ -24,8 +24,6 @@ A brief history of how the internet was born:
 - In the 2000s, the dotcom bubble had reached its end; however, this created a new wave of opportunity for technology. Networking, the internet, and the devices you use today have evolved rapidly since the start of the early 2000s. From desktops, to laptops, to tablets, technology is constantly evolving, and so is the complexity of networking to it.
 
 ## What is computer networking
-
-![What is computer networking](../../../assets/day-12/whats_networking.png)
 
 In this section, you will review what a computer network is.
 
@@ -66,8 +64,6 @@ As noted in the previous slide, in a bigger network, the computers are grouped t
 - Router connects multiple switches on a network.
 
 ## Data and the OSI model
-
-![Data and the OSI Model](../../../assets/day-12/osi_model.png)
 
 In this section, you will learn what data is and the basics of the Open System Interconnection (OSI) model.
 
