@@ -381,7 +381,7 @@ The home folder is not in `$PATH`
 ## Key Takeaways
 
 ![Key Takeaways](../../../assets/day-10/key_takeaways.png)
-
+:::tip[Recap]
 Some key takeaways from this lesson include:
 
 - Bash shell scripts offer a way to automate complex, multi-command operations into a single file.
@@ -391,3 +391,5 @@ Some key takeaways from this lesson include:
 - Conditional statements create different logic paths in the script (by using `if`, `gt`, equality, and others).
 - Security! Check that the script contains only the required functionality.
 - Test! Test all scripts to confirm that they function as expected.
+
+:::

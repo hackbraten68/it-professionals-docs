@@ -151,9 +151,11 @@ The `.bashrc` file is stored in the home directory of each user. As mentioned ea
 ## Key Takeaways
 
 ![Key Takeaways](../../../assets/day-10/takeaways.png)
-
+:::tip[Recap]
 Key takeaways include the following:
 
 - Variables are ways of storing values and reusing the value in commands scripts.
 - Some variables are built-in to Linux and commonly used, such as the `$PATH` and `$HOME` environment variables.
 - Aliases are single commands that can represent other, much longer commands.
+
+:::

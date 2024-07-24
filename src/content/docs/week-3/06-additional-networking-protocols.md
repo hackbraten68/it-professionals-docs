@@ -400,8 +400,11 @@ With **hping3**, **traceroute**, **mtr**, **telnet**, and **nslookup**, you can 
 ## Key Takeaways
 
 ![takeaways](../../../assets/network_protocols/takeaways.png)
+:::tip[Recap]
 
 - **TCP and UDP** are transport protocols. TCP is connection-oriented, and UDP is connectionless.
 - Common application protocols that are used on the internet include **HTTP**, **TLS/SSL**, **SMTP**, and **FTP**.
 - Common network management and support protocols include **DNS**, **DHCP**, and **ICMP**.
 - Common utilities that are used to discover and troubleshoot network communication include **ping**, **nslookup**, and **traceroute**.
+
+:::

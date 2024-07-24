@@ -365,10 +365,12 @@ Answers:
 ## Key takeaways
 
 ![Key takeaways](../../../assets/day-9/take_aways.png)
-
+:::tip[Recap]
 Some of the key takeaways include the following:
 
 - Linux systems run daemons, services, and programs.
 - You can use the `ps` and `pstree` commands to display running processes.
 - You can use the `top` command to examine processes running on a server and to analyze resource utilization.
 - You can use the `at` and `cron` commands to schedule when a command is run.
+
+:::

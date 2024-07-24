@@ -138,6 +138,8 @@ AWS offers a variety of Amazon WorkSpaces bundles with different hardware and so
 
 ![Takeaways](../../../assets/network_technologies/takeaways.png)
 
+:::tip[Recap]
+
 - Wireless technology plays a key role in today’s communications.
 - WEP added security to wireless networks by encrypting data.
 - WPA offers improvements in handling security keys and user authorization.
@@ -149,3 +151,5 @@ AWS offers a variety of Amazon WorkSpaces bundles with different hardware and so
   - Narrow-band cellular data
   - LoRaWAN
 - Customers can use Amazon WorkSpaces to provision virtual, cloud-based Microsoft Windows or Amazon Linux desktops, known as WorkSpaces, for their users.
+
+:::

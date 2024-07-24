@@ -202,7 +202,7 @@ What does a network interface card (NIC) use that is known as a unique physical 
 ## Key Takeaways
 
 ![Key Takeaways](../../../assets/day-12/takeaways_1.png)
-
+:::tip[Recap]
 Some key takeaways from this lesson include the following:
 
 - A computer network is a collection of computing devices that are logically connected to communicate and share resources.
@@ -213,3 +213,5 @@ Some key takeaways from this lesson include the following:
   - Switches
   - Routers
 - The OSI model is a standard of how computers share information.
+
+:::

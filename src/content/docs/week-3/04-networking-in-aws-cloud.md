@@ -426,6 +426,7 @@ Q2: What is the largest CIDR block that can be chosen?
 ## Key takeaways
 
 ![takeaways](../../../assets/networking_aws/takeaways.png)
+:::tip[Recap]
 
 - Amazon VPC is a service that you can use to build a custom defined network in the AWS Cloud.
 - The IP address range of a VPC is defined by using a CIDR block.
@@ -436,3 +437,5 @@ Q2: What is the largest CIDR block that can be chosen?
   - Public and private subnet
   - Security groups
   - Network ACLs
+
+:::

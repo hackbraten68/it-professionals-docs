@@ -11,34 +11,58 @@ export default defineConfig({
 			},
 			sidebar: [
 				{
-					label: 'Cloud Foundation',
-					autogenerate: { directory: 'week-1' }
-				},
-				{
-					label: 'Linux Fundamentals',
-					autogenerate: { directory: 'week-2' }
-				},
-				{
-					label: 'Networking',
-					autogenerate: { directory: 'week-3' }
-				},
-				{
-					label: 'Cheat Sheets',
-					autogenerate: { directory: 'cheatsheets' }
-				},
-				{
-					label: 'Guides',
+					label: 'Getting Started',
 					items: [
 						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', link: '/guides/example/' },
+						{ label: 'Documentation Guide', link: '/guides/navigation/' },
 					],
 				},
 				{
+					label: 'AWS Course Scripts',
+					items: [
+						{
+							label: 'Cloud Foundation',
+							collapsed: true,
+							autogenerate: { directory: 'week-1' }
+						},
+						{
+							label: 'Linux Fundamentals',
+							collapsed: true,
+							autogenerate: { directory: 'week-2' }
+						},
+						{
+							label: 'Networking',
+							collapsed: true,
+							badge: { text: 'Updated', variant: 'tip' },
+							autogenerate: { directory: 'week-3' }
+						},
+						{
+							label: 'Security',
+							collapsed: true,
+							badge: { text: 'In progress', variant: 'caution' },
+							autogenerate: { directory: 'week-4' }
+						},
+					]
+				},
+				{
+					label: 'Cheat Sheets',
+					collapsed: true,
+					autogenerate: { directory: 'cheatsheets' }
+				},
+				{
+					label: 'Python',
+					collapsed: true,
+					autogenerate: { directory: 'python' }
+				},
+				{
 					label: 'Softskill Course',
+					collapsed: true,
 					autogenerate: { directory: 'softskill' }
 				},
 				{
 					label: 'Course Archive',
+					collapsed: true,
+					hidden: true,
 					autogenerate: { directory: 'archive' }
 				}
 			],

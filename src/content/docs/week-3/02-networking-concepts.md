@@ -290,9 +290,12 @@ Q2: Which type of protocol ensures that a connection is established? What is an 
 ## Key Takeaways
 
 ![Key Takeaways](../../../assets/networking_concepts/takeaways.png)
+:::tip[Recap]
 
 - A local-area network (LAN) connects devices in a limited geographical area, and a wide-area network (WAN) connects devices in a large geographical area.
 - A network management model defines how data is managed, and how applications are hosted in a network. Client-server and peer-to-peer are two common network management models for a LAN.
 - A network topology shows how nodes connect to each other. Star and hybrid are example patterns of a network typology.
 - A VPC is a virtual network that allows you to launch AWS resources that you define. A VPC looks and works just like a normal network within a data center with the benefits of using AWS services for scalability.
 - A network protocol defines the rules for formatting and transmitting data between devices on a network.
+
+:::

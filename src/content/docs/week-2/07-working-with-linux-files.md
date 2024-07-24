@@ -223,7 +223,7 @@ Answers:
 ## Key Takeaways
 
 ![Key Takeaways](../../../assets/day-8/take_aways.png)
-
+:::tip[Recap]
 The commands introduced in this lesson are summarized as follows:
 
 - `hash`: Is used to see a history of programs and commands that are run from the command line
@@ -236,3 +236,5 @@ The commands introduced in this lesson are summarized as follows:
 - `gzip`: Compresses a file's size
 - `zip`: Compresses the contents of a file
 - `unzip`: Decompresses the contents of a file
+
+:::

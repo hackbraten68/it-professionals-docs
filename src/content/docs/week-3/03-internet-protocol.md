@@ -186,7 +186,10 @@ Q2: **In the IP address 10.0.0.1, which portion is the network and which portion
 ### Key takeaways
 
 ![Takeaways](../../../assets/internet_protocol/key_takeaways.png)
+:::tip[Recap]
 
 - **An IP address** uniquely identifies a device on a network and enables communication to it.
 - **An IPv4 address** consists of four numbers in the range of 0-255, with each number separated by a dot (.).
 - **A port number** further identifies an application or a service on a device. When the port number is combined with the device’s IP address, it represents an endpoint.
+
+:::

@@ -222,7 +222,7 @@ Which command provides help for Linux commands?
 ### Key Takeaways
 
 ![Key Takeaways](../../../assets/day-6/takeaways.png)
-
+:::tip[Recap]
 Some key takeaways from this lesson include:
 
 - Linux is an operating system that is similar to Unix. It is free and open source, and users can expand it.
@@ -230,3 +230,5 @@ Some key takeaways from this lesson include:
 - All Linux distributions come with a CLI. Some also offer a GUI.
 - The bash shell is the default shell in Linux.
 - You can use the `man` command to read the Linux manual pages.
+
+:::

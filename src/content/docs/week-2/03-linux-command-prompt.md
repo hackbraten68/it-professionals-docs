@@ -189,7 +189,7 @@ Be sure that you can answer these key questions about this content:
 ## Key Takeaways
 
 ![Key Takeaways](../../../assets/day-6/key_takeaways.png)
-
+:::tip[Recap]
 Some key takeaways from this lesson include the following:
 
 - The Linux login workflow consists of the following three main steps:
@@ -198,3 +198,5 @@ Some key takeaways from this lesson include the following:
   - The user is presented with a command prompt in the user’s home directory.
 - You can use the `tab` key to automatically complete commands at the command prompt.
 - Some useful Linux commands include `history`, `whoami`, and `hostname`.
+
+:::
