@@ -170,8 +170,10 @@ Follow the instructions on the slide. After most or all students have completed 
 ## Key Takeaways
 
 ![Service Category Takeaways](../../../assets/day-4/category_takeaways.png)
-
+:::tip[Recap]
 This module includes the following key takeaways:
 
 - AWS offers a broad set of cloud-based services that span multiple categories, including the Compute, Networking, and Storage categories.
 - The AWS Management Console provides a web interface that you can use to access and manage your AWS Cloud resources.
+
+:::

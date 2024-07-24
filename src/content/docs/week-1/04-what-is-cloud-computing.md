@@ -2,6 +2,6 @@
 title: What is Cloud Computing?
 sidebar: 
     badge:
-        text: Needs ❤️
+        text: tbc
         variant: danger
 ---

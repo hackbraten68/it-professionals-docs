@@ -2,6 +2,6 @@
 title: AWS Pricing
 sidebar: 
     badge:
-        text: Needs ❤️
+        text: tbc
         variant: danger
 ---

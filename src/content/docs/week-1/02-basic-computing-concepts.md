@@ -146,7 +146,7 @@ As soon as the application is in production, it must be monitored and maintained
 ## Key Takeaways
 
 ![Key Takeaways SDLC](../../../assets/day-1/summary.png)
-
+:::tip[Recap]
 The following are some key takeaways from this module:
 
 - A **server** is a computer that provides data or services to other computers.
@@ -160,3 +160,5 @@ The following are some key takeaways from this module:
   - **Test**
   - **Implement**
   - **Maintain**
+
+:::

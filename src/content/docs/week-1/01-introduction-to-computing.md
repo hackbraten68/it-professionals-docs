@@ -137,13 +137,15 @@ An OS manages a computer’s hardware and software. You also use it to interact 
 
 Some applications work only on specific operating systems.
 
-### Key Takeaways
+## Key Takeaways
 
 ![Takeaways](../../../assets/intro_computing/takeaways.png)
-
+:::tip[Recap]
 This module includes the following key takeaways:
 
 - Applications, computers, and networks run the digital world.
 - An application is a computer program. It is a set of instructions that a computer runs to perform a specific task.
 - A computer’s hardware consists of its physical components, such as its CPU, memory, storage drive, and network card.
 - A computer’s software consists of the programs that run on it, such as its OS and user applications.
+
+:::

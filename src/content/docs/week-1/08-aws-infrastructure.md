@@ -2,6 +2,6 @@
 title: AWS Infrastructure Overview
 sidebar: 
     badge:
-        text: Needs ❤️
+        text: tbc
         variant: danger
 ---

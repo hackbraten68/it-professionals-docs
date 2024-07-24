@@ -2,6 +2,6 @@
 title: AWS Elastic Compute
 sidebar: 
     badge:
-        text: Needs ❤️
+        text: tbc
         variant: danger
 ---

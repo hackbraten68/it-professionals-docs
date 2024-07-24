@@ -123,7 +123,7 @@ When you estimate the costs of Amazon S3, you must consider the following factor
 ## Key Takeaways
 
 ![S3 Key Takeaways](../../../assets/day-5/s3_takeaways.png)
-
+:::tip[Recap]
 This module includes the following key takeaways:
 
 - Amazon S3 is a fully managed cloud storage service.
@@ -133,3 +133,5 @@ This module includes the following key takeaways:
 - You can access Amazon S3 at any time from anywhere through a URL.
 
 For more information about Amazon S3, see [AWS Amazon S3](https://aws.amazon.com/s3/).
+
+:::

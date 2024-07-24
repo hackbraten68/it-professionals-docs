@@ -98,7 +98,7 @@ The Oracle instance in this example provides an interesting case study in terms 
 ## Key Takeaways
 
 ![Responsibilty Key Takeaways](../../../assets/day-4/responsibilty_takeaways.png)
-
+:::tip[Recap]
 This module includes the following key takeaways:
 
 - AWS and the customer share security responsibilities.
@@ -107,3 +107,5 @@ This module includes the following key takeaways:
 - AWS is responsible for protecting the infrastructure—including hardware, software, networking, and facilities—that run AWS Cloud services.
 - For services that are categorized as infrastructure as a service (IaaS), the customer is responsible for performing necessary security configuration and management tasks.
 - Examples include guest OS updates and security patches, firewall, and security group configurations.
+
+:::
