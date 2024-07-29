@@ -118,3 +118,128 @@ An effective security prevention strategy protects valuable assets by using a la
 - **Data security**: Protects access to data through identity and access management.
 
 You will learn more about these layers and the tools that they use in the next modules.
+
+#### Layered defense example: Castle
+
+![Layered defense example: Castle](../../../assets/security_lifecycle/layered_sec_model_example.png)
+
+As an example of a layered defense, consider the architecture of a castle. The castle might have a moat as its first level of defense. The castle also includes an outer wall, an inner wall, and finally, the keep, where the protected assets reside. Each layer must be defeated in order for an attacking army to reach the keep and take the castle.
+
+Similarly, companies implement many layers of defense on their systems to make the systems more difficult to breach.
+
+### Layered defense example: OSI model
+
+![Layered defense example: OSI model](../../../assets/security_lifecycle/osi_model_defense.png)
+
+The OSI model provides another example of how security can be implemented in layers. Each of the model’s layers provides an opportunity to implement a security solution:
+
+- **Physical layer:** Network devices and equipment are protected from physical access to keep intruders out.
+- **Data link layer:** Filters are applied to network switches to help prevent attacks based on media access control (MAC) addresses.
+- **Network and transport layers:** Implementing firewalls and access control lists (ACLs) helps to mitigate unauthorized access to internal systems.
+- **Session and presentation layers:** By using authentication and encryption methods, you can prevent unauthorized data accesses.
+- **Application layer:** Solutions, such as virus scanners and an IDS, help protect applications.
+
+Protect each layer separately to make it as difficult as possible for an outside party to breach your defenses and gain access to your resources.
+
+## Types of prevention measures
+
+### Network hardening measures
+
+![Network hardening measures](../../../assets/security_lifecycle/network_hardening.png)
+
+The first layer of security prevention measures focuses on protecting the network. This protection can be achieved through **network discovery hardening** and **network security architecture hardening**. This slide lists some examples of actions for each type of hardening.
+
+The goal of **network discovery hardening** is to prevent an attacker from discovering, exploring, or mapping the network. Unfortunately, the same tools that network administrators use to explore or map networks can compromise network security if malicious entities are allowed to use them. (Examples of these tools include ping and Nmap.) As a result, network discovery tools should be blocked because they can be used to exploit network systems. Another effective network hardening action is to close network ports that are not used because they present open doors for attackers to come in. In addition, you can use your asset inventory list to identify and enforce the list of devices that are allowed on your network. If a device that is not on the allow list appears on your network, you can immediately investigate and take proper action.
+
+**Hardening the security architecture** of your network is another important prevention measure. For example, you can use firewalls in your network topology to protect resources such as web servers and database servers. A firewall permits only a certain type of traffic (based on protocol and source IP address) to come into the protected resource. You can also use segments to break down the network so that critical resources run in their own segment, which gives them additional protection. For example, database servers could be such a critical resource.
+
+You will learn more about network hardening measures in a separate module.
+
+### Systems hardening measures
+
+![Systems hardening measures](../../../assets/security_lifecycle/system_hardening.png)
+
+The next layer of security prevention measures addresses protecting the hosts that run your services and applications or that store your data. This security layer is known as systems hardening.
+
+Examples of systems hardening measures include the following:
+
+- **Applying OS patches and security updates on a regular basis:** As OS vendors identify known vulnerabilities, they publish patches to correct them. It is important that you apply these patches when they become available in order to prevent vulnerabilities at the OS level from being exploited.
+
+- **Removing unused applications and services:** Unused or older versions of applications and services might sometimes expose security vulnerabilities that can be maliciously exploited. By uninstalling them, you not only eliminate the potential security exposure but also free up the runtime and storage resources that they consume.
+
+- **Monitoring and controlling configuration changes:** Ideally, all configuration changes that you make to a system are performed using an automated tool that enforces best practice change control policies and procedures. You should also monitor all configuration changes so that you can always answer the important questions of, Who changed what, where, and when?
+
+You will learn more about systems hardening measures in a separate module.
+
+### Data security controls
+
+![Data security controls](../../../assets/security_lifecycle/data_security_controls.png)
+
+Data security is the next layer of prevention measures in the layered security model. It focuses on protecting data through the use of various control mechanisms, including the following:
+
+- **Encrypting data in transit and data at rest:** Encryption protects the confidentiality of information. For example, a digital certificate can be used to encrypt messages between a sender and a receiver.
+
+- **Using data integrity checking tools:** For example, use a hashing tool to generate a unique value based on the content of a data file before a sender transmits the file. When the receiver receives the file, the same hashing tool is used to generate the value again. If both the before and after transmission values are the same, the data file’s integrity has not been compromised.
+
+- **Using role-based access control:** Access control affects the availability of information. It ensures that data is made available only to users that are authorized to access the data.
+
+You will learn more about data security controls in separate modules.
+
+### Identity management
+
+![Identity management](../../../assets/security_lifecycle/identity_management.png)
+
+Finally, the last layer of security prevention measures is identity management. Identity management defines rules that specify who has access to specific information (authentication) and what they can do with it (authorization). Examples of identity management controls include the following:
+
+- **Use the principle of least privilege to control access to resources:** You should grant users the permission to access only the resources that they are authorized to.
+
+- **Set up a policy that enforces password strength and password expiration:** Passwords are a mechanism that is used for authentication. A good password policy prevents passwords from being easily guessed and requires them to be changed on a periodic basis.
+
+- **Use the principles of authentication, authorization, and accounting (AAA):** In addition to authentication and authorization controls, auditing measures should also be put in place. These measures are implemented by capturing resource usage information, and they facilitate security auditing.
+
+You will learn more about identity management in a separate module.
+
+## Checkpoint Questions
+
+![Checkpoint Questions](../../../assets/security_lifecycle/questions.png)
+
+<details>
+<summary>1. What are the tasks performed in the prevention phase of the security lifecycle?</summary>
+
+- Identify assets to be protected.
+- Assess asset vulnerability.
+- Implement countermeasures.
+</details>
+
+<details>
+<summary>2. What is a layered security strategy?</summary>
+A layered security strategy establishes multiple layers of defense against attacks. For an attack to succeed, it must overcome each layer, which makes it difficult.
+</details>
+
+<details>
+<summary>3. What are the types of prevention measures?</summary>
+
+- Network hardening measures
+- System hardening measures
+- Data security controls
+- Identity management
+</details>
+
+## Key Takeaways
+
+![Takeaways](../../../assets/security_lifecycle/takeaways.png)
+
+:::tip[Keytakeaways from this lesson include the following:]
+
+- Preventive measures give you the ability to stop threats before they happen.
+- The following are the three tasks performed in the prevention phase of the security lifecycle:
+  - Identify assets to be protected.
+  - Assess asset vulnerability.
+  - Implement countermeasures.
+- An effective security prevention strategy provides protection through multiple layers, which implement the following:
+  - Network hardening measures
+  - System hardening measures
+  - Data security controls
+  - Identity management
+
+:::
