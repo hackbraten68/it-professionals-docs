@@ -5,10 +5,9 @@ description: Welcome to Introduction to Security.Third-party links are for educa
 
 ![Intro](../../../assets/intro_security/intro.png)
 
-:::tip[What you'll learn]
-In this lesson, you will learn how to:
+:::tip[In this lesson, you will learn how to:]
 
-- Define key security terms•
+- Define key security terms
 - Identify different types of security threats
 - Identify the components that comprise a security strategy
 - List the types of security controls
