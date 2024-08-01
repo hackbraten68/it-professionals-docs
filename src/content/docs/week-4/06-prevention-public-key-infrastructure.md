@@ -1,5 +1,5 @@
 ---
-title: Prevention Public Key Infrastructure
+title: Prevention - Public Key Infrastructure
 ---
 
 ![Prevention Public Key Infrastructure](../../../assets/public_key_infrastructure/intro.png)

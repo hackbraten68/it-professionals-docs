@@ -1,5 +1,5 @@
 ---
-title: Prevention Data Security
+title: Prevention - Data Security
 ---
 
 ![Prevention: Data Security](../../../assets/data_security/intro.png)
