@@ -286,5 +286,4 @@ True
 
 - **AWS Identity and Access Management (IAM)** is a service that helps you control access to AWS resources in a secure way by using authentication and authorization.
 
-
 :::
