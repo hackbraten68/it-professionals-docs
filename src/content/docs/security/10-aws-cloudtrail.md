@@ -6,7 +6,7 @@ title: AWS Cloudtrail
 
 :::tip[What you'll learn]
 
-This module will describe AWS CloudTrail, a service that helps you monitor requests to the Amazon Web Services (AWS) services that you use.2
+This module will describe AWS CloudTrail, a service that helps you monitor requests to the Amazon Web Services (AWS) services that you use.
 
 :::
 

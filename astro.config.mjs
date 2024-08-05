@@ -60,18 +60,6 @@ export default defineConfig({
 					collapsed: true,
 					autogenerate: { directory: 'python' }
 				},
-				{
-					label: 'Softskill Course',
-					collapsed: true,
-					draft: true,
-					autogenerate: { directory: 'softskill' }
-				},
-				{
-					label: 'Course Archive',
-					collapsed: true,
-					draft: true,
-					autogenerate: { directory: 'archive' }
-				}
 			],
 		}),
 	],
