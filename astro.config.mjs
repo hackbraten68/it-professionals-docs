@@ -28,19 +28,19 @@ export default defineConfig({
 						{
 							label: 'Linux Fundamentals',
 							collapsed: true,
-							autogenerate: { directory: 'week-2' }
+							autogenerate: { directory: 'linux-fundamentals' }
 						},
 						{
 							label: 'Networking',
 							collapsed: true,
 							badge: { text: 'Updated', variant: 'tip' },
-							autogenerate: { directory: 'week-3' }
+							autogenerate: { directory: 'networking' }
 						},
 						{
 							label: 'Security',
 							collapsed: true,
 							badge: { text: 'In progress', variant: 'caution' },
-							autogenerate: { directory: 'week-4' }
+							autogenerate: { directory: 'security' }
 						},
 						{
 							label: 'Databases',
@@ -63,12 +63,13 @@ export default defineConfig({
 				{
 					label: 'Softskill Course',
 					collapsed: true,
+					draft: true,
 					autogenerate: { directory: 'softskill' }
 				},
 				{
 					label: 'Course Archive',
 					collapsed: true,
-					hidden: true,
+					draft: true,
 					autogenerate: { directory: 'archive' }
 				}
 			],
