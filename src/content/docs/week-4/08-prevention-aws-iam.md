@@ -1,7 +1,7 @@
 ---
 title: Prevention - AWS Identity and Access Management (IAM)
 ---
-![AWS Identity and Access Management (IAM)](../../../assets/aws_iam/intro.png)
+![AWS Identity and Access Management (IAM)](../../../assets/security/aws_iam/intro.png)
 
 :::tip[What you will learn:]
 
@@ -13,7 +13,7 @@ In this module, you will learn about AWS Identity and Access Management (IAM) us
 
 ### What is IAM?
 
-![What is IAM?](../../../assets/aws_iam/whats_iam.png)
+![What is IAM?](../../../assets/security/aws_iam/whats_iam.png)
 
 **IAM** is a service that helps securely control access to AWS resources. You can use it to manage access to AWS services and resources securely. Using IAM, you can create and manage AWS users and groups (to support authentication). You can also use IAM for permissions to allow or deny their access to AWS resources (to support authorization).
 
@@ -38,7 +38,7 @@ Use IAM to perform the following tasks:
 
 ### IAM features
 
-![IAM features](../../../assets/aws_iam//features.png)
+![IAM features](../../../assets/security/aws_iam//features.png)
 
 #### IAM User
 
@@ -66,7 +66,7 @@ Later, if you need to revoke or modify your permissions, you can delete or modif
 
 ### Types of security credentials
 
-![Types of security credentials](../../../assets/aws_iam/types_credentials.png)
+![Types of security credentials](../../../assets/security/aws_iam/types_credentials.png)
 
 Here is a summary of the different types of AWS security credentials.
 
@@ -78,14 +78,14 @@ For added security, AWS recommends that you apply multi-factor authentication (M
 
 ### IAM: Authorization
 
-![IAM: Authorization](../../../assets/aws_iam/authorization.png)
+![IAM: Authorization](../../../assets/security/aws_iam/authorization.png)
 
 After users have been authenticated, they must then be authorized to access an AWS service. To assign permissions to a user, group, or role, you must create an IAM policy. A policy is a document that explicitly lists permissions. There are no default permissions. All actions are denied by default (implicit deny) unless they are explicitly allowed. Any actions that you did not explicitly allow are denied. Any actions that you explicitly deny are always denied.
 
 IAM is global. It is not on a per-Region basis. It applies across all AWS Regions.
 
 ### MFA
-![MFA](../../../assets/aws_iam/mfa.png)
+![MFA](../../../assets/security/aws_iam/mfa.png)
 
 In the example:
 
@@ -111,7 +111,7 @@ You can also use AWS Security Token Service (AWS STS) to request temporary, limi
 
 ### IAM users
 
-![IAM users](../../../assets/aws_iam/iam_users.png)
+![IAM users](../../../assets/security/aws_iam/iam_users.png)
 
 An IAM user is an entity that you create in AWS that provides a way to interact with AWS. An IAM user primarily gives individuals identities that they can use to sign in to the console and make requests to AWS services. Newly created IAM users have no default credentials that they can use to authenticate themselves and access AWS resources. First, you assign security credentials to users for authentication. Then, attach permissions that authorize the users to perform any AWS actions or to access any AWS resources. The credentials that you create for users are what they use to uniquely identify themselves to AWS.
 
@@ -121,7 +121,7 @@ A best practice is to create a separate IAM user account with administrative per
 
 ### IAM groups
 
-![IAM groups](../../../assets/aws_iam/iam_groups.png)
+![IAM groups](../../../assets/security/aws_iam/iam_groups.png)
 
 A group is a collection of IAM users. You can use groups to specify permissions for a collection of users, which can make it easier to manage the permissions for those users. For example, you could have a group named `Developers` and give that group the types of permissions that developers typically need. Any user in that group automatically has the permissions that are assigned to the group. If a new user joins your organization and should have developer permissions, add that user to the `Developers` group. Doing so automatically gives these users the appropriate permissions. Similarly, suppose that a person changes jobs in your organization. Instead of editing that user's permissions, you can remove the user from the earlier group and add them to the new group.
 
@@ -133,7 +133,7 @@ Important characteristics of groups include the following:
 
 ### IAM roles
 
-![IAM roles](../../../assets/aws_iam/iam_roles.png)
+![IAM roles](../../../assets/security/aws_iam/iam_roles.png)
 
 A role is a tool for giving temporary access to AWS resources in your AWS account. Permissions are not attached to an IAM user or group. Instead, at runtime, applications or AWS services can programmatically assume a role. When a role is assumed, AWS returns temporary security credentials that the user or application can use to make programmatic requests to AWS. Consequently, you do not need to share long-term security credentials—for example, by creating an IAM user—for each entity that requires access to a resource.
 
@@ -159,7 +159,7 @@ The principal can also be an IAM user, group, or role from other AWS accounts, i
 
 ### IAM permissions
 
-![IAM permissions](../../../assets/aws_iam/iam_permissions.png)
+![IAM permissions](../../../assets/security/aws_iam/iam_permissions.png)
 
 Using policies, you can fine-tune permissions that are granted to IAM users, groups, and roles. Because policies are stored in JavaScript Object Notation (JSON) format, you can use them with a version control system. It is a best practice to define least privileged access to each user, group, or role. In that way, you can customize access to specific resources by using an authorization policy.
 
@@ -167,7 +167,7 @@ When you determine whether permissions are allowed, IAM first checks for an **ex
 
 ### IAM policies
 
-![IAM policies](../../../assets/aws_iam/iam_policies.png)
+![IAM policies](../../../assets/security/aws_iam/iam_policies.png)
 
 An IAM policy is a formal statement of one or more permissions. Policies can be attached to any IAM entity, which includes a user, group, role, or resource. For example, you can attach a policy to your AWS resources to block all requests that do not come from an approved IP address range. Policies specify which actions are allowed, which resources are granted those actions, and the resulting effect when the user requests access to the resources.
 
@@ -187,7 +187,7 @@ When you attach the same policy to multiple IAM users, put the users in a group 
 
 #### Example: IAM policy
 
-![Example: IAM policy](../../../assets/aws_iam/iam_policies_example.png)
+![Example: IAM policy](../../../assets/security/aws_iam/iam_policies_example.png)
 
 The example policy gives users access to only the following resources:
 
@@ -198,13 +198,13 @@ The policy includes an explicit deny (`"Effect":"Deny"`) element with the `NotRe
 
 ### IAM: Policy assignment
 
-![IAM: Policy assignment](../../../assets/aws_iam/iam_policy_assignment.png)
+![IAM: Policy assignment](../../../assets/security/aws_iam/iam_policy_assignment.png)
 
 You can assign the same policy to a user, group, and role. This practice makes reuse available and reduces the need to recreate the same policy for different identities.
 
 ## Checkpoint questions
 
-![Checkpoint questions](../../../assets/aws_iam/questions.png)
+![Checkpoint questions](../../../assets/security/aws_iam/questions.png)
 
 <details>
 <summary>1. What are two ways that you can use IAM to access AWS services? </summary>
@@ -223,9 +223,9 @@ An IAM user is an entity that you create in AWS that provides a way to interact 
 
 ## Key takeaways
 
-![Key takeaways](../../../assets/aws_iam/takeaways.png)
+![Key takeaways](../../../assets/security/aws_iam/takeaways.png)
 
-:::tip[Keytakeaways from this lesson include:]
+:::tip[Key takeaways from this lesson include:]
 
 - IAM is a service that helps securely control access to AWS resources.
 - IAM provides different types of security credentials:

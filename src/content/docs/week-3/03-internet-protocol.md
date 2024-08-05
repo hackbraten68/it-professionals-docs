@@ -2,7 +2,7 @@
 title: Internet Protocols
 ---
 
-![Internet Protocols](../../../assets/internet_protocol/intro.png)
+![Internet Protocols](../../../assets/networking/internet_protocol/intro.png)
 
 You will learn:
 
@@ -14,15 +14,15 @@ You will learn:
 
 ## What is IP
 
-![What is IP](../../../assets/internet_protocol/ip.png)
+![What is IP](../../../assets/networking/internet_protocol/ip.png)
 
-![What is IP](../../../assets/internet_protocol/whats_ip.png)
+![What is IP](../../../assets/networking/internet_protocol/whats_ip.png)
 
 IP is a critical standard within the larger TCP/IP protocol suite when combined with the connection-oriented Transmission Control Protocol (TCP). TCP/IP implements a set of protocols that provide crucial services for the internet by enabling the successful routing of network traffic among devices on a network.
 
 ### IP addresses
 
-![IP addresses](../../../assets/internet_protocol/ip_addresses.png)
+![IP addresses](../../../assets/networking/internet_protocol/ip_addresses.png)
 
 IP addresses:
 
@@ -36,7 +36,7 @@ IP addresses:
 
 ### Private and public IP addresses – OSI model
 
-![Private and public IP addresses – OSI model](../../../assets/internet_protocol/private-public.png)
+![Private and public IP addresses – OSI model](../../../assets/networking/internet_protocol/private-public.png)
 
 IP addresses:
 
@@ -53,7 +53,7 @@ IP addresses:
 
 ### Layer 3 of the OSI model
 
-![Layer 3 of the OSI model](../../../assets/internet_protocol/layer_3.png)
+![Layer 3 of the OSI model](../../../assets/networking/internet_protocol/layer_3.png)
 
 - **Why is it important?**
   - Layer 2 (data link) establishes the connection between two nodes. These nodes have physical components that use a MAC address, which needs to be translated to a logical address. At layer 3 (network), this translation between logical and physical addresses occurs.
@@ -61,7 +61,7 @@ IP addresses:
 
 ### Private and public IP addresses
 
-![Private and public IP addresses](../../../assets/internet_protocol/private_public_ips.png)
+![Private and public IP addresses](../../../assets/networking/internet_protocol/private_public_ips.png)
 
 IP addresses:
 
@@ -73,7 +73,7 @@ IP addresses:
 
 ### IP addresses – IPv4
 
-![IP addresses – IPv4](../../../assets/internet_protocol/ipv4.png)
+![IP addresses – IPv4](../../../assets/networking/internet_protocol/ipv4.png)
 
 IPv4 addresses:
 
@@ -86,7 +86,7 @@ IPv4 addresses:
 
 ### IP addresses – IPv6
 
-![IP addresses – IPv6](../../../assets/internet_protocol/ipv6.png)
+![IP addresses – IPv6](../../../assets/networking/internet_protocol/ipv6.png)
 
 IPv6 addresses:
 
@@ -96,7 +96,7 @@ IPv6 addresses:
 
 ### IP addresses – dynamic and static
 
-![IP addresses –dynamic and static](../../../assets/internet_protocol/dynamic_static.png)
+![IP addresses –dynamic and static](../../../assets/networking/internet_protocol/dynamic_static.png)
 
 Dynamic and static IP addresses:
 
@@ -105,13 +105,13 @@ Dynamic and static IP addresses:
 
 ### IP addresses - EC2 instances
 
-![IP addresses - EC2 instances](../../../assets/internet_protocol/ec2_ip.png)
+![IP addresses - EC2 instances](../../../assets/networking/internet_protocol/ec2_ip.png)
 
 EC2 instances can be assigned a static or dynamic IP address depending on the use case. If the instance is used as a server, the best address to assign it is a static IP address, also known as an Elastic IP address (EIP). Otherwise, it will be assigned a dynamic IP address, when the instance is stopped and restarted, the IP address will change.
 
 ### IP addresses – summary
 
-![IP addresses – summary](../../../assets/internet_protocol/ip_summary.png)
+![IP addresses – summary](../../../assets/networking/internet_protocol/ip_summary.png)
 
 Public or private IP addresses:
 
@@ -120,7 +120,7 @@ Public or private IP addresses:
 
 ### IP addresses – special purpose
 
-![IP addresses – special purpose](../../../assets/internet_protocol/ip_special.png)
+![IP addresses – special purpose](../../../assets/networking/internet_protocol/ip_special.png)
 
 Special purpose IP addresses:
 
@@ -132,7 +132,7 @@ Special purpose IP addresses:
 
 ### Converting an IP address into binary
 
-![Converting an IP address into binary](../../../assets/internet_protocol/ip_converting.png)
+![Converting an IP address into binary](../../../assets/networking/internet_protocol/ip_converting.png)
 
 IPv4 addresses:
 
@@ -144,7 +144,7 @@ IPv4 addresses:
 
 ### Port numbers
 
-![Port numbers](../../../assets/internet_protocol/port_numbers.png)
+![Port numbers](../../../assets/networking/internet_protocol/port_numbers.png)
 
 - **Purpose**: A device might send or receive data from multiple devices simultaneously. A port number, in combination with an IP address, enables the device to determine the exact source or destination of the data, which is also known as the endpoint.
 - **Functionality**: A computer can receive and send information in multiple ways simultaneously. For example, it can download a file over File Transfer Protocol (FTP) from an Amazon Simple Storage Service (Amazon S3) bucket, stream a live video from Twitch, and receive email messages—all at the same time.
@@ -159,7 +159,7 @@ IPv4 addresses:
 
 #### Port number example
 
-![Port number example](../../../assets/internet_protocol/port_number_example.png)
+![Port number example](../../../assets/networking/internet_protocol/port_number_example.png)
 
 - **Example**: Port numbers and IP addresses work together to ensure that messages reach their correct destination.
 
@@ -173,7 +173,7 @@ IPv4 addresses:
 
 ### Checkpoint questions
 
-![Checkpoint questions](../../../assets/internet_protocol/questions.png)
+![Checkpoint questions](../../../assets/networking/internet_protocol/questions.png)
 
 Q1: **Which type of IP address should be assigned to printers?**
 
@@ -185,7 +185,7 @@ Q2: **In the IP address 10.0.0.1, which portion is the network and which portion
 
 ### Key takeaways
 
-![Takeaways](../../../assets/internet_protocol/key_takeaways.png)
+![Takeaways](../../../assets/networking/internet_protocol/key_takeaways.png)
 :::tip[Recap]
 
 - **An IP address** uniquely identifies a device on a network and enables communication to it.

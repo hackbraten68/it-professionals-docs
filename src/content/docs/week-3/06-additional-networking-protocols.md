@@ -1,7 +1,7 @@
 ---
 title: Additional Networking Protocols
 ---
-![Additional Networking Protocols](../../../assets/network_protocols/intro.png)
+![Additional Networking Protocols](../../../assets/networking/network_protocols/intro.png)
 
 You will learn how to:
 
@@ -11,7 +11,7 @@ You will learn how to:
 
 ## Transport, application, management and support protocols
 
-![Transport, application, management and support protocols](../../../assets/network_protocols/misc_protocols.png)
+![Transport, application, management and support protocols](../../../assets/networking/network_protocols/misc_protocols.png)
 
 ### Communication Protocols
 
@@ -51,7 +51,7 @@ Support protocols facilitate and improve network communications.
 
 ## The OSI model
 
-![The OSI Model](../../../assets/network_protocols/osi_model.png)
+![The OSI Model](../../../assets/networking/network_protocols/osi_model.png)
 
 You might recall the mention of Open Systems Interconnection (OSI) in your previous
 learning. The OSI model defines a standard for how computers can share information
@@ -82,7 +82,7 @@ upper layers.
 
 ### TCP
 
-![TCP](../../../assets/network_protocols/tcp.png)
+![TCP](../../../assets/networking/network_protocols/tcp.png)
 
 Recall that you first learned about TCP/IP earlier in this module. When TCP combines
 with Internet Protocol (IP), they form the TCP/IP protocol suite, a set of protocols
@@ -104,7 +104,7 @@ treats the data as a stream of bytes.
 
 ### UDP
 
-![UDP](../../../assets/network_protocols/udp.png)
+![UDP](../../../assets/networking/network_protocols/udp.png)
 
 The UDP uses a simple, connectionless communication model to deliver data over an
 IP network. Compared to TCP, UDP provides only a minimum set of functions. It is
@@ -124,7 +124,7 @@ guarantees. Data can be lost or duplicated, and datagrams can arrive out of orde
 
 ### TCP vs. UDP
 
-![TCP vs. UDP](../../../assets/network_protocols/tcp_vs_udp.png)
+![TCP vs. UDP](../../../assets/networking/network_protocols/tcp_vs_udp.png)
 
 In comparison, TCP is a connection-oriented protocol, which requires that hosts
 establish a logical connection with each other before communication can occur. This
@@ -137,7 +137,7 @@ delivery.
 
 ### Network protocols
 
-![Network protocols](../../../assets/network_protocols/network_protocols.png)
+![Network protocols](../../../assets/networking/network_protocols/network_protocols.png)
 
 A network protocol defines therules for formatting and transmitting databetween devices on a network. It typically operates at layer 3 (network) or layer 4 (transport) of the OSI model.
 
@@ -145,7 +145,7 @@ Network protocols fall into two general categories:connection-orientedprotocols 
 
 ### TCP handshake
 
-![TCP handshake](../../../assets/network_protocols/tcp_handshake.png)
+![TCP handshake](../../../assets/networking/network_protocols/tcp_handshake.png)
 
 TCP is great for transferring important files because connection is guaranteed even
 though it has a larger overhead (time). It is connection oriented.
@@ -180,7 +180,7 @@ causes an error.
 
 ### HTTP
 
-![HTTP](../../../assets/network_protocols/http.png)
+![HTTP](../../../assets/networking/network_protocols/http.png)
 
 HTTP is the protocol that is used to reach webpages. A full HTTP address is expressed as a uniform resource locator (URL).
 
@@ -188,7 +188,7 @@ Secure Hypertext Transfer Protocol (HTTPS) is a combination of HTTP with the SSL
 
 ### SSL and TLS
 
-![SSL and TLS](../../../assets/network_protocols/ssl_tls.png)
+![SSL and TLS](../../../assets/networking/network_protocols/ssl_tls.png)
 
 SSL is a standard for securing and safeguarding communications between two
 systems by using encryption. TLS is an updated version of SSL that is more secure.
@@ -215,7 +215,7 @@ AWS services and internal connected resources, you need AWS Certificate Manager
 
 ### Mail protocols (SMTP, POP & IMAP)
 
-![Mail protocols (SMTP, POP & IMAP)](../../../assets/network_protocols/mail_protocols.png)
+![Mail protocols (SMTP, POP & IMAP)](../../../assets/networking/network_protocols/mail_protocols.png)
 
 SMTP is used to transfer email messages between mail servers.
 
@@ -223,7 +223,7 @@ Email clients use POP and IMAP to retrieve email messages from the mail server.
 
 ### Remote desktop protocols (RDP and SSH)
 
-![Remote desktop protocols (RDP and SSH)](../../../assets/network_protocols/rdp_ssh.png)
+![Remote desktop protocols (RDP and SSH)](../../../assets/networking/network_protocols/rdp_ssh.png)
 
 RDP is a protocol that is used to access the desktop of a remote Microsoft Windows
 computer. Use port 3389 with clients that are available on different operating
@@ -240,7 +240,7 @@ employees in using infrastructure on premises.
 
 ### Application protocol port numbers
 
-![Application protocol port numbers](../../../assets/network_protocols/port_numbers.png)
+![Application protocol port numbers](../../../assets/networking/network_protocols/port_numbers.png)
 
 Application protocols, such as HTTP and FTP, have assigned port numbers. The next
 section will discuss FTP and DNS in more detail.
@@ -263,7 +263,7 @@ DNS.
 
 ### Examples of management and support protocols
 
-![Examples of management and support protocols](../../../assets/network_protocols/examples_protocols.png)
+![Examples of management and support protocols](../../../assets/networking/network_protocols/examples_protocols.png)
 
 Management protocols are used to configure and maintain network equipment.
 Support protocols enable and improve network communications.
@@ -277,7 +277,7 @@ Here are the examples of management and support protocols:
 
 ### DNS
 
-![DNS](../../../assets/network_protocols/DNS.png)
+![DNS](../../../assets/networking/network_protocols/DNS.png)
 
 DNS is a database for domain names. It is similar to the contacts list on a mobile phone. The contacts list matches people’s (or organization’s) names with phone numbers. DNS functions like a contacts list for the internet.
 
@@ -285,7 +285,7 @@ DNS translates human-readable domain names (for example, [www.amazon.com](www.am
 
 ### ICMP
 
-![ICMP](../../../assets/network_protocols/icmp.png)
+![ICMP](../../../assets/networking/network_protocols/icmp.png)
 
 Network devices use ICMP to diagnose network communication issues and generate
 responses to errors in IP networks.
@@ -296,7 +296,7 @@ message to the source.
 
 ### DHCP
 
-![DHCP](../../../assets/network_protocols/dhcp.png)
+![DHCP](../../../assets/networking/network_protocols/dhcp.png)
 
 DHCP automatically assigns IP addresses, subnet masks, gateways, and other IP parameters to devices that are connected to a network.
 
@@ -304,13 +304,13 @@ Some examples of DHCP options are router (default gateway), DNS servers, and DNS
 
 ### FTP
 
-![FTP](../../../assets/network_protocols/ftp.png)
+![FTP](../../../assets/networking/network_protocols/ftp.png)
 
 FTP is a network protocol that authorizes the transfer of files from one computer to another. FTP performs two basic functions: PUT and GET. If you have downloaded something such as an image or a file, then you probably used an FTP server.
 
 ### Common network utilities
 
-![Common network utilities](../../../assets/network_protocols/common_network.png)
+![Common network utilities](../../../assets/networking/network_protocols/common_network.png)
 
 When you work with networks, it is important to check network performance,
 bandwidth usage, and network configurations. The following list contains a few
@@ -330,7 +330,7 @@ Example of common network utilities include:
  
 ### hping3
 
-![hping3](../../../assets/network_protocols/hping3.png)
+![hping3](../../../assets/networking/network_protocols/hping3.png)
 
 You might need to troubleshoot network performance issues such as packet loss or
 latency issues in your running instance of your VPC. When doing so, it is best to use a
@@ -350,7 +350,7 @@ port.
 
 ### traceroute
 
-![traceroute](../../../assets/network_protocols/traceroute.png)
+![traceroute](../../../assets/networking/network_protocols/traceroute.png)
 
 The Linux traceroute utility identifies the path that is taken from a client node to the
 destination node. The utility records the time in milliseconds for each router to
@@ -368,7 +368,7 @@ The output shows a number of results:
 
 ### mtr
 
-![mtr](../../../assets/network_protocols/mtr.png)
+![mtr](../../../assets/networking/network_protocols/mtr.png)
 
 Linux mtr is a command that you type into the command prompt that provides
 continual, updated output, which you can use to analyze network performance.
@@ -383,13 +383,13 @@ performance varies over time.
 
 ### Telnet
 
-![Telnet](../../../assets/network_protocols/telnet.png)
+![Telnet](../../../assets/networking/network_protocols/telnet.png)
 
 You can use telnet to test individual ports and see whether they are open or not.
 
 ### nslookup
 
-![nslookup](../../../assets/network_protocols/nslookup.png)
+![nslookup](../../../assets/networking/network_protocols/nslookup.png)
 
 **nslookup** is a network administration command-line tool for querying the DNS to obtain the mapping between domain name and IP address, or other DNS records.
 
@@ -399,7 +399,7 @@ With **hping3**, **traceroute**, **mtr**, **telnet**, and **nslookup**, you can 
 
 ## Key Takeaways
 
-![takeaways](../../../assets/network_protocols/takeaways.png)
+![takeaways](../../../assets/networking/network_protocols/takeaways.png)
 :::tip[Recap]
 
 - **TCP and UDP** are transport protocols. TCP is connection-oriented, and UDP is connectionless.

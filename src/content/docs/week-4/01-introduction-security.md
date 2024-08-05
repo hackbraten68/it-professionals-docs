@@ -3,7 +3,7 @@ title: Introduction to Security
 description: Welcome to Introduction to Security.Third-party links are for educational purposes only. AWS takes no responsibility and assumes no liability for the accuracy or accessibility of the linked content.
 ---
 
-![Intro](../../../assets/intro_security/intro.png)
+![Intro](../../../assets/security/intro_security/intro.png)
 
 :::tip[In this lesson, you will learn how to:]
 
@@ -17,7 +17,7 @@ description: Welcome to Introduction to Security.Third-party links are for educa
 
 ## What is security
 
-![What is security](../../../assets/intro_security/whats_security.png)
+![What is security](../../../assets/security/intro_security/whats_security.png)
 
 Security can be generally defined as the practice of protecting valuable assets. These assets can be physical, such as people, computers, and buildings, or digital, such as software applications and user data. Security attempts to ensure that only authorized personnel are allowed access to these assets and protects these assets from malicious modification, theft, or destruction so that they can be used according to their intended purpose.
 
@@ -25,7 +25,7 @@ Cybersecurity is particularly concerned with the protection of networks, compute
 
 ### Confidentiality, integrity, and availability (CIA)
 
-![Confidentiality, integrity, and availability (CIA)](../../../assets/intro_security/cia.png)
+![Confidentiality, integrity, and availability (CIA)](../../../assets/security/intro_security/cia.png)
 
 The confidentiality, integrity, and availability (CIA) triad represents three important security aspects that must be considered when protecting information. They are defined as follows:
 
@@ -39,7 +39,7 @@ You will learn more about the methods for ensuring the confidentiality, integrit
 
 ### Basic security terms
 
-![Basic security terms](../../../assets/intro_security/basic_terms.png)
+![Basic security terms](../../../assets/security/intro_security/basic_terms.png)
 
 The following scenario explains the basic security terms that this slide lists:
 
@@ -55,7 +55,7 @@ The following scenario explains the basic security terms that this slide lists:
 
 ### Why is security important?
 
-![Why is security important?](../../../assets/intro_security/sec_important.png)
+![Why is security important?](../../../assets/security/intro_security/sec_important.png)
 
 Security has become crucial for everyone because computers and related technologies are integrated into our work environments and personal lives more each day. As more valued information is put on systems, the types and number of threats continue to increase. It is commonplace today to hear reports in the news of government agencies, financial companies, and other businesses with an internet presence being hacked (that is, breached).
 
@@ -63,7 +63,7 @@ To quantify the magnitude of the problem, a study conducted by Verizon estimates
 
 *Source:* Verizon. 2021. 2021 Data Breach Investigations Report (DBIR). Accessed November 23, 2021. [Verizon 2021 Data Breach Investigations Report](https://enterprise.verizon.com/business/resources/reports/2021-data-breach-investigations-report.pdf).
 
-![Why is security important?](../../../assets/intro_security/sec_important_2.png)
+![Why is security important?](../../../assets/security/intro_security/sec_important_2.png)
 
 The consequences of a breach can affect both individuals and businesses. For example, identity theft is an event that targets an individual’s personally identifiable information (PII), such as their name, date of birth, and passwords. It can result in the individual losing control of their bank and credit card accounts. Similarly, an attacker might steal confidential company data or intellectual property. The attacker may then try to sell the data or exact a ransom to give it back to the company. 
 
@@ -81,7 +81,7 @@ Ponemon Institute. 2021. Cost of a Data Breach Report 2021. Accessed November 23
 
 ### Security breach example
 
-![Security breach example](../../../assets/intro_security/breach_example.png)
+![Security breach example](../../../assets/security/intro_security/breach_example.png)
 
 The impact and reach of this data breach example emphasize the importance of security in today’s connected digital world.
 
@@ -91,7 +91,7 @@ The impact and reach of this data breach example emphasize the importance of sec
 
 ### Types of threats
 
-![Types of threats](../../../assets/intro_security/threat_types.png)
+![Types of threats](../../../assets/security/intro_security/threat_types.png)
 
 This table lists common types of threats and identifies the areas of the CIA triad that they affect. The types of threats listed in the first part of the table are malware, ransomware, and denial of service (DoS) attack.
 
@@ -104,7 +104,7 @@ Some examples of malware include the following:
 
 Note that a distributed denial of service (DDoS) is a variation of a DoS threat. A DDoS attack uses multiple machines to flood a target system with multiple requests to prevent the system’s normal use.
 
-![Type of threats](../../../assets/intro_security/threat_types_2.png)
+![Type of threats](../../../assets/security/intro_security/threat_types_2.png)
 
 The types of threats listed in the second part of the table are man-in-the-middle (MitM) attack, phishing, and social engineering.
 
@@ -116,7 +116,7 @@ Source: [*Verizon. 2021. 2021 Data Breach Investigations Report (DBIR). Accessed
 
 ### What is a security strategy
 
-![What is a security strategy](../../../assets/intro_security/sec_strategy.png)
+![What is a security strategy](../../../assets/security/intro_security/sec_strategy.png)
 
 Businesses need a security strategy to prevent threats, eliminate vulnerabilities, and recover from breaches. At a minimum, a security strategy defines the following:
 
@@ -125,13 +125,13 @@ Businesses need a security strategy to prevent threats, eliminate vulnerabilitie
 
 ### Security strategy for the cloud
 
-![Security strategy for the cloud](../../../assets/intro_security/sec_strategy_cloud.png)
+![Security strategy for the cloud](../../../assets/security/intro_security/sec_strategy_cloud.png)
 
 For a cloud environment, the security strategy should also define who is responsible for implementing the different security measures.
 
 ### AWS Cloud security shared responsibility model
 
-![AWS Cloud security shared responsibility model](../../../assets/intro_security/sec_shared_responsibility.png)
+![AWS Cloud security shared responsibility model](../../../assets/security/intro_security/sec_shared_responsibility.png)
 
 In the AWS Cloud, the shared responsibility model indicates who is responsible for implementing security measures. In this model, AWS is responsible for security **OF** the cloud, and the customer is responsible for security **IN** the cloud.
 
@@ -149,7 +149,7 @@ Customers are responsible for the security of everything they put in the cloud. 
 
 ### What are security controls
 
-![What are security controls](../../../assets/intro_security/sec_controls.png)
+![What are security controls](../../../assets/security/intro_security/sec_controls.png)
 
 Security controls are measures that protect against threats and eliminate vulnerabilities. There are three types of security controls: preventive, detective, and corrective. For each type of control, you can implement physical, technical, and administrative security measures to ensure information confidentiality, integrity, and availability.
 
@@ -167,7 +167,7 @@ Note that each type of security control represents three stages of a security li
 
 ### Security control type examples
 
-![Security control type examples](../../../assets/intro_security/sec_controls_examples.png)
+![Security control type examples](../../../assets/security/intro_security/sec_controls_examples.png)
 
 This table provides some examples of preventative, detective, and corrective security controls. Each example is further categorized as a physical, administrative, or technical control.
 
@@ -177,7 +177,7 @@ Typically, when implementing a security control, start by controlling the physic
 
 ### Security lifecycle
 
-![Security lifecycle](../../../assets/intro_security/sec_lifecycle.png)
+![Security lifecycle](../../../assets/security/intro_security/sec_lifecycle.png)
 
 An effective security strategy addresses security in stages of a lifecycle. These stages consist of prevention, detection, response, and analysis. Note that the first three stages correspond to the three types of security controls.
 
@@ -193,7 +193,7 @@ In the next lessons, you will examine the details of each phase of the security 
 
 ## Checkpoint questions
 
-![Checkpoint questions](../../../assets/intro_security/questions.png)
+![Checkpoint questions](../../../assets/security/intro_security/questions.png)
 
 1. Social engineering is a type of security threat where an attacker uses human interaction to manipulate a person into revealing sensitive information.
 
@@ -221,7 +221,7 @@ In the next lessons, you will examine the details of each phase of the security 
 
 ## Key Takeaways
 
-![Takeaways](../../../assets/intro_security/takeaways.png)
+![Takeaways](../../../assets/security/intro_security/takeaways.png)
 
 :::tip[Recap]
 Key takeaways from this lesson include the following:

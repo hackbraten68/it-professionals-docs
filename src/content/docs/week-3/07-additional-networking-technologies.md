@@ -1,7 +1,7 @@
 ---
 title: Additional Networking Technologies
 ---
-![Additional Networking Technologies](../../../assets/network_technologies/intro.png)
+![Additional Networking Technologies](../../../assets/networking/network_technologies/intro.png)
 
 You will learn how to:
 
@@ -13,29 +13,29 @@ You will learn how to:
 
 ### What are wireless technologies
 
-![What are wireless technologies](../../../assets/network_technologies/wireless_technology.png)
+![What are wireless technologies](../../../assets/networking/network_technologies/wireless_technology.png)
 
 Wireless technologies communicate without the need of a traditional cord attached to them. From landline phones to wireless phones, desktop computers to laptops, and even traditional game consoles, devices have evolved to on-the-go virtual reality (VR). The world has been going wireless with the advancement of technology.
 
 ### Examples of wireless technologies
 
-![Examples of wireless technologies](../../../assets/network_technologies/example_wireless.png)
+![Examples of wireless technologies](../../../assets/networking/network_technologies/example_wireless.png)
 
 ## IoT
 
 ### Internet of Things (IoT)
 
-![Internet of Things](../../../assets/network_technologies/iot.png)
+![Internet of Things](../../../assets/networking/network_technologies/iot.png)
 
 The **Internet of Things** (IoT) refers to physical devices, or things, that are connected to the internet so that they can share and collect data. The primary goal of IoT is for devices to self-report in real time, which can improve efficiency. It can also surface important information more quickly than a system that depends on human intervention.
 
-![IoT](../../../assets/network_technologies/iot_2.png)
+![IoT](../../../assets/networking/network_technologies/iot_2.png)
 
 People even use the term Internet of Everything. Things can be thought of as devices or sensors that have the capability to communicate. Many devices are in homes, factories, oil wells, hospitals, cars, and other places that must be connected. Data from these devices can be collected, stored, and analyzed to design better solutions or products. IoT devices include consumer applications (such as thermostats) and commercial applications (such as industrial sensors, smart watches, and smart toasters). They also include devices in the Internet of Medical Things (IoMT), such as health monitors.
 
 ### Some IoT devices that you use every day
 
-![Some IoT devices that you use every day](../../../assets/network_technologies/everyday_iot.png)
+![Some IoT devices that you use every day](../../../assets/networking/network_technologies/everyday_iot.png)
 
 Smartphones are probably the most widely used IoT devices in the world. These devices transfer a large amount of data. Smart watches, like Fitbits and Apple Watches, capture vital health information, which is analyzed to provide key insights into a person’s health.
 
@@ -45,7 +45,7 @@ Smart meters and thermostats are popular. These devices help residents reduce el
 
 ### Enterprise IoT devices
 
-![Enterprise IoT devices](../../../assets/network_technologies/iot_enterprise.png)
+![Enterprise IoT devices](../../../assets/networking/network_technologies/iot_enterprise.png)
 
 Medicinal pumps and pacemakers have been a huge success in the healthcare space. You can control the dosage and schedule of a medicine and automate the process to eliminate the scope for human error or accidental overdose.
 
@@ -57,7 +57,7 @@ Many countries have started to invest aggressively in the smart cities and smart
 
 ### How IoT devices communicate
 
-![How IoT devices communicate](../../../assets/network_technologies/iot_communicate.png)
+![How IoT devices communicate](../../../assets/networking/network_technologies/iot_communicate.png)
 
 A device can be thought of as a combination of sensors and actuators that gather vast amounts of information from its environment. An example is a temperature sensor that captures the temperature-related details from a living room (which is its environment). These devices are purpose-built and do not come with many compute abilities. For these devices to communicate, they use lightweight protocols such as MQ Telemetry Transport (MQTT), which do not have a big footprint on the device.
 
@@ -73,7 +73,7 @@ The user interface, typically a mobile device or a computer, is your window to t
 
 ### AWS IoT Core communication
 
-![AWS IoT Core communication](../../../assets/network_technologies/aws_iot.png)
+![AWS IoT Core communication](../../../assets/networking/network_technologies/aws_iot.png)
 
 You can use AWS IoT Core to connect billions of IoT devices and route trillions of messages to different AWS services. With AWS IoT Core, users can choose their preferred communication protocol. Communication protocols include MQTT, Secure Hypertext Transfer Protocol Secure (HTTPS), MQTT over WSS, and long-range wide area network (LoRaWAN).
 
@@ -83,7 +83,7 @@ You can use AWS IoT Core to connect billions of IoT devices and route trillions 
 
 ## Enterprise mobility
 
-![Enterprise mobility](../../../assets/network_technologies/enterprise_mobility.png)
+![Enterprise mobility](../../../assets/networking/network_technologies/enterprise_mobility.png)
 
 Enterprise mobility is a growing trend for businesses. This approach supports remote-working options, which use personal laptops and mobile devices for business. Remote workers can connect and access data through cloud technology. Two specific solutions enable enterprise mobility:
 
@@ -93,7 +93,7 @@ Enterprise mobility is a growing trend for businesses. This approach supports re
 
 ### Amazon WorkSpaces
 
-![Amazon WorkSpaces](../../../assets/network_technologies/workspaces.png)
+![Amazon WorkSpaces](../../../assets/networking/network_technologies/workspaces.png)
 
 Customers can use **Amazon WorkSpaces** to provision virtual, cloud-based Microsoft Windows or Amazon Linux desktops, known as WorkSpaces, for their users. Amazon WorkSpaces eliminates the need to procure and deploy hardware or install complex software. Customers can quickly add or remove users as their needs change. Users can access their virtual desktops from multiple devices or web browsers.
 
@@ -111,7 +111,7 @@ Amazon WorkSpaces provides monthly or hourly billing options. With monthly billi
 
 #### WorkSpaces use cases
 
-![Workspaces use cases](../../../assets/network_technologies/workspaces_usecases.png)
+![Workspaces use cases](../../../assets/networking/network_technologies/workspaces_usecases.png)
 
 ### Who should use Amazon WorkSpaces?
 
@@ -126,7 +126,7 @@ AWS offers a variety of Amazon WorkSpaces bundles with different hardware and so
 
 ## Checkpoint questions
 
-![Checkpoint questions](../../../assets/network_technologies/questions.png)
+![Checkpoint questions](../../../assets/networking/network_technologies/questions.png)
 
 **True or False:** After a user launches an Amazon WorkSpace, the end user can decrease the size of the root or user volumes within the WorkSpace.  
 **False.** After a user launches an Amazon WorkSpace, the end user cannot decrease the size of the root or user volumes within the WorkSpace.
@@ -136,7 +136,7 @@ AWS offers a variety of Amazon WorkSpaces bundles with different hardware and so
 
 ## Key takeaways
 
-![Takeaways](../../../assets/network_technologies/takeaways.png)
+![Takeaways](../../../assets/networking/network_technologies/takeaways.png)
 
 :::tip[Recap]
 

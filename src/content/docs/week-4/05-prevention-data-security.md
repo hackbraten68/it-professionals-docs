@@ -2,7 +2,7 @@
 title: Prevention - Data Security
 ---
 
-![Prevention: Data Security](../../../assets/data_security/intro.png)
+![Prevention: Data Security](../../../assets/security/data_security/intro.png)
 
 :::tip[In this lesson, you will learn how to:]
 
@@ -14,7 +14,7 @@ title: Prevention - Data Security
 
 ## Security lifecycle: Prevention – Data security
 
-![Security lifecycle: Prevention – Data security](../../../assets/data_security/security_lifecycle.png)
+![Security lifecycle: Prevention – Data security](../../../assets/security/data_security/security_lifecycle.png)
 
 Recall that the phases of the security lifecycle consist of the following:
 
@@ -27,13 +27,13 @@ In this lesson, you will learn about data security concepts and methods that can
 
 ## Confidentiality, integrity, and availability (CIA)
 
-![Confidentiality, integrity, and availability (CIA)](../../../assets/data_security/cia.png)
+![Confidentiality, integrity, and availability (CIA)](../../../assets/security/data_security/cia.png)
 
 This module introduces concepts that are linked to the integrity and confidentiality aspects of the CIA triad.
 
 ## Data in motion compared to data at rest
 
-![Data in motion compared to data at rest](../../../assets/data_security/data_motion.png)
+![Data in motion compared to data at rest](../../../assets/security/data_security/data_motion.png)
 
 It is important to secure sensitive data while it travels through networks and systems (**data in motion**). It is also important to secure this data when it is stored on a device (**data at rest**).
 
@@ -46,7 +46,7 @@ You should use cryptographic techniques, encryption, and controls to secure data
 
 ## Cryptography
 
-![Cryptography](../../../assets/data_security/cryptography.png)
+![Cryptography](../../../assets/security/data_security/cryptography.png)
 
 People have been using codes throughout history to keep information from others. Spies, governments, and others have used codes and other methods to ensure that only certain people can read messages. 
 
@@ -59,7 +59,7 @@ People have been using codes throughout history to keep information from others.
 
 ### Practical uses
 
-![Practical uses](../../../assets/data_security/practical_uses.png)
+![Practical uses](../../../assets/security/data_security/practical_uses.png)
 
 The following examples explain data encryption:
 
@@ -77,13 +77,13 @@ The following examples explain data encryption:
 
 ## Encryption
 
-![Encryption](../../../assets/data_security/encryption.png)
+![Encryption](../../../assets/security/data_security/encryption.png)
 
 The goal of encryption is to achieve data confidentiality. In the diagram that is on the slide, you can see that the message “This message is confidential” is encrypted with a key. After it is encrypted, the only way to read the message is to use the same key to decrypt the message. The three types of encryption are symmetric, asymmetric, and hybrid, which the following slides explain further.
 
 ### Symmetric encryption
 
-![Symmetric encryption](../../../assets/data_security/symmetric_encryption.png)
+![Symmetric encryption](../../../assets/security/data_security/symmetric_encryption.png)
 
 Symmetric encryption uses the same key to encrypt and decrypt the data. The key is a shared secret between the sender and the receiver. Symmetric encryption is fast and reliable and is used for bulk data. Symmetric encryption is used for payment applications, to encrypt databases, and to verify the identity of the sender of a message in messaging applications.
 
@@ -96,7 +96,7 @@ In the diagram that is on the slide, you can see that the message “Hello” is
 
 ### Asymmetric encryption
 
-![Asymmetric encryption](../../../assets/data_security/asymmetric_encryption.png)
+![Asymmetric encryption](../../../assets/security/data_security/asymmetric_encryption.png)
 
 Asymmetric encryption uses both a private key and a public key (a key pair) to encrypt and decrypt the data. Every user in the conversation has a key pair. Asymmetric encryption is more complex and much slower than symmetric encryption. However, it provides more capabilities in the way that keys are managed. Asymmetric encryption is used to encrypt emails or create digital signatures.
 
@@ -109,7 +109,7 @@ In the diagram that is shown on the slide, you can see that the message “Hello
 
 ### Comparison of encryption methods
 
-![Comparison of encryption methods](../../../assets/data_security/comparison_methods.png)
+![Comparison of encryption methods](../../../assets/security/data_security/comparison_methods.png)
 
 The algorithms that are used for symmetric encryption are less complex than the ones for asymmetric encryption. Therefore, symmetric encryption is used when speed matters, such as when transmitting data in bulk. The downside is that the secret key that is used for encryption must be shared between senders and recipients. This method poses a security risk if one of the parties were to lose the key.
 
@@ -117,7 +117,7 @@ Asymmetric encryption is newer and is considered to be more secure than symmetri
 
 ### Hybrid encryption
 
-![Hybrid encryption](../../../assets/data_security/hybrid_encryption.png)
+![Hybrid encryption](../../../assets/security/data_security/hybrid_encryption.png)
 
 Hybrid approaches are often used for encryption. Examples include:
 
@@ -137,7 +137,7 @@ A protocol that uses hybrid encryption is TLS, which is also known as SSL.
 
 ## AWS CloudHSM and AWS KMS
 
-![AWS CloudHSM and AWS KMS](../../../assets/data_security/cloud_hsm_kms.png)
+![AWS CloudHSM and AWS KMS](../../../assets/security/data_security/cloud_hsm_kms.png)
 
 A hardware security module (HSM) is a special hardened and tamper-resistant device used to create and manage keys. They must meet specific, highly secure standards such as FIPS-140-2.
 
@@ -157,7 +157,7 @@ Legal obligations can require customers to use an HSM.
 
 ### What is data integrity?
 
-![What is data integrity?](../../../assets/data_security/whats_data_security.png)
+![What is data integrity?](../../../assets/security/data_security/whats_data_security.png)
 
 In general, hashes are used to verify the integrity of files that are downloaded from a website. Hashing and encryption are two very different processes:
 
@@ -167,7 +167,7 @@ In general, hashes are used to verify the integrity of files that are downloaded
 
 ### Ensuring data integrity with hashing
 
-![Ensuring data integrity with hashing](../../../assets/data_security/ensuring_data_security.png)
+![Ensuring data integrity with hashing](../../../assets/security/data_security/ensuring_data_security.png)
 
 Hashing is a technique that is used to ensure **data integrity**.
 
@@ -185,7 +185,7 @@ In general, hashes are used to verify the integrity of files that are downloaded
 
 ### Principles of permissions
 
-![Principles of permissions](../../../assets/data_security/permission_principles.png)
+![Principles of permissions](../../../assets/security/data_security/permission_principles.png)
 
 A permission grants a specific type of access to a resource (for example, write access to a file). Permissions are classified into two types: discretionary (based on identity or other criteria) and role-based (based on an assigned role).
 
@@ -193,7 +193,7 @@ A permission is assigned to a subject (a person, device, or system) to give the 
 
 ### Discretionary access control
 
-![Discretionary access control](../../../assets/data_security/discretionary_access_control.png)
+![Discretionary access control](../../../assets/security/data_security/discretionary_access_control.png)
 
 In a discretionary access control (DAC) type, individuals are assigned a level of access to a resource. The level of access information is stored in an access control list (ACL). DAC controls the access to resources based on the identity of individuals or groups of individuals.
 
@@ -205,7 +205,7 @@ AWS Identity and Access Management (IAM), the AWS service that helps you securel
 
 ### Role-based access control
 
-![Role-based access control](../../../assets/data_security/role_based_access_control.png)
+![Role-based access control](../../../assets/security/data_security/role_based_access_control.png)
 
 In a role-based access control type, a level of access to a resource is assigned to a role. That is, permissions are distributed based on role. Individuals are then assigned to different roles as they need access to resources.
 
@@ -233,7 +233,7 @@ Consequently, the groups are granted permissions as follows:
 
 ## Checkpoint questions
 
-![Checkpoint questions](../../../assets/data_security/questions.png)
+![Checkpoint questions](../../../assets/security/data_security/questions.png)
 
 <details>
 <summary>1. What are the three types of encryption?</summary>
@@ -252,7 +252,7 @@ A document that defines a list of accesses or restrictions, or both, to resource
 
 ## Key Takeaways
 
-![Key Takeaways](../../../assets/data_security/takeaways.png)
+![Key Takeaways](../../../assets/security/data_security/takeaways.png)
 
 :::tip[This module includes the following key takeaways:]
 

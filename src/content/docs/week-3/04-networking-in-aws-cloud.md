@@ -1,7 +1,7 @@
 ---
 title: Networking in the AWS Cloud
 ---
-![Networking in the AWS Cloud](../../../assets/networking_aws/intro.png)
+![Networking in the AWS Cloud](../../../assets/networking/networking_aws/intro.png)
 
 You will learn how to:
 
@@ -10,10 +10,9 @@ You will learn how to:
 - **Describe the key components of a virtual private cloud (VPC)**
 - **Relate subnetting and Classless Inter-Domain Routing (CIDR) block addressing to Amazon VPC features**
 
-
 ## Networking in the cloud
 
-![Networking in the cloud](../../../assets/networking_aws/networking_cloud.png)
+![Networking in the cloud](../../../assets/networking/networking_aws/networking_cloud.png)
 
 As described earlier, networking in the cloud is similar to regular networking in a data center:
 
@@ -33,7 +32,7 @@ As described earlier, networking in the cloud is similar to regular networking i
 
 ## What is Amazon VPC
 
-![Amazon VPC](../../../assets/networking_aws/amazon_vpc.png)
+![Amazon VPC](../../../assets/networking/networking_aws/amazon_vpc.png)
 
 The Amazon VPC service offers the following benefits:
 
@@ -49,7 +48,7 @@ The Amazon VPC service offers the following benefits:
 
 ### Why use an Amazon VPC
 
-![Why use an Amazpn VPC](../../../assets/networking_aws/why_aws_vpc.png)
+![Why use an Amazpn VPC](../../../assets/networking/networking_aws/why_aws_vpc.png)
 
 An Amazon VPC offers the following benefits:
 
@@ -65,7 +64,7 @@ An Amazon VPC offers the following benefits:
 
 ### Amazon VPC features
 
-![Amazon VPC features](../../../assets/networking_aws/vpc_features.png)
+![Amazon VPC features](../../../assets/networking/networking_aws/vpc_features.png)
 
 An Amazon VPC includes the following features:
 
@@ -74,7 +73,7 @@ An Amazon VPC includes the following features:
 - It can span multiple Availability Zones.
 - It is logically isolated from other Amazon VPCs.
 
-![Amazon VPC features](../../../assets/networking_aws/vpc_features_2.png)
+![Amazon VPC features](../../../assets/networking/networking_aws/vpc_features_2.png)
 
 Amazon VPC features offer the following benefits:
 
@@ -83,7 +82,7 @@ Amazon VPC features offer the following benefits:
 
 ## IP addressing in Amazon VPC
 
-![IP addressing in Amazon VPC](../../../assets/networking_aws/vpc_ip_addressing.png)
+![IP addressing in Amazon VPC](../../../assets/networking/networking_aws/vpc_ip_addressing.png)
 
 IP addressing in Amazon VPC has the following rules:
 
@@ -93,7 +92,7 @@ IP addressing in Amazon VPC has the following rules:
 
 ### Private IP address range
 
-![Private IP address range](../../../assets/networking_aws/private_ip.png)
+![Private IP address range](../../../assets/networking/networking_aws/private_ip.png)
 
 Why is this information important?
 
@@ -116,7 +115,7 @@ Why is this information important?
 
 ### What is Amazon VPC?
 
-![Amazon VPC](../../../assets/networking_aws/amazon_vpc_components.png)
+![Amazon VPC](../../../assets/networking/networking_aws/amazon_vpc_components.png)
 
 - **Amazon VPC** (Virtual Private Cloud) is a virtual network that you define, resembling a traditional network in a data center.
 - For more information, see [What is Amazon VPC?](https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html).
@@ -152,7 +151,7 @@ Why is this information important?
 
 ### Amazon VPC Components
 
-![Amazon VPC components](../../../assets/networking_aws/amazon_vpc_components_2.png)
+![Amazon VPC components](../../../assets/networking/networking_aws/amazon_vpc_components_2.png)
 
 Amazon VPC components are used to configure networking in a VPC:
 
@@ -182,7 +181,7 @@ Amazon VPC components are used to configure networking in a VPC:
 
 ### Internet gateway
 
-![Internet gateway](../../../assets/networking_aws/internet_gateway.png)
+![Internet gateway](../../../assets/networking/networking_aws/internet_gateway.png)
 
 #### How to Enable Internet Access in Amazon VPC
 
@@ -221,7 +220,7 @@ For more information, see [Amazon VPC Internet Gateway Documentation](https://do
 
 ### NAT gateway
 
-![NAT Gateway](../../../assets/networking_aws/nat_gateway.png)
+![NAT Gateway](../../../assets/networking/networking_aws/nat_gateway.png)
 
 #### How to Provide Internet Access to a Private Subnet
 
@@ -250,7 +249,7 @@ For more information, see [Amazon VPC NAT Gateway Documentation](https://docs.aw
 
 ### Route tables
 
-![Route tables](../../../assets/networking_aws/route_tables.png)
+![Route tables](../../../assets/networking/networking_aws/route_tables.png)
 
 #### Important Things to Keep in Mind When Working with Route Tables in the AWS Console
 
@@ -274,7 +273,7 @@ For more information, see [Amazon VPC Route Tables Documentation](https://docs.a
 
 ### Public and private subnet
 
-![Public and private subnet](../../../assets/networking_aws/public_private_subnets.png)
+![Public and private subnet](../../../assets/networking/networking_aws/public_private_subnets.png)
 
 #### Significant Information About Subnets
 
@@ -298,7 +297,7 @@ For more information, see [Amazon VPC Subnets Documentation](https://docs.aws.am
 
 ### Security group
 
-![Security group](../../../assets/networking_aws/security_group.png)
+![Security group](../../../assets/networking/networking_aws/security_group.png)
 
 #### Creating a Security Group Requires Specific Items
 
@@ -324,7 +323,7 @@ For more information, see [Amazon EC2 Security Group Rules Documentation](https:
 
 ### Network ACL
 
-![Network ACL](../../../assets/networking_aws/network_acl.png)
+![Network ACL](../../../assets/networking/networking_aws/network_acl.png)
 
 #### Creating a Network ACL Requires Specific Items
 
@@ -357,7 +356,7 @@ For more information, see [Amazon VPC Network ACLs Documentation](https://docs.a
 
 #### Example of an Amazon VPC
 
-![Example of an Amazon VPC](../../../assets/networking_aws/amazon_vpc_example.png)
+![Example of an Amazon VPC](../../../assets/networking/networking_aws/amazon_vpc_example.png)
 
 The Slide Shows an Example of a Fully Functioning Amazon VPC.
 Starting from the outside and working inward, you have the following components:
@@ -387,7 +386,7 @@ Starting from the outside and working inward, you have the following components:
 
 ### What can be used with Amazon VPC?
 
-![What can be used with Amazon VPC?](../../../assets/networking_aws/vpc_can_use.png)
+![What can be used with Amazon VPC?](../../../assets/networking/networking_aws/vpc_can_use.png)
 
 #### What are some example services that can be used with Amazon VPC?
 
@@ -415,7 +414,7 @@ Starting from the outside and working inward, you have the following components:
 
 ## Checkpoint questions
 
-![Checkpoint questions](../../../assets/networking_aws/questions.png)
+![Checkpoint questions](../../../assets/networking/networking_aws/questions.png)
 
 Q1: Which level does the security group protect?  
 **Answer:** Instance level  
@@ -425,7 +424,7 @@ Q2: What is the largest CIDR block that can be chosen?
 
 ## Key takeaways
 
-![takeaways](../../../assets/networking_aws/takeaways.png)
+![takeaways](../../../assets/networking/networking_aws/takeaways.png)
 :::tip[Recap]
 
 - Amazon VPC is a service that you can use to build a custom defined network in the AWS Cloud.

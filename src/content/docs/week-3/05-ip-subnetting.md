@@ -1,7 +1,7 @@
 ---
 title: IP Subnetting
 ---
-![Introduction to IP Subnetting](../../../assets/ip_subnetting/ip_subnetting.png)
+![Introduction to IP Subnetting](../../../assets/networking/ip_subnetting/ip_subnetting.png)
 
 In this lesson, you will learn how to:
 
@@ -12,7 +12,7 @@ In this lesson, you will learn how to:
 
 ## What is an IP address?
 
-![What is an IP address?](../../../assets/ip_subnetting/whats_ip.png)
+![What is an IP address?](../../../assets/networking/ip_subnetting/whats_ip.png)
 
 What is an IP address?
 
@@ -22,7 +22,7 @@ Think about IP addresses as similar to your home and work addresses. The interne
 
 ### How to find your own IP address
 
-![How to find your own IP address](../../../assets/ip_subnetting/find_your_ip.png)
+![How to find your own IP address](../../../assets/networking/ip_subnetting/find_your_ip.png)
 
 You should always be able to find the IP address for a device. The best way to do it is to search online for the instructions for the device that you are using. The following are the instructions for finding your local IP address on a Windows PC:
 
@@ -30,7 +30,7 @@ You should always be able to find the IP address for a device. The best way to d
 2. In the Command Prompt box, enter `ipconfig`, and press Enter.
 3. Scroll down to see a list of Wireless LAN Adapter Wi-Fi information, including IP addresses.
 
-![How to find your IP address](../../../assets/ip_subnetting/find_your_ip_2.png)
+![How to find your IP address](../../../assets/networking/ip_subnetting/find_your_ip_2.png)
 
 This slide shows an example of what you’ll see after scrolling through the results of your `ipconfig` search.
 
@@ -44,7 +44,7 @@ Notice that you can see:
 
 ### What are subnets
 
-![What are subnets](../../../assets/ip_subnetting/subnets.png)
+![What are subnets](../../../assets/networking/ip_subnetting/subnets.png)
 
 Subnetting is the technique for logically partitioning a single physical network into multiple smaller subnetworks or subnets. An organization can use subnetting to conceal network complexity and reduce network traffic by adding subnets without a new network number. When a single network number must be used across many segments of a local area network (LAN), subnetting is essential.
 
@@ -56,7 +56,7 @@ In the example shown, after subnetting, the IP address has been changed from 144
 
 ### Why do organizations use subnets
 
-![Why do organizations use subnets](../../../assets/ip_subnetting/subnets_used_orgs.png)
+![Why do organizations use subnets](../../../assets/networking/ip_subnetting/subnets_used_orgs.png)
 
 Why do organizations use subnets?
 

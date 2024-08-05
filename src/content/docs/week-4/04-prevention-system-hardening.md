@@ -1,7 +1,7 @@
 ---
 title: Prevention - System Hardening
 ---
-![Prevention - System Hardening](../../../assets/system_hardening/intro.png)
+![Prevention - System Hardening](../../../assets/security/system_hardening/intro.png)
 
 :::tip[You will learn how to:]
 
@@ -18,7 +18,7 @@ You’ll begin by defining systems hardening.
 
 ### What is systems hardening?
 
-![What is systems hardening?](../../../assets/system_hardening/whats_system_hardening.png)
+![What is systems hardening?](../../../assets/security/system_hardening/whats_system_hardening.png)
 
 For many businesses around the world, cyberattacks are a constant threat that they attempt to avoid at all costs. Businesses must be hyper-vigilant about how they secure their endpoints, which include workstations and servers.
 
@@ -30,7 +30,7 @@ Some companies often fail to find the right balance between security and product
 
 ### Security lifecycle: Prevention –systems hardening
 
-![Security lifecycle: Prevention –systems hardening](../../../assets/system_hardening/security_lifecycle.png)
+![Security lifecycle: Prevention –systems hardening](../../../assets/security/system_hardening/security_lifecycle.png)
 
 Recall that the phases of the security lifecycle consist of:
 
@@ -43,7 +43,7 @@ In this lesson, you will learn the concept of **systems hardening** as part of t
 
 ### Authentication, authorization, and accounting
 
-![Authentication, authorization, and accounting](../../../assets/system_hardening/triple_a.png)
+![Authentication, authorization, and accounting](../../../assets/security/system_hardening/triple_a.png)
 
 A comprehensive solution for systems hardening should also consider these three security facets:
 
@@ -53,13 +53,13 @@ A comprehensive solution for systems hardening should also consider these three 
 
 ### Physical security
 
-![Physical security](../../../assets/system_hardening/physical_security.png)
+![Physical security](../../../assets/security/system_hardening/physical_security.png)
 
 Physical security also contributes to systems hardening. Remember that the vulnerability is at the human level in most cases. Examples of physical security include closed-circuit surveillance cameras, motion or thermal alarm systems, security guards, picture IDs, and locked and dead-bolted steel doors. Another example of physical security is biometrics, which includes fingerprint, voice, face, iris, handwriting, and other automated methods that are used to recognize individuals.
 
 ### Types of systems that can be hardened
 
-![Types of systems that can be hardened](../../../assets/system_hardening/systems_type.png)
+![Types of systems that can be hardened](../../../assets/security/system_hardening/systems_type.png)
 
 You can harden all kinds of systems for security, including desktops, servers, mobile phones, and applications.
 
@@ -71,7 +71,7 @@ Another example is software application hardening, which focuses on securing the
 
 ### Security baselines
 
-![Security baselines](../../../assets/system_hardening/security_baselines.png)
+![Security baselines](../../../assets/security/system_hardening/security_baselines.png)
 
 A security baseline defines the expected conditions of a system. It defines what is an acceptable state or operation of the system so that you can quickly detect anomalies.
 
@@ -85,7 +85,7 @@ Next, you’ll discuss how you can harden systems.
 
 ### Common ways to harden systems
 
-![Common ways to harden systems](../../../assets/system_hardening/common_ways.png)
+![Common ways to harden systems](../../../assets/security/system_hardening/common_ways.png)
 
 Ways to harden a system include the following:
 
@@ -103,7 +103,7 @@ Ways to harden a system include the following:
 
 ### Linux processes
 
-![Linux processes](../../../assets/system_hardening/linux_processes.png)
+![Linux processes](../../../assets/security/system_hardening/linux_processes.png)
 
 Systems are not pre-hardened by default, so you must take action to secure your systems.
 
@@ -115,7 +115,7 @@ The image on this slide is a sample running processes in Linux. It helps you vis
 
 ### Patching
 
-![Patching](../../../assets/system_hardening/patching.png)
+![Patching](../../../assets/security/system_hardening/patching.png)
 
 Another way to harden a system is to apply patches regularly through a centralized process. Patches can affect firmware, the operating system, applications, and other software.
 
@@ -123,13 +123,13 @@ Patch Manager, a capability of AWS Systems Manager, automates the process of pat
 
 ### Common systems hardening recommendations
 
-![Common systems hardening recommendations](../../../assets/system_hardening/common_recommendations.png)
+![Common systems hardening recommendations](../../../assets/security/system_hardening/common_recommendations.png)
 
 The purpose of implementing systems-hardening techniques and practices is to minimize the number of potential entryways that an attacker can use to access your system. Common recommendations include deleting or deactivating system applications and establishing a system security plan. Important measures include patching and updating the operating system (OS), permissions, ports, and user accounts and configuring user authentication, resource controls, and other features.
 
 ### Software application hardening
 
-![Software application hardening](../../../assets/system_hardening/application_hardening.png)
+![Software application hardening](../../../assets/security/system_hardening/application_hardening.png)
 
 Software application hardening, or just application hardening, involves updating or implementing extra security measures to protect both standard and third-party applications installed on your server.
 
@@ -143,7 +143,7 @@ The next modules discuss this topic in more detail.
 
 ### Server hardening
 
-![Server hardening](../../../assets/system_hardening/server_hardening.png)
+![Server hardening](../../../assets/security/system_hardening/server_hardening.png)
 
 The first and second tables list hardening guidelines specific to various servers. Included are a File Transfer Protocol (FTP) server, directory services server, Dynamic Host Configuration Protocol (DHCP) server, and Domain Name System (DNS) server.
 
@@ -157,7 +157,7 @@ In almost all cases, SFTP is preferable to FTP because of its underlying securit
 
 ### Mobile device management (MDM)
 
-![Mobile device management (MDM)](../../../assets/system_hardening/mobile_device_management.png)
+![Mobile device management (MDM)](../../../assets/security/system_hardening/mobile_device_management.png)
 
 For securing mobile devices, use a mobile device management (MDM) solution. Use MDM to enforce corporate and security policies regarding the use of devices. Companies that permit bring your own device (BYOD) should implement MDM.
 
@@ -165,7 +165,7 @@ AWS has services that are specifically equivalent to each MDM solution indicated
 
 ### Training and education
 
-![Training and education](../../../assets/system_hardening/training_education.png)
+![Training and education](../../../assets/security/system_hardening/training_education.png)
 
 Training, education, and policies are key:
 
@@ -189,7 +189,7 @@ AWS has tools that help harden systems.
 
 ### AWS Tools
 
-![AWS Tools](../../../assets/system_hardening/aws_tools.png)
+![AWS Tools](../../../assets/security/system_hardening/aws_tools.png)
 
 AWS provides many different security tools to help customers keep their AWS accounts and applications secure. Some of the AWS tools include AWS Trusted Advisor, Amazon GuardDuty, AWS Shield, and AWS CloudTrail.
 
@@ -203,7 +203,7 @@ CloudTrail offers auditing, security monitoring, and operational troubleshooting
 
 ### Amazon GuardDuty
 
-![Amazon GuardDuty](../../../assets/system_hardening/guard_duty.png)
+![Amazon GuardDuty](../../../assets/security/system_hardening/guard_duty.png)
 
 To further explain, GuardDuty is a continuous security monitoring service that analyzes and processes various data sources. These sources might include VPC Flow Logs, CloudTrail management event logs, CloudTrail stored Amazon Simple Storage Service (Amazon S3) data event logs, and DNS logs.
 
@@ -215,7 +215,7 @@ CloudTrail logs are monitored for undesired activities. GuardDuty detects these 
 
 ## Checkpoint questions
 
-![Checkpoint questions](../../../assets/system_hardening/questions.png)
+![Checkpoint questions](../../../assets/security/system_hardening/questions.png)
 
 Q1: What are the common ways to harden systems?
 
@@ -245,7 +245,7 @@ Q3: Which AWS tool uses threat intelligence feeds, such as lists of malicious IP
 
 ## Key Takeaways
 
-![Takeaways](../../../assets/system_hardening/takeaways.png)
+![Takeaways](../../../assets/security/system_hardening/takeaways.png)
 
 :::tip[The following are key takeaways from this lesson:]
 

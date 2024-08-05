@@ -2,7 +2,7 @@
 title: Prevention - Identity Management
 ---
 
-![Prevention - Identity Management](../../../assets/identity_management/intro.png)
+![Prevention - Identity Management](../../../assets/security/identity_management/intro.png)
 
 :::tip[In this lesson]
 you will learn how reliable authentication is a core component of modern IT security solutions. You will also explore how it works.
@@ -10,7 +10,7 @@ you will learn how reliable authentication is a core component of modern IT secu
 :::
 
 
-![Security lifecycle: Prevention –identity management](../../../assets/identity_management/security_lifecycle.png)
+![Security lifecycle: Prevention –identity management](../../../assets/security/identity_management/security_lifecycle.png)
 
 As a review, the security lifecycle consists of the following phases:
 
@@ -27,7 +27,7 @@ In this section, you will learn about identity management and recall the confide
 
 ### What is identity management?
 
-![What is identity management?](../../../assets/identity_management/whats_id_management.png)
+![What is identity management?](../../../assets/security/identity_management/whats_id_management.png)
 
 Identity management is the active administration of subjects, objects, and their relationships regarding access permissions.
 
@@ -37,7 +37,7 @@ In the example on the slide, a cashier, security guard, and manager are working 
 
 ### Identity management principles
 
-![Identity management principles](../../../assets/identity_management/id_management_principles.png)
+![Identity management principles](../../../assets/security/identity_management/id_management_principles.png)
 
 Authentication, authorization, and accounting are the core tasks that are performed in identity management. As an example, consider the case of a visitor who tries to gain physical access to a company’s facilities:
 
@@ -55,7 +55,7 @@ Authentication, authorization, and accounting are the core tasks that are perfor
 
 ### AAA example login process
 
-![AAA example login process](../../../assets/identity_management/aaa_example_login.png)
+![AAA example login process](../../../assets/security/identity_management/aaa_example_login.png)
 
 As an analogy, consider the case of a visitor who tries to gain physical access to a company’s facilities. Recall the following:
 
@@ -68,7 +68,7 @@ As an analogy, consider the case of a visitor who tries to gain physical access 
 
 ### Authentication factors
 
-![Authentication factors](../../../assets/identity_management/auth_factors.png)
+![Authentication factors](../../../assets/security/identity_management/auth_factors.png)
 
 The three types of authentication factors are **something you know**, **something you have**, and **something you are**. Every authenticator has one or more authentication factors.
 
@@ -76,7 +76,7 @@ The three types of authentication factors are **something you know**, **somethin
 
 ### Authentication factors: Something you know
 
-![Authentication factors: Something you know](../../../assets/identity_management/auth_something.png)
+![Authentication factors: Something you know](../../../assets/security/identity_management/auth_something.png)
 
 Passwords, passphrases, and personal identification numbers (PINs) are examples of authentication factors. These factors are simpler to implement, but they are also the least secure. In the example on the slide, a diagram shows the authentication factor of something that you know. A user is inputting the following information:
 
@@ -88,13 +88,13 @@ By using this process, the web server can send the login credentials to the auth
 
 ### Authentication factors: Something you have
 
-![Authentication factors: Something you have](../../../assets/identity_management/auth_something_have.png)
+![Authentication factors: Something you have](../../../assets/security/identity_management/auth_something_have.png)
 
 Using something that you have is a more secure way to authenticate. This method is often implemented as a second-factor authentication system after you have provided something that you know.
 
 ### Authentication factors: Something you are
 
-![Authentication factors: Something you are](../../../assets/identity_management/auth_something_2.png)
+![Authentication factors: Something you are](../../../assets/security/identity_management/auth_something_2.png)
 
 Using an authentication mechanism that validates a unique human property, such as a fingerprint or a retinal pattern, is the most complex and expensive solution. However, the authentication can be highly reliable when it is configured well.
 
@@ -102,7 +102,7 @@ Accuracy in biometrics is the most important factor in this type of authenticati
 
 ### Personally identifiable information (PII)
 
-![Personally identifiable information (PII)](../../../assets/identity_management/pii.png)
+![Personally identifiable information (PII)](../../../assets/security/identity_management/pii.png)
 
 Personally identifiable information (PII) is a type of data that, when used alone or with other relevant data, identifies an individual. PII might contain direct identifiers, such as passport information, race, ethnicity, or date of birth. Even if individuals have the same name and possibly the same birth date, they would not have the same government identification number. In this way, PII can identify something unique about an individual among a group of people.
 
@@ -118,7 +118,7 @@ PII can fall under all three authentication factors:
 
 ### Authentication: Password policies
 
-![Authentication: Password policies](../../../assets/identity_management/passowrd_policies.png)
+![Authentication: Password policies](../../../assets/security/identity_management/passowrd_policies.png)
 
 When you use password authentication, controlled password management is critical. The most basic way to manage password authentication is to define a policy with password parameters or rules. A basic or common policy might have the following parameters:
 
@@ -136,7 +136,7 @@ An example password for this policy is `Pa$$w0rd123!`.
 
 ### Dictionary attacks
 
-![Dictionary attacks](../../../assets/identity_management/dictionary_attacks.png)
+![Dictionary attacks](../../../assets/security/identity_management/dictionary_attacks.png)
 
 When you define password rules, you must understand the types of attacks that password authentication can be subject to. One type of attack is a **dictionary attack**. A dictionary attack attempts to systematically enter each word in the dictionary as a password until it finds a match. Countermeasures for dictionary attacks include enforcing a strong password policy and locking out access after a fixed number of unsuccessful attempts.
 
@@ -148,25 +148,25 @@ A **password hash** is a unique encrypted value. This password hash is produced 
 
 ### Password managers
 
-![Password managers](../../../assets/identity_management/passwd_manager.png)
+![Password managers](../../../assets/security/identity_management/passwd_manager.png)
 
 One of the benefits of a password management system is that it gives users more control over managing their credentials.
 
 ### Group accounts
 
-![Group accounts](../../../assets/identity_management/group_accounts.png)
+![Group accounts](../../../assets/security/identity_management/group_accounts.png)
 
 To harden authentication, as a best practice, avoid the use of group accounts because they provide no accountability. With group accounts, multiple groups can authenticate.
 
 ### Single sign-on (SSO)
 
-![Single sign-on (SSO)](../../../assets/identity_management/SSO.png)
+![Single sign-on (SSO)](../../../assets/security/identity_management/SSO.png)
 
 With single sign-on (SSO), users log in once and gain access to different applications without the need to re-enter login credentials for each application.
 
 ### AWS Single Sign-On
 
-![AWS Single Sign-On](../../../assets/identity_management/aws_sso.png)
+![AWS Single Sign-On](../../../assets/security/identity_management/aws_sso.png)
 
 AWS SSO includes the following features:
 
@@ -179,7 +179,7 @@ For more information, see [What is AWS Single Sign-On?](https://docs.aws.amazon.
 
 ### Federated users
 
-![Federated users](../../../assets/identity_management/federated_users.png)
+![Federated users](../../../assets/security/identity_management/federated_users.png)
 
 Federated users is a type of SSO implementation that is used between web identities. It uses a token to verify user identity between distinct systems.
 
@@ -187,7 +187,7 @@ With SSO, individuals can sign into different networks or services by using the 
 
 ### Amazon Cognito
 
-![Amazon Cognito](../../../assets/identity_management/amazon_cognito.png)
+![Amazon Cognito](../../../assets/security/identity_management/amazon_cognito.png)
 
 Here is how Amazon Cognito works to authenticate and grant access to an AWS service:
 
@@ -212,7 +212,7 @@ For more information, see [What is Amazon Cognito?](https://docs.aws.amazon.com/
 
 ### How IAM works
 
-![How IAM works](../../../assets/identity_management/how_iam_works.png)
+![How IAM works](../../../assets/security/identity_management/how_iam_works.png)
 
 The diagram on the slide illustrates how IAM works:
 
@@ -244,7 +244,7 @@ The diagram on the slide illustrates how IAM works:
 
 ## Checkpoint questions
 
-![Checkpoint questions](../../../assets/identity_management/questions.png)
+![Checkpoint questions](../../../assets/security/identity_management/questions.png)
 
 <details>
 <summary>1. The following are the three primary tasks of identity management:</summary>
@@ -271,7 +271,7 @@ True
 
 ## Key takeaways
 
-![takeaways](../../../assets/identity_management/takeaways.png)
+![takeaways](../../../assets/security/identity_management/takeaways.png)
 
 :::tip[The following are some keytakeaways from this lesson:]
 

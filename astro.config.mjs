@@ -42,6 +42,12 @@ export default defineConfig({
 							badge: { text: 'In progress', variant: 'caution' },
 							autogenerate: { directory: 'week-4' }
 						},
+						{
+							label: 'Databases',
+							collapsed: true,
+							badge: { text: 'New', variant: 'success' },
+							autogenerate: { directory: 'databases' }
+						},
 					]
 				},
 				{

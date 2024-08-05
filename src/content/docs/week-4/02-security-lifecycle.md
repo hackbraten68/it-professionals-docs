@@ -2,7 +2,7 @@
 title: Security Life Cycle - Prevention
 ---
 
-![Intro - Security Life Cycle - Prevention](../../../assets/security_lifecycle/intro.png)
+![Intro - Security Life Cycle - Prevention](../../../assets/security/security_lifecycle/intro.png)
 
 :::tip[In this lesson, you will learn how to:]
 
@@ -17,7 +17,7 @@ title: Security Life Cycle - Prevention
 
 ### Prevention in the security lifecycle
 
-![Prevention in the security lifecycle](../../../assets/security_lifecycle/sec_lifecycle_prevention.png)
+![Prevention in the security lifecycle](../../../assets/security/security_lifecycle/sec_lifecycle_prevention.png)
 
 Prevention is the first and arguably the most important phase of the security lifecycle. It offers the opportunity to proactively stop threats from becoming breaches through the implementation of security controls. In the prevention stage, you:
 
@@ -29,7 +29,7 @@ The next slides examine these tasks in more detail.
 
 ### Identifying assets
 
-![Identifying assets](../../../assets/security_lifecycle/identify_assets.png)
+![Identifying assets](../../../assets/security/security_lifecycle/identify_assets.png)
 
 You must know what resources are in your computing environment so that you can protect them. Therefore, the first step in prevention is to create an inventory of your computing assets. This inventory can be extracted from existing design documents, such as network topology diagrams, architecture diagrams, and other system documentation. The list should provide a clear understanding of what components are in your environment. It also should convey what their key properties are (for example, the IP address of network devices) and how they relate to each other.
 
@@ -42,19 +42,19 @@ In the AWS Cloud, the AWS Systems Manager service provides an inventory function
 
 ### AWS Systems Manager Inventory
 
-![AWS Systems Manager Inventory](../../../assets/security_lifecycle/aws_manager.png)
+![AWS Systems Manager Inventory](../../../assets/security/security_lifecycle/aws_manager.png)
 
 The next three slides show example screen captures of the AWS Systems Manager console. These screen captures illustrate the information that the Systems Manager inventory function provides. The screen capture on this slide shows the **Managed Instances** tab of the Systems Manager console. This tab displays a list of all of the managed Amazon Elastic Compute Cloud (Amazon EC2) instances in the user’s AWS account.
 
 The information displayed for each instance includes its ID, name, ping status (which reflects the instance’s state), platform type, and IP address.
 
-![AWS Systems Manager Inventory](../../../assets/security_lifecycle/aws_manager_2.png)
+![AWS Systems Manager Inventory](../../../assets/security/security_lifecycle/aws_manager_2.png)
 
 When you select an instance from the **Managed Instances** list, the console shows additional information about the instance through several tabs.
 
 On the **Description** tab, you see more configuration details, including the **Availability Zone** where the instance is running. It also displays security information, such as the **key pair** that is used to remotely log in to the instance. You will learn more about EC2 instance key pairs later in the course.
 
-![AWS Systems Manager Inventory](../../../assets/security_lifecycle/aws_manager_3.png)
+![AWS Systems Manager Inventory](../../../assets/security/security_lifecycle/aws_manager_3.png)
 
 On the **Inventory** tab for a selected EC2 instance, you can see the various types of detailed inventory information that AWS Systems Manager captures. This information includes the following:
 
@@ -70,7 +70,7 @@ The screen capture on this slide shows the list of installed applications on the
 
 ### Assessing asset vulnerability
 
-![Assessing asset vulnerability](../../../assets/security_lifecycle/assessing_asset.png)
+![Assessing asset vulnerability](../../../assets/security/security_lifecycle/assessing_asset.png)
 
 As soon as you have identified your list of assets, you can perform a vulnerability assessment on each one of them. The goal of vulnerability assessment is to search for security weaknesses or potential exposures so that you can implement countermeasures against them. It involves analyzing the asset’s security posture by asking questions relevant to the asset type, its intended use, and its desired level of protection.
 
@@ -87,13 +87,13 @@ Automated tools, such as database scanners and application scanners, are availab
 
 ### Common vulnerabilities and exposures example
 
-![Common vulnerabilities and exposures example](../../../assets/security_lifecycle/common_vulnerabilities.png)
+![Common vulnerabilities and exposures example](../../../assets/security/security_lifecycle/common_vulnerabilities.png)
 
 This slide shows an example of a vulnerability that was recorded in the CVE website. It identifies the vulnerability as affecting the **Apache Log4j2** software and describes the threat as potentially causing a **denial of service** attack. It also indicates **that a later version of the software includes a fix**.
 
 ### Implementing countermeasures
 
-![Implementing countermeasures](../../../assets/security_lifecycle/countermeasures.png)
+![Implementing countermeasures](../../../assets/security/security_lifecycle/countermeasures.png)
 
 After you have analyzed and determined the security requirements of your assets, establish a security strategy, and implement security controls to protect your assets.
 
@@ -107,7 +107,7 @@ In this section, you will learn the value of using a layered model to build a pr
 
 ### Layered security model
 
-![Layered security model](../../../assets/security_lifecycle/layered_sec_model.png)
+![Layered security model](../../../assets/security/security_lifecycle/layered_sec_model.png)
 
 An effective security prevention strategy protects valuable assets by using a layered defense model. By implementing multiple layers of security, an attacker would have to penetrate all of the layers in order to gain access to the protected asset. Some examples of security layers include the following:
 
@@ -121,7 +121,7 @@ You will learn more about these layers and the tools that they use in the next m
 
 #### Layered defense example: Castle
 
-![Layered defense example: Castle](../../../assets/security_lifecycle/layered_sec_model_example.png)
+![Layered defense example: Castle](../../../assets/security/security_lifecycle/layered_sec_model_example.png)
 
 As an example of a layered defense, consider the architecture of a castle. The castle might have a moat as its first level of defense. The castle also includes an outer wall, an inner wall, and finally, the keep, where the protected assets reside. Each layer must be defeated in order for an attacking army to reach the keep and take the castle.
 
@@ -129,7 +129,7 @@ Similarly, companies implement many layers of defense on their systems to make t
 
 ### Layered defense example: OSI model
 
-![Layered defense example: OSI model](../../../assets/security_lifecycle/osi_model_defense.png)
+![Layered defense example: OSI model](../../../assets/security/security_lifecycle/osi_model_defense.png)
 
 The OSI model provides another example of how security can be implemented in layers. Each of the model’s layers provides an opportunity to implement a security solution:
 
@@ -145,7 +145,7 @@ Protect each layer separately to make it as difficult as possible for an outside
 
 ### Network hardening measures
 
-![Network hardening measures](../../../assets/security_lifecycle/network_hardening.png)
+![Network hardening measures](../../../assets/security/security_lifecycle/network_hardening.png)
 
 The first layer of security prevention measures focuses on protecting the network. This protection can be achieved through **network discovery hardening** and **network security architecture hardening**. This slide lists some examples of actions for each type of hardening.
 
@@ -157,7 +157,7 @@ You will learn more about network hardening measures in a separate module.
 
 ### Systems hardening measures
 
-![Systems hardening measures](../../../assets/security_lifecycle/system_hardening.png)
+![Systems hardening measures](../../../assets/security/security_lifecycle/system_hardening.png)
 
 The next layer of security prevention measures addresses protecting the hosts that run your services and applications or that store your data. This security layer is known as systems hardening.
 
@@ -173,7 +173,7 @@ You will learn more about systems hardening measures in a separate module.
 
 ### Data security controls
 
-![Data security controls](../../../assets/security_lifecycle/data_security_controls.png)
+![Data security controls](../../../assets/security/security_lifecycle/data_security_controls.png)
 
 Data security is the next layer of prevention measures in the layered security model. It focuses on protecting data through the use of various control mechanisms, including the following:
 
@@ -187,7 +187,7 @@ You will learn more about data security controls in separate modules.
 
 ### Identity management
 
-![Identity management](../../../assets/security_lifecycle/identity_management.png)
+![Identity management](../../../assets/security/security_lifecycle/identity_management.png)
 
 Finally, the last layer of security prevention measures is identity management. Identity management defines rules that specify who has access to specific information (authentication) and what they can do with it (authorization). Examples of identity management controls include the following:
 
@@ -201,7 +201,7 @@ You will learn more about identity management in a separate module.
 
 ## Checkpoint Questions
 
-![Checkpoint Questions](../../../assets/security_lifecycle/questions.png)
+![Checkpoint Questions](../../../assets/security/security_lifecycle/questions.png)
 
 <details>
 <summary>1. What are the tasks performed in the prevention phase of the security lifecycle?</summary>
@@ -227,7 +227,7 @@ A layered security strategy establishes multiple layers of defense against attac
 
 ## Key Takeaways
 
-![Takeaways](../../../assets/security_lifecycle/takeaways.png)
+![Takeaways](../../../assets/security/security_lifecycle/takeaways.png)
 
 :::tip[Keytakeaways from this lesson include the following:]
 

@@ -2,7 +2,7 @@
 title: AWS Trusted Advisor
 ---
 
-![AWS Trusted Advisor](../../../assets/trusted_advisor/intro.png)
+![AWS Trusted Advisor](../../../assets/security/trusted_advisor/intro.png)
 
 :::tip[You will learn how to:]
 
@@ -17,7 +17,7 @@ title: AWS Trusted Advisor
 
 ### Introduction to Trusted Advisor
 
-![Introduction to Trusted Advisor](../../../assets/trusted_advisor/whats_trusted_advisor.png)
+![Introduction to Trusted Advisor](../../../assets/security/trusted_advisor/whats_trusted_advisor.png)
 
 Trusted Advisor is an online resource designed to help you reduce cost, increase performance, and improve security by optimizing your AWS environment. It provides best practices (or checks) in five categories:
 
@@ -39,7 +39,7 @@ The status of the check is shown by using color coding on the dashboard page:
 
 ### Trusted Advisor features
 
-![Trusted Advisor features](../../../assets/trusted_advisor/features.png)
+![Trusted Advisor features](../../../assets/security/trusted_advisor/features.png)
 
 Trusted Advisor provides a suite of features so that you can customize recommendations and proactively monitor your Amazon Web Services (AWS) resources:
 
@@ -63,13 +63,13 @@ For more information about Trusted Advisor, see the [AWS Trusted Advisor product
 
 ### How do I start using Trusted Advisor?
 
-![How do I start using Trusted Advisor?](../../../assets/trusted_advisor/walktrough_1.png)
+![How do I start using Trusted Advisor?](../../../assets/security/trusted_advisor/walktrough_1.png)
 
 Sign in to the AWS Management Console, and navigate to Trusted Advisor. This action opens the Trusted Advisor Dashboard.
 
 ### Trusted Advisor Dashboard
 
-![Trusted Advisor Dashboard](../../../assets/trusted_advisor/walktrough_2.png)
+![Trusted Advisor Dashboard](../../../assets/security/trusted_advisor/walktrough_2.png)
 
 Trusted Advisor inspects your AWS infrastructure for opportunities to save money, improve system availability and performance, or help close security gaps. The checks are based on best practices identified by experts in each AWS service and on information from customers over time.
 
@@ -85,7 +85,7 @@ You can choose a category icon to display the list of checks performed for that 
 
 ### Category checklist
 
-![Category checklist](../../../assets/trusted_advisor/walktrough_3.png)
+![Category checklist](../../../assets/security/trusted_advisor/walktrough_3.png)
 
 The list of checks for a category groups each check by status and provides a summarized description of the check. You can filter the list to show only the checks that have have a given status by using the Viewdropdown menu. You can also export the details of an individual check to an .xls file.
 
@@ -93,7 +93,7 @@ This slide shows an example of the list of checks for the Cost Optimization cate
 
 ### Check details
 
-![Check details](../../../assets/trusted_advisor/walktrough_4.png)
+![Check details](../../../assets/security/trusted_advisor/walktrough_4.png)
 
 When you expand a check, you see the following details:
 
@@ -107,7 +107,7 @@ This slide shows an example screen capture of the details for a Low Utilization 
 
 ### Trusted Advisor security checks
 
-![Trusted Advisor security checks](../../../assets/trusted_advisor/security_checks.png)
+![Trusted Advisor security checks](../../../assets/security/trusted_advisor/security_checks.png)
 
 Trusted Advisor provides popular performance and security recommendations to all AWS customers. The following Trusted Advisor checks are available to all customers at no cost:
 
@@ -127,7 +127,7 @@ Trusted Advisor provides popular performance and security recommendations to all
 
 ### Activity: Interpret Trusted Advisor recommendations
 
-![Activity: Interpret Trusted Advisor recommendations](../../../assets/trusted_advisor/recommendations.png)
+![Activity: Interpret Trusted Advisor recommendations](../../../assets/security/trusted_advisor/recommendations.png)
 
 You have a friend who used Trusted Advisor for the first time. Your friend is trying to interpret its recommendations to improve their cloud environment and needs your help.
 
@@ -137,7 +137,7 @@ Help your friend interpret the following recommendations, which are on the next 
 
 #### Activity: Recommendation 1
 
-![Activity: Recommendation 1](../../../assets/trusted_advisor/activity_recomm_1.png)
+![Activity: Recommendation 1](../../../assets/security/trusted_advisor/activity_recomm_1.png)
 
 For this recommendation, answer the following questions:
 
@@ -158,7 +158,7 @@ For this recommendation, answer the following questions:
 
 #### Activity: Recommendation 2
 
-![Activity: Recommendation 2](../../../assets/trusted_advisor/activity_recomm_2.png)
+![Activity: Recommendation 2](../../../assets/security/trusted_advisor/activity_recomm_2.png)
 
 For this recommendation, answer the following questions:
 
@@ -179,7 +179,7 @@ For this recommendation, answer the following questions:
 
 #### Activity: Recommendation 3
 
-![Activity: Recommendation 3](../../../assets/trusted_advisor/activity_recomm_3.png)
+![Activity: Recommendation 3](../../../assets/security/trusted_advisor/activity_recomm_3.png)
 
 For this recommendation, answer the following questions:
 
@@ -200,7 +200,7 @@ For this recommendation, answer the following questions:
 
 #### Activity: Recommendation No. 4
 
-![Activity: Recommendation No. 4](../../../assets/trusted_advisor/activity_recomm_4.png)
+![Activity: Recommendation No. 4](../../../assets/security/trusted_advisor/activity_recomm_4.png)
 
 For this recommendation, answer the following questions:
 
@@ -221,7 +221,7 @@ For this recommendation, answer the following questions:
 
 ## Checkpoint questions
 
-![Checkpoint questions](../../../assets/trusted_advisor/questions.png)
+![Checkpoint questions](../../../assets/security/trusted_advisor/questions.png)
 
 Q1: What are the categories in which Trusted Advisor provides checks?
 <details>
@@ -259,7 +259,7 @@ Q3: What is a security check that Trusted Advisor provides at no cost to custome
 
 ## Key Takeaways
 
-![Takeaways](../../../assets/trusted_advisor/takeaways.png)
+![Takeaways](../../../assets/security/trusted_advisor/takeaways.png)
 
 :::tip[This module includes the following keytakeaways:]
 

@@ -1,7 +1,7 @@
 ---
 title: Introduction to Networking
 ---
-![Intro](../../../assets/day-12/intro.png)
+![Intro](../../../assets/networking/intro_networking/intro.png)
 
 You will learn how to:
 
@@ -13,7 +13,7 @@ You will learn how to:
 
 In this section, you will understand how the internet was born.
 
-![Basic history of how the internet was born](../../../assets/day-12/internet_born.png)
+![Basic history of how the internet was born](../../../assets/networking/intro_networking/internet_born.png)
 
 A brief history of how the internet was born:
 
@@ -27,13 +27,13 @@ A brief history of how the internet was born:
 
 In this section, you will review what a computer network is.
 
-![A Network is like a highway](../../../assets/day-12/network_highway.png)
+![A Network is like a highway](../../../assets/networking/intro_networking/network_highway.png)
 
 In this example, point A is your house (the client), and point B is the grocery store (website). In this example, in order to get to point A to point B, you would get in some type of transportation (send a request) to go to the store to buy what you need. To get there, transportation takes a series of roads (networks) to get to point B.
 
 ### What is computer networking ?
 
-![What is computer networking really?](../../../assets/day-12/networking_computer.png)
+![What is computer networking really?](../../../assets/networking/intro_networking/networking_computer.png)
 
 What is computer networking?
 
@@ -47,13 +47,13 @@ How does it work at a basic level?
 
 ### Basic computer network
 
-![Basic computer network](../../../assets/day-12/network_basic.png)
+![Basic computer network](../../../assets/networking/intro_networking/network_basic.png)
 
 Above is an example of a basic computer network where a computer is connected through a network interface card (NIC) and traffic is routed/switched through a switch to its intended destination. When there are more computers within buildings, computers are grouped together to a switch that is then connected to a router as seen on the next slide.
 
 ### Elements of a computer network
 
-![Elements of a computer network](../../../assets/day-12/network_elements.png)
+![Elements of a computer network](../../../assets/networking/intro_networking/network_elements.png)
 
 As noted in the previous slide, in a bigger network, the computers are grouped to a switch, in this example, switch A and B, also known as subnets. These switches send traffic to a router, which is ultimately a bigger switch with more intelligent functions.
 
@@ -69,7 +69,7 @@ In this section, you will learn what data is and the basics of the Open System I
 
 ### What is data
 
-![What is data](../../../assets/day-12/whats_data.png)
+![What is data](../../../assets/networking/intro_networking/whats_data.png)
 
 Data:
 
@@ -78,7 +78,7 @@ Data:
 
 ### The OSI Model
 
-![The OSI Model](../../../assets/day-12/osi_model_explanation.png)
+![The OSI Model](../../../assets/networking/intro_networking/osi_model_explanation.png)
 
 The OSI model is the main model used in networking today. The diagram illustrates how data flows in an OSI-compliant network from a source computer to a target computer.
 
@@ -95,7 +95,7 @@ The OSI model is the main model used in networking today. The diagram illustrate
 
 ### Data at Layer 2 and 3 in the OSI
 
-![Data at Layer 2 and 3 in the OSI](../../../assets/day-12/data_layer_osi.png)
+![Data at Layer 2 and 3 in the OSI](../../../assets/networking/intro_networking/data_layer_osi.png)
 
 At **layer 2** (the data link layer) a message or data is called a **frame**. Frames are associated with a Media Access Control **(MAC) address** which is known as a physical address.
 
@@ -103,11 +103,11 @@ At **layer 3** (network layer) a message or data is called a **packet**. Packets
 
 ## Networking components
 
-![Networking components](../../../assets/day-12/network_components.png)
+![Networking components](../../../assets/networking/intro_networking/network_components.png)
 
 In this section, you will review the networking components that are used within a network.
 
-![Networking components](../../../assets/day-12/network_components_explanation.png)
+![Networking components](../../../assets/networking/intro_networking/network_components_explanation.png)
 
 This section will cover the following networking components:
 
@@ -122,7 +122,7 @@ The picture above shows how the networking components work together to create a 
 
 ### Client
 
-![Client](../../../assets/day-12/client.png)
+![Client](../../../assets/networking/intro_networking/client.png)
 
 The client connects to the server over a network.
 
@@ -132,7 +132,7 @@ A client can also refer to software on the accessing device. For example, a web 
 
 ### Server
 
-![Server](../../../assets/day-12/server.png)
+![Server](../../../assets/networking/intro_networking/server.png)
 
 - The server has a specific job to respond to a request. When the client sends a request, the server will respond with the appropriate content the client is requesting.
 - Other examples of a server are:
@@ -144,7 +144,7 @@ A client can also refer to software on the accessing device. For example, a web 
 
 ## Network interface card (NIC)
 
-![Network interface card (NIC)](../../../assets/day-12/network_card.png)
+![Network interface card (NIC)](../../../assets/networking/intro_networking/network_card.png)
 
 A NIC:
 
@@ -155,7 +155,7 @@ A NIC:
 
 ### Network cables
 
-![Network cables](../../../assets/day-12/network_cable.png)
+![Network cables](../../../assets/networking/intro_networking/network_cable.png)
 
 - Fiber-Optic: It's faster since it transmits light instead of electricity. This cable is a good choice for areas that have high levels of electromagnetic interference (EMI) and can transmit data over distances of several kilometers.
 - Coaxial: This is being replaced by fiber-optic. This cable is mainly used to connect a cable TV modem to an ISP, and to connect TVs to cable boxes. It has a copper wire in the middle with a metal braided shield.
@@ -163,7 +163,7 @@ A NIC:
 
 ### Switch
 
-![Switch](../../../assets/day-12/switch.png)
+![Switch](../../../assets/networking/intro_networking/switch.png)
 
 A switch:
 
@@ -173,7 +173,7 @@ A switch:
 
 ### Router
 
-![Router](../../../assets/day-12/router.png)
+![Router](../../../assets/networking/intro_networking/router.png)
 
 A router:
 
@@ -183,13 +183,13 @@ A router:
 
 ### Modem
 
-![Modem](../../../assets/day-12/modem.png)
+![Modem](../../../assets/networking/intro_networking/modem.png)
 
 A modem connects your home to the internet from the ISP. A coaxial cable is used and, depending on your modem, it will then provide a wireless connection to your devices, or you can connect an additional router by connecting it to a port behind the modem.
 
 ## Checkpoint Questions
 
-![Checkpoint Questions](../../../assets/day-12/checkpoint_questions.png)
+![Checkpoint Questions](../../../assets/networking/intro_networking/checkpoint_questions.png)
 
 What can a router do that a switch cannot?
 
@@ -201,7 +201,7 @@ What does a network interface card (NIC) use that is known as a unique physical 
 
 ## Key Takeaways
 
-![Key Takeaways](../../../assets/day-12/takeaways_1.png)
+![Key Takeaways](../../../assets/networking/intro_networking/takeaways_1.png)
 :::tip[Recap]
 Some key takeaways from this lesson include the following:
 

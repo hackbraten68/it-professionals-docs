@@ -2,7 +2,7 @@
 title: Prevention - Public Key Infrastructure
 ---
 
-![Prevention Public Key Infrastructure](../../../assets/public_key_infrastructure/intro.png)
+![Prevention Public Key Infrastructure](../../../assets/security/public_key_infrastructure/intro.png)
 
 :::tip[In this lesson, you will learn how to:]
 
@@ -16,7 +16,7 @@ title: Prevention - Public Key Infrastructure
 
 ### Security lifecycle: Prevention
 
-![Security lifecycle: Prevention](../../../assets/public_key_infrastructure/security_lc_prevention.png)
+![Security lifecycle: Prevention](../../../assets/security/public_key_infrastructure/security_lc_prevention.png)
 
 As a review, the phases of the security lifecycle consist of:
 
@@ -37,7 +37,7 @@ As PKI applies to technology, an entity accesses a server to retrieve informatio
 
 ### Public key infrastucture
 
-![Public key infrastucture](../../../assets/public_key_infrastructure/public_key_infrastructure.png)
+![Public key infrastucture](../../../assets/security/public_key_infrastructure/public_key_infrastructure.png)
 
 Public key infrastructure (PKI) is a collection of technologies that are used to apply cryptography principles to transfer information securely between two entities. It is based on a practical distribution and implementation of keys, with a set of tools to achieve confidentiality, integrity, non-repudiation, and authenticity.
 
@@ -47,13 +47,13 @@ The entity that issues the certificate is called the issuer or the certificate a
 
 ### Enabling trust
 
-![Enabling trust](../../../assets/public_key_infrastructure/enabling_trust.png)
+![Enabling trust](../../../assets/security/public_key_infrastructure/enabling_trust.png)
 
 Trust is achieved through the exchange of public keys that validate and identify the parties. Public keys are attached to the certificate that a certificate authority (CA) issues.
 
 ### PKI components
 
-![PKI comnponents](../../../assets/public_key_infrastructure/pki_components.png)
+![PKI comnponents](../../../assets/security/public_key_infrastructure/pki_components.png)
 
 This diagram illustrates a public key infrastructure from end to end, highlighting the main components.
 
@@ -68,7 +68,7 @@ In this diagram, a user submits a registration request to the registration autho
 
 ## Certificate authorities
 
-![Certificate authorities](../../../assets/public_key_infrastructure/certificate_authorities.png)
+![Certificate authorities](../../../assets/security/public_key_infrastructure/certificate_authorities.png)
 
 CAs are entities that deliver digital certificates, which ensure that a website is secure. An example of a certificate authority is Google Trust Services (GTS). CAs issue other types of documents, including the following:
 
@@ -77,19 +77,19 @@ CAs are entities that deliver digital certificates, which ensure that a website 
 
 ### Root CAs and subordinate CAs
 
-![Root CAs and subordinate CAs](../../../assets/public_key_infrastructure/root_ca.png)
+![Root CAs and subordinate CAs](../../../assets/security/public_key_infrastructure/root_ca.png)
 
 A subordinate CA is not required in a smaller environment. However, it provides greater flexibility to expand the PKI environment.
 
 ### Internal CAs vs. external CAs
 
-![Internal CAs vs. external CAs](../../../assets/public_key_infrastructure/internal_vs_external_ca.png)
+![Internal CAs vs. external CAs](../../../assets/security/public_key_infrastructure/internal_vs_external_ca.png)
 
 If the protected resource is not published externally, an internal CA can be used.
 
 ## Certificates
 
-![Certificates](../../../assets/public_key_infrastructure/certificates.png)
+![Certificates](../../../assets/security/public_key_infrastructure/certificates.png)
 
 Digital certificates are electronic credentials that are used to **represent online identities** of individuals, computers, and other entities on a network. Digital certificates are like personal identification cards.
 
@@ -99,7 +99,7 @@ A certificate with a **public key** and corresponding **private key** can be use
 
 ### Certificate use cases
 
-![Certificate use cases](../../../assets/public_key_infrastructure/certs_use_cases.png)
+![Certificate use cases](../../../assets/security/public_key_infrastructure/certs_use_cases.png)
 
 Uses cases for digital certificates include the following:
 
@@ -111,7 +111,7 @@ For example, consider an individual who is buying something on a website. The cu
 
 ### Obtaining a certificate
 
-![Obtaining a certificate](../../../assets/public_key_infrastructure/obtaining_certs.png)
+![Obtaining a certificate](../../../assets/security/public_key_infrastructure/obtaining_certs.png)
 
 To obtain a digital certificate from an external CA, you must typically submit a certificate signing request (CSR). Using an open-source or vendor-specific tool, you create the CSR on your server and send the CSR file to the CA. After you receive the digital certificate, you install it on your server.
 
@@ -119,13 +119,13 @@ In the AWS Cloud, you can use the AWS Certificate Manager (ACM) service to obtai
 
 ### Certificate expiration and revocation
 
-![Certificate expiration and revocation](../../../assets/public_key_infrastructure/certs_expired.png)
+![Certificate expiration and revocation](../../../assets/security/public_key_infrastructure/certs_expired.png)
 
 A certificate has an expiration date and can be revoked. An expired or revoked certificate cannot be used because it is added to the certificate revocation list (CRL), which the issuing certificate authority maintains. This list is checked when a resource tries to use the certificate.
 
 ### Certificate revocation list
 
-![Certificate revocation list](../../../assets/public_key_infrastructure/certs_revoke_list.png)
+![Certificate revocation list](../../../assets/security/public_key_infrastructure/certs_revoke_list.png)
 
 The CRL must be published and accessible at all times, especially if an internal CA issues the certificate.
 
@@ -133,19 +133,19 @@ The Online Certificate Status Protocol (OCSP) is an internet protocol. It is use
 
 ### Certificate storage
 
-![Certificate storage](../../../assets/public_key_infrastructure/certs_storage.png)
+![Certificate storage](../../../assets/security/public_key_infrastructure/certs_storage.png)
 
 By default, certificates are stored locally on the computer. They can also be stored on smart cards or trusted platform module (TPM) chips.
 
 ### ACM
 
-![ACM](../../../assets/public_key_infrastructure/acm.png)
+![ACM](../../../assets/security/public_key_infrastructure/acm.png)
 
 For more information about ACM, see [AWS Certificate Manager](https://aws.amazon.com/certificate-manager/).
 
 ## Key Takeaways
 
-![Takeaways](../../../assets/public_key_infrastructure/takeaways.png)
+![Takeaways](../../../assets/security/public_key_infrastructure/takeaways.png)
 
 :::tip[Keytakeaways from this lesson include:]
 

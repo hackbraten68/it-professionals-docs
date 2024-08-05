@@ -2,7 +2,7 @@
 title: Networking Concepts
 ---
 
-![Networking Concepts](../../../assets/networking_concepts/networking_concepts.png)
+![Networking Concepts](../../../assets/networking/networking_concepts/networking_concepts.png)
 
 You will learn how to:
 
@@ -12,13 +12,13 @@ You will learn how to:
 
 ## Types of computer networks
 
-![Types of computer networks](../../../assets/networking_concepts/types_networks.png)
+![Types of computer networks](../../../assets/networking/networking_concepts/types_networks.png)
 
 In this section, you will understand basic computer networks.
 
 ### Local-area network (LAN)
 
-![Local-area network (LAN)](../../../assets/networking_concepts/lan.png)
+![Local-area network (LAN)](../../../assets/networking/networking_concepts/lan.png)
 
 - In the example above, a LAN with one router, two switches, and three nodes under each switch. Each switch or subnet can represent an office floor or building within the same corporate office or school.
 - LANs commonly use the Ethernet standard for connecting devices, and they usually have a high data-transfer rate.
@@ -26,7 +26,7 @@ In this section, you will understand basic computer networks.
 
 ### Wide-area network (WAN)
 
-![Wide-area network (WAN)](../../../assets/networking_concepts/wan.png)
+![Wide-area network (WAN)](../../../assets/networking/networking_concepts/wan.png)
 
 - In the example above, a WAN with three routers, two switches and three nodes under each switch. Examples of WANs are two corporate offices located across the United States connected by a WAN (the internet).
 - WANs use technologies such as fiber-optic cables and satellites to transmit data which are used to connect LANs.
@@ -34,7 +34,7 @@ In this section, you will understand basic computer networks.
 
 ### LAN vs. WAN
 
-![LAN vs. WAN](../../../assets/networking_concepts/lan_vs_wan.png)
+![LAN vs. WAN](../../../assets/networking/networking_concepts/lan_vs_wan.png)
 
 - LAN:
   - Within the same building or floor.
@@ -44,13 +44,13 @@ In this section, you will understand basic computer networks.
 
 ## Network topologies
 
-![Network topologies](../../../assets/networking_concepts/network_topologies.png)
+![Network topologies](../../../assets/networking/networking_concepts/network_topologies.png)
 
 In this section, you will understand basic network topologies (physical and logical).
 
 #### What is a network topology
 
-![What is a network topology](../../../assets/networking_concepts/network_topologies_whats.png)
+![What is a network topology](../../../assets/networking/networking_concepts/network_topologies_whats.png)
 
 It's important to understand network management models because they define the roles and relationships of the devices in your network.
 
@@ -62,7 +62,7 @@ It's important to understand network management models because they define the r
 
 ### Physical topologies
 
-![Physical topologies](../../../assets/networking_concepts/physical_topology.png)
+![Physical topologies](../../../assets/networking/networking_concepts/physical_topology.png)
 
 What is a physical topology?
 
@@ -95,7 +95,7 @@ What is a physical topology?
 
 ### Logical topologies
 
-![Logical topologies](../../../assets/networking_concepts/logical_topology.png)
+![Logical topologies](../../../assets/networking/networking_concepts/logical_topology.png)
 
 What is a logical topology?
 
@@ -134,7 +134,7 @@ What is a logical topology?
 
 ### Amazon Virtual Private Cloud (VPC)
 
-![Amazon VPC](../../../assets/networking_concepts/aws_vpc.png)
+![Amazon VPC](../../../assets/networking/networking_concepts/aws_vpc.png)
 
 Please note that this is just a simple comparison of services between a traditional topology and AWS services.
 
@@ -145,11 +145,11 @@ Please note that this is just a simple comparison of services between a traditio
 
 ## Comparing LAN/WAN & Amazon VPC
 
-![Comparing LAN/WAN & Amazon VPC](../../../assets/networking_concepts/lanwan_vs_vpc.png)
+![Comparing LAN/WAN & Amazon VPC](../../../assets/networking/networking_concepts/lanwan_vs_vpc.png)
 
 ### LAN and AWS VPC
 
-![Lan and VPC](../../../assets/networking_concepts/lan_vs_vpc.png)
+![Lan and VPC](../../../assets/networking/networking_concepts/lan_vs_vpc.png)
 
 Above is an example of a LAN topology and an AWS VPC network. There are similarities between a LAN and an AWS VPC.
 
@@ -159,7 +159,7 @@ Above is an example of a LAN topology and an AWS VPC network. There are similari
 
 ### WAN and AWS VPC
 
-![WAN and AWS VPC](../../../assets/networking_concepts/wan_vpc.png)
+![WAN and AWS VPC](../../../assets/networking/networking_concepts/wan_vpc.png)
 
 An example of a WAN where a city on the West coast can communicate to a city on the East coast from the same company within AWS is called VPC peering. This is beyond the scope of this course; however, this is an example of how this is achieved.
 
@@ -168,11 +168,11 @@ An example of a WAN where a city on the West coast can communicate to a city on 
 
 ## Network management models
 
-![Network management models](../../../assets/networking_concepts/network_management.png)
+![Network management models](../../../assets/networking/networking_concepts/network_management.png)
 
 In this section, you will cover the different network management models.
 
-![Network management models](../../../assets/networking_concepts/network_management_2.png)
+![Network management models](../../../assets/networking/networking_concepts/network_management_2.png)
 
 Why is it important?
 
@@ -183,7 +183,7 @@ Why is it important?
 
 ### Client-server model
 
-![Client-server model](../../../assets/networking_concepts/client-server.png)
+![Client-server model](../../../assets/networking/networking_concepts/client-server.png)
 
 - In a client-server network model, the data management and application hosting are centralized at the server, and distributed to the clients.
 - If the server goes down, no client can access the network until the server is restored.
@@ -193,7 +193,7 @@ Why is it important?
 
 ### Peer-to-peer model
 
-![Peer-to-peer model](../../../assets/networking_concepts/peer-to-peer.png)
+![Peer-to-peer model](../../../assets/networking/networking_concepts/peer-to-peer.png)
 
 - In a peer-to-peer model, each node has its own data and applications and is responsible for its own management and security.
 - Peers are equally privileged participants in the architecture.
@@ -205,14 +205,14 @@ Why is it important?
 
 ## Network protocols
 
-![Network protocols](../../../assets/networking_concepts/network_protocols.png)
+![Network protocols](../../../assets/networking/networking_concepts/network_protocols.png)
 
 - An example of a connection-oriented protocol is a phone call between two people. One person calls and the other answers and therefore a connection is established.
 - An example of a connectionless protocol is sending a package through the mail to another person. Once it leaves your hands, the package can get to its destination or it can get lost. It doesn’t require a connection to be established.
 
 ### Connection-oriented protocol
 
-![Connection-oriented protocol](../../../assets/networking_concepts/connection_oriented.png)
+![Connection-oriented protocol](../../../assets/networking/networking_concepts/connection_oriented.png)
 
 - With a connection-oriented protocol, there is typically a larger overhead because it ensures that a connection is established.
 - It checks if the message was received or not received. If the message was received, a session is then established. If an error occurs or the message is not received, it sends the message again.
@@ -220,7 +220,7 @@ Why is it important?
 
 ### Connectionless protocol
 
-![Connectionless protocol](../../../assets/networking_concepts/connectionless.png)
+![Connectionless protocol](../../../assets/networking/networking_concepts/connectionless.png)
 
 - With a connectionless protocol, there is typically little overhead because it doesn’t care if there is a session established.
 - This is faster than a connection-oriented protocol and uses asynchronous communication which means that one of the parties does not have to be available for data to be sent.
@@ -229,7 +229,7 @@ Why is it important?
 
 ### Examples of network protocols
 
-![Examples of network protocols](../../../assets/networking_concepts/examples_protocols.png)
+![Examples of network protocols](../../../assets/networking/networking_concepts/examples_protocols.png)
 
 - **TCP/IP** is a connection-oriented protocol. It defines how to establish and maintain network communication in which application programs can exchange data. Data sent via this protocol is broken down into smaller chunks called packets. The goal of TCP/IP was to support an interconnection of networks (internet).
   - **TCP** is great for transferring important files since there is a guarantee of connection, even though there is a larger overhead (time).
@@ -245,7 +245,7 @@ Why is it important?
 
 ### Transmission control protocol (TCP) handshake
 
-![Transmission control protocol (TCP) handshake](../../../assets/networking_concepts/tcp.png)
+![Transmission control protocol (TCP) handshake](../../../assets/networking/networking_concepts/tcp.png)
 
 Why is this all important?
 
@@ -268,7 +268,7 @@ Why is this all important?
 
 ### User Datagram Protocol (UDP)
 
-![User Datagram Protocol (UDP)](../../../assets/networking_concepts/udp.png)
+![User Datagram Protocol (UDP)](../../../assets/networking/networking_concepts/udp.png)
 
 - **UDP** uses connectionless communication and there is no guarantee of the delivery or ordering of data. The best example and use case of UDP is media. When streaming services such as a movie, UDP is used because it is fast; however, there are times when you might see buffering and things may seem off or out of order like the words do not match up to the picture. That is UDP delivering the data and the streaming service trying to order the data as UDP doesn’t guarantee the order or delivery.
 - It is about speed and doesn’t provide a three-way handshake to ensure data is delivered.
@@ -276,7 +276,7 @@ Why is this all important?
 
 ## Checkpoint questions
 
-![Checkpoint questions](../../../assets/networking_concepts/questions.png)
+![Checkpoint questions](../../../assets/networking/networking_concepts/questions.png)
 
 Q1: Which area network connects devices over large geographical areas?
 
@@ -289,7 +289,7 @@ Q2: Which type of protocol ensures that a connection is established? What is an 
 
 ## Key Takeaways
 
-![Key Takeaways](../../../assets/networking_concepts/takeaways.png)
+![Key Takeaways](../../../assets/networking/networking_concepts/takeaways.png)
 :::tip[Recap]
 
 - A local-area network (LAN) connects devices in a limited geographical area, and a wide-area network (WAN) connects devices in a large geographical area.

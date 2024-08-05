@@ -2,7 +2,7 @@
 title: AWS Cloudtrail
 ---
 
-![AWS Cloudtrail](../../../assets/cloudtrail/intro.png)
+![AWS Cloudtrail](../../../assets/security/cloudtrail/intro.png)
 
 :::tip[What you'll learn]
 
@@ -14,7 +14,7 @@ This module will describe AWS CloudTrail, a service that helps you monitor reque
 
 ### What is CloudTrail?
 
-![What is CloudTrail?](../../../assets/cloudtrail/whats_cloudtrail.png)
+![What is CloudTrail?](../../../assets/security/cloudtrail/whats_cloudtrail.png)
 
 By definition, CloudTrail is an auditing, compliance monitoring, and governance tool from AWS. It is classified as a Management and Governance tool in the AWS Management Console.
 
@@ -34,13 +34,13 @@ How does CloudTrail work?
 
 ### CloudTrail example
 
-![CloudTrail example: Amazon EC2 event (1 of 2)](../../../assets/cloudtrail/cloudtrail_example1.png)
+![CloudTrail example: Amazon EC2 event (1 of 2)](../../../assets/security/cloudtrail/cloudtrail_example1.png)
 
 The log file contains one or more records. This slide includes an example of a CloudTrail log entry that shows the records for an action that started an EC2 instance.
 
 The example shows that an AWS Identity and Access Management (IAM) user named Alice used the AWS Command Line Interface (AWS CLI). Alice used the AWS CLI to call the Amazon EC2StartInstancesaction to start the instance with an instanceID ofi-ebeaf9e2.
 
-![CloudTrail example: Amazon EC2 event (2 of 2)](../../../assets/cloudtrail/cloudtrail_example2.png)
+![CloudTrail example: Amazon EC2 event (2 of 2)](../../../assets/security/cloudtrail/cloudtrail_example2.png)
 
 The log file contains one or more records. This slide includes an example of a CloudTrail log entry that shows the records for an action that started an EC2 instance.
 
@@ -48,7 +48,7 @@ The example shows that an AWS Identity and Access Management (IAM) user named Al
 
 ### Finding your CloudTrail log files
 
-![Finding your CloudTrail log files](../../../assets/cloudtrail/cloudtrail_log_files.png)
+![Finding your CloudTrail log files](../../../assets/security/cloudtrail/cloudtrail_log_files.png)
 
 Follow these steps to find your log files:
 
@@ -62,7 +62,7 @@ CloudTrail typically delivers logs within an average of about 15 minutes of an e
 
 ### CloudTrail benefits
 
-![CloudTrail benefits](../../../assets/cloudtrail/benefits.png)
+![CloudTrail benefits](../../../assets/security/cloudtrail/benefits.png)
 
 CloudTrail has several key benefits:
 
@@ -78,7 +78,7 @@ The body of the CloudTrail record contains fields that help you determine the re
 
 ### CloudTrail best practices
 
-![CloudTrail best practices](../../../assets/cloudtrail/best_practices.png)
+![CloudTrail best practices](../../../assets/security/cloudtrail/best_practices.png)
 
 To harden your security and auditing processes, turn on CloudTrail log file integrity validation. This feature helps you to determine whether a CloudTrail log file was unchanged, deleted, or modified since CloudTrail delivered it to the specified S3 bucket.
 
@@ -92,7 +92,7 @@ Ensure that CloudTrail is enabled for all AWS Regions to increase the visibility
 
 ## Checkpoint questions
 
-![Checkpoint questions](../../../assets/cloudtrail/questions.png)
+![Checkpoint questions](../../../assets/security/cloudtrail/questions.png)
 
 <details>
 <summary>1. Q1: What is an AWS CloudTrail event?</summary>
@@ -111,7 +111,7 @@ Log files are stored in a compressed format with a .gz extension.
 
 ## Key takeaways
 
-![Key takeaways](../../../assets/cloudtrail/takeaways.png)
+![Key takeaways](../../../assets/security/cloudtrail/takeaways.png)
 
 :::tip[This lesson includes the following keytakeaways:]
 
