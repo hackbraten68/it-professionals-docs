@@ -33,7 +33,7 @@ export default defineConfig({
 						{
 							label: 'Networking',
 							collapsed: true,
-							badge: { text: 'Updated', variant: 'tip' },
+							badge: { text: 'Done', variant: 'tip' },
 							autogenerate: { directory: 'networking' }
 						},
 						{
