@@ -39,7 +39,7 @@ export default defineConfig({
 						{
 							label: 'Security',
 							collapsed: true,
-							badge: { text: 'In progress', variant: 'caution' },
+							badge: { text: 'Done', variant: 'tip' },
 							autogenerate: { directory: 'security' }
 						},
 						{
@@ -47,6 +47,18 @@ export default defineConfig({
 							collapsed: true,
 							badge: { text: 'New', variant: 'success' },
 							autogenerate: { directory: 'databases' }
+						},
+						{
+							label: 'AWS Architecture',
+							collapsed: true,
+							badge: { text: 'New', variant: 'success' },
+							autogenerate: { directory: 'aws-architecture' }
+						},
+						{
+							label: 'Systems Operations',
+							collapsed: true,
+							badge: { text: 'New', variant: 'success' },
+							autogenerate: { directory: 'system-operations' }
 						},
 					]
 				},
