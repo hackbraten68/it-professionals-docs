@@ -60,6 +60,24 @@ export default defineConfig({
 							badge: { text: 'New', variant: 'success' },
 							autogenerate: { directory: 'system-operations' }
 						},
+						{
+							label: 'Tooling and Automation',
+							collapsed: true,
+							badge: { text: 'New', variant: 'success' },
+							autogenerate: { directory: 'tooling-automation' }
+						},
+						{
+							label: 'Servers',
+							collapsed: true,
+							badge: { text: 'New', variant: 'success' },
+							autogenerate: { directory: 'servers' }
+						},
+						{
+							label: 'Scaling and Name Resolution',
+							collapsed: true,
+							badge: { text: 'New', variant: 'success' },
+							autogenerate: { directory: 'scaling-name-resolution' }
+						},
 					]
 				},
 				{
