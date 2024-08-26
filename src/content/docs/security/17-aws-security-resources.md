@@ -44,7 +44,7 @@ For more information, see [AWS Developer Support](https://aws.amazon.com/premium
 
 ## AWS Business Support
 
-![AWS Business Support]()
+![AWS Business Support](../../../assets/security/security_resources/business_support.png)
 
 **AWS Business Support** provides a support plan for users or businesses that use AWS services for production workloads within AWS. Support from cloud support engineers is available 24/7 by phone, chat, or email. The following are the response times for this support plan:
 
