@@ -166,7 +166,7 @@ A city must meet one or the other of these district conditions to be included in
 
 ### `IN` logical operator
 
-![IN logical operator]()
+![IN logical operator](../../../assets/databases/performing_conditional_search/in_operator.png)
 
 The query uses the `IN` operator to return data items for cities with districts called Delhi, Punjab, and Kerala.
 
