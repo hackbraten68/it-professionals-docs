@@ -125,8 +125,6 @@ Five common aggregate functions are:
 - `SUM()`
 </details>
 
-
 ## Key Takeaways
 
 ![Takeaways](../../../assets/databases/working_with_functions/takeaways.png)
-
