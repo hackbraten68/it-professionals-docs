@@ -109,7 +109,7 @@ An example of this is Chaos Monkey, a software tool that Netflix engineers devel
 
 ![Key ideas](../../../assets/aws_architecture/well_architectured_principles/key_ideas.png)
 
-:::tip[The key design principles that are promoted in the AWS Well-Architected Framework include thefollowing:]
+:::tip[The key design principles that are promoted in the AWS Well-Architected Framework include the following:]
 
 - Stop guessing your capacity needs.
 - Test systems at production scale.
