@@ -262,11 +262,13 @@ Apply these design principles when architecting your cloud workloads to maximize
 <details>
   <summary>What does the Well-Architected Framework provide?</summary>
   The Well-Architected Framework provides the following:
+
   - Questions that are centered on critically understanding architectural decisions
   - Domain-specific lenses
   - Hands-on labs
   - AWS Well-Architected Tool
   - AWS Well-Architected Partner Program
+  
 </details>
 
 <details>

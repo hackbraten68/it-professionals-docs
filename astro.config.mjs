@@ -23,6 +23,7 @@ export default defineConfig({
 						{
 							label: 'Cloud Foundation',
 							collapsed: true,
+							badge: { text: 'revisit', variant: 'tip' },
 							autogenerate: { directory: 'week-1' }
 						},
 						{
@@ -33,50 +34,53 @@ export default defineConfig({
 						{
 							label: 'Networking',
 							collapsed: true,
-							badge: { text: 'Done', variant: 'tip' },
 							autogenerate: { directory: 'networking' }
 						},
 						{
 							label: 'Security',
 							collapsed: true,
-							badge: { text: 'Done', variant: 'tip' },
 							autogenerate: { directory: 'security' }
 						},
 						{
 							label: 'Databases',
 							collapsed: true,
-							badge: { text: 'New', variant: 'success' },
 							autogenerate: { directory: 'databases' }
 						},
 						{
 							label: 'AWS Architecture',
 							collapsed: true,
-							badge: { text: 'New', variant: 'success' },
+							badge: { text: 'todo', variant: 'success' },
 							autogenerate: { directory: 'aws-architecture' }
 						},
 						{
 							label: 'Systems Operations',
 							collapsed: true,
-							badge: { text: 'New', variant: 'success' },
 							autogenerate: { directory: 'system-operations' }
 						},
 						{
 							label: 'Tooling and Automation',
 							collapsed: true,
-							badge: { text: 'New', variant: 'success' },
 							autogenerate: { directory: 'tooling-automation' }
 						},
 						{
 							label: 'Servers',
 							collapsed: true,
-							badge: { text: 'New', variant: 'success' },
 							autogenerate: { directory: 'servers' }
 						},
 						{
 							label: 'Scaling and Name Resolution',
 							collapsed: true,
-							badge: { text: 'New', variant: 'success' },
 							autogenerate: { directory: 'scaling-name-resolution' }
+						},
+						{
+							label: 'Serverless and Containers',
+							collapsed: true,
+							autogenerate: { directory: 'serverless-and-containers' }
+						},
+						{
+							label: 'AWS Database Services',
+							collapsed: true,
+							autogenerate: { directory: 'aws-database-services' }
 						},
 					]
 				},
