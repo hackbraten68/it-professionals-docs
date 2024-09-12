@@ -15,6 +15,7 @@ export default defineConfig({
 					items: [
 						// Each item here is one entry in the navigation menu.
 						{ label: 'Documentation Guide', link: '/guides/navigation/' },
+						{ label: 'Exam Questions', link: '/exams/kc' }
 					],
 				},
 				{
@@ -81,6 +82,16 @@ export default defineConfig({
 							label: 'AWS Database Services',
 							collapsed: true,
 							autogenerate: { directory: 'aws-database-services' }
+						},
+						{
+							label: 'AWS Networking Services',
+							collapsed: true,
+							autogenerate: { directory: 'aws-networking-services' }
+						},
+						{
+							label: 'Storage and Archiving',
+							collapsed: true,
+							autogenerate: { directory: 'storage-archiving' }
 						},
 					]
 				},
