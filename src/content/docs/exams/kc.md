@@ -4,7 +4,7 @@ title: Exam Questions
 
 # Cloud Foundations
 
-## KC - Introduction to Cloud Computing
+### KC - Introduction to Cloud Computing
 
 1. **Q:** What is a Computer program?
    <details>
@@ -36,7 +36,7 @@ title: Exam Questions
    A: iOS, A.Linux 2.
    </details>
 
-## KC - Basic Computing Concepts
+### KC - Basic Computing Concepts
 
 1. **Q:** Which server receives HTTP requests from clients and uses HTTP to send pages or resources back to the requestor?
    <details>
@@ -68,7 +68,7 @@ title: Exam Questions
    A: EC2
    </details>
 
-## KC - Development Team Roles
+### KC - Development Team Roles
 
 1. **Q:** Which job roles are part of a development team? (Select TWO)
    <details>
@@ -100,7 +100,7 @@ title: Exam Questions
    A: Assign tasks to team members and Develop a project plan
    </details>
 
-## KC - What is Cloud Computing?
+### KC - What is Cloud Computing?
 
 1. **Q:** Which statement describes cloud computing?
    <details>
@@ -132,7 +132,7 @@ title: Exam Questions
    A: Hybrid cloud
    </details>
 
-## KC - Advantages of Cloud Computing
+### KC - Advantages of Cloud Computing
 
 1. **Q:** What are benefits of trading fixed expense for variable expense? (Select TWO.)
    <details>
@@ -164,7 +164,7 @@ title: Exam Questions
    A: Users can deploy their solutions in multiple AWS Regions around the world with a few clicks.
    </details>
 
-## KC - What is Amazon Web Services?
+### KC - What is Amazon Web Services?
 
 1. **Q:** Which cloud computing model gives a user the ability to immediately use a service without having to run or manage any resources?
    <details>
@@ -196,7 +196,7 @@ title: Exam Questions
    A: Tutorials and projects.
    </details>
 
-## KC - Fundamentals of AWS Pricing
+### KC - Fundamentals of AWS Pricing
 
 1. **Q:** Which types of data transfer are free for Amazon S3? (Select TWO.)
    <details>
@@ -228,7 +228,7 @@ title: Exam Questions
    A: AWS Pricing Calculator
    </details>
 
-## KC - AWS Infrastructure Overview
+### KC - AWS Infrastructure Overview
 
 1. **Q:** Which capability is the AWS Global Infrastructure designed and built to deliver?
    <details>
@@ -260,7 +260,7 @@ title: Exam Questions
    A: A global content delivery network (CDN) that delivers content to end users with reduced latency.
    </details>
 
-## KC - AWS Services and Service Categories
+### KC - AWS Services and Service Categories
 
 1. **Q:** Which services are in the AWS storage category?
    <details>
@@ -292,7 +292,7 @@ title: Exam Questions
    A: Amazon VPC
    </details>
 
-## KC - Shared Responsibility Model
+### KC - Shared Responsibility Model
 
 1. **Q:** What is AWS responsible for according to the AWS shared responsibility model?
    <details>
@@ -324,7 +324,7 @@ title: Exam Questions
    A: Software as a service (SaaS)
    </details>
 
-## KC - Introduction to Amazon S3
+### KC - Introduction to Amazon S3
 
 1. **Q:** What property uniquely identifies an object in an Amazon S3 bucket?
    <details>
@@ -356,7 +356,7 @@ title: Exam Questions
    A: Bucket names are universal, and they must be unique across all existing bucket names in Amazon S3 & It can be used for static web hosting.
    </details>
 
-## KC - Introduction to Amazon EC2
+### KC - Introduction to Amazon EC2
 
 1. **Q:** Which statement describes the Amazon EC2 service?
    <details>
@@ -390,7 +390,7 @@ title: Exam Questions
 
 # Linux
 
-## KC - An Introduction to Linux
+### KC - An Introduction to Linux
 
 1. **Q:** Which statement about the Linux operating system is true?
    <details>
@@ -422,7 +422,7 @@ title: Exam Questions
    A: Complementary tools and applications and Kernel
    </details>
 
-## KC - Linux Command Line
+### KC - Linux Command Line
 
 1. **Q:** What is the name of the default Linux shell?
    <details>
@@ -454,7 +454,7 @@ title: Exam Questions
    A: hostname
    </details>
 
-## KC - Users and Groups
+### KC - Users and Groups
 
 1. **Q:** Which statements apply to setting user passwords? (Select TWO)
    <details>
@@ -486,7 +486,7 @@ title: Exam Questions
    A: Always log in as a standard user, and switch the user to the root account only when you must elevate permissions.
    </details>
 
-## KC - Editing Files
+### KC - Editing Files
 
 1. **Q:** What is the default text editor for virtually all Linux distributions?
    <details>
@@ -518,7 +518,7 @@ title: Exam Questions
    A: gedit
    </details>
 
-## KC - Working with the File System
+### KC - Working with the File System
 
 1. **Q:** Which statements about Linux file names are true? (Select TWO)
    <details>
@@ -550,7 +550,7 @@ title: Exam Questions
    A: ls -la /var/log
    </details>
 
-## KC - Working with Files
+### KC - Working with Files
 
 1. **Q:** Which option can you use with the find command to run a command on searched files?
    <details>
@@ -582,7 +582,7 @@ title: Exam Questions
    A: -cvf tarball.tar
    </details>
 
-## KC - Managing File Permissions
+### KC - Managing File Permissions
 
 1. **Q:** Which command allows the user to set permissions for the files and directories?
    <details>
@@ -616,7 +616,7 @@ title: Exam Questions
 
 # Working with Commands
 
-## KC - Working with Commands
+### KC - Working with Commands
 
 1. **Q:** Wildcards are used to specify one to many unknown characters, or a set of limited and specific values in a search. What types of wildcard characters does Bash recognize? (Select TWO)
    <details>
@@ -650,7 +650,7 @@ title: Exam Questions
 
 # Managing Processes
 
-## KC - Managing Processes
+### KC - Managing Processes
 
 1. **Q:** A software developer is having issues with a process that runs on a Linux host. The application is not responding. The developer decides to end the process by using the kill command, which requires the process ID (PID). Which command can the developer use to retrieve the PID?
    <details>
@@ -684,7 +684,7 @@ title: Exam Questions
 
 # Managing Services
 
-## KC - Managing Services
+### KC - Managing Services
 
 1. **Q:** Which service can AWS customers use to monitor AWS services and resources?
    <details>
@@ -718,7 +718,7 @@ title: Exam Questions
 
 # The Bash Shell
 
-## KC - The Bash Shell
+### KC - The Bash Shell
 
 1. **Q:** What is a variable?
    <details>
@@ -752,7 +752,7 @@ title: Exam Questions
 
 # Bash Shell Scripts
 
-## KC - Bash Shell Scripts
+### KC - Bash Shell Scripts
 
 1. **Q:** Why might an administrator create a Bash shell script? (Select TWO)
    <details>
@@ -786,7 +786,7 @@ title: Exam Questions
 
 # Software Management
 
-## KC - Software Management
+### KC - Software Management
 
 1. **Q:** Which components are part of a package? (Select THREE)
    <details>
@@ -820,7 +820,7 @@ title: Exam Questions
 
 # Managing Log Files
 
-## KC - Managing Log Files
+### KC - Managing Log Files
 
 1. **Q:** In Linux Distributions, where are log files normally stored?
    <details>
@@ -854,7 +854,7 @@ title: Exam Questions
 
 # Introduction to Networking
 
-## KC - Introduction to Networking
+### KC - Introduction to Networking
 
 1. **Q:** Which statement describes a computer network?
    <details>
@@ -886,7 +886,7 @@ title: Exam Questions
    A: Switch.
    </details>
 
-## KC - Networking Concepts
+### KC - Networking Concepts
 
 1. **Q:** Which statement accurately describes the function of a local area network (LAN) and wide area network (WAN)?
    <details>
@@ -918,7 +918,7 @@ title: Exam Questions
    A: It creates a session between the sender and the receiver.
    </details>
 
-## KC - Internet Protocol [IP]
+### KC - Internet Protocol [IP]
 
 1. **Q:** Which device should be assigned a static IP address?
    <details>
@@ -950,7 +950,7 @@ title: Exam Questions
    A: When a port number is combined with an IP address, it uniquely identifies a source or a destination for data communication.
    </details>
 
-## KC - Amazon VPC
+### KC - Amazon VPC
 
 1. **Q:** Which statement describes Amazon Virtual Private Cloud (Amazon VPC)?
    <details>
@@ -982,7 +982,7 @@ title: Exam Questions
    A: It acts as a stateful firewall that controls inbound network traffic and outbound network traffic.
    </details>
 
-## KC - IPv4 Subnetting
+### KC - IPv4 Subnetting
 
 1. **Q:** What are some reasons for creating a subnet? (Select TWO)
    <details>
@@ -1014,7 +1014,7 @@ title: Exam Questions
    A: It defines which section of an IP address identifies the network and which section of an IP address identifies the hosts.
    </details>
 
-## KC - TCP and UDP
+### KC - TCP and UDP
 
 1. **Q:** Which protocols are used to secure web applications? (Select TWO)
    <details>
@@ -1046,7 +1046,7 @@ title: Exam Questions
    A: Remote Desktop Protocol (RDP)
    </details>
 
-## KC - Additional Networking Technologies
+### KC - Additional Networking Technologies
 
 1. **Q:** Devices communicate with cloud services by using various technologies and protocols. Which option do devices not use to communicate with cloud services?
    <details>
@@ -1078,7 +1078,7 @@ title: Exam Questions
    A: Amazon WorkSpaces
    </details>
 
-## KC - Introduction to Security
+### KC - Introduction to Security
 
 1. **Q:** What is the role of confidentiality in the confidentiality, integrity, and availability (CIA) triad?
    <details>
@@ -1110,7 +1110,7 @@ title: Exam Questions
    A: Acceptable use policy document
    </details>
 
-## KC - Security Lifecycle: Prevention
+### KC - Security Lifecycle: Prevention
 
 1. **Q:** Which of the following tasks are a part of the prevention phase of the life cycle? (Select THREE.)
    <details>
@@ -1142,7 +1142,7 @@ title: Exam Questions
    A: Grant users access to only the resources that they are authorized to access.
    </details>
 
-## KC - Network Hardening
+### KC - Network Hardening
 
 1. **Q:** Which type of security vulnerability exposes protocols and services on a network?
    <details>
@@ -1174,7 +1174,7 @@ title: Exam Questions
    A: A firewall that protects Amazon Elastic Compute Cloud (Amazon EC2) instances.
    </details>
 
-## KC - Systems Hardening
+### KC - Systems Hardening
 
 1. **Q:** What is the primary goal of systems hardening?
    <details>
@@ -1206,7 +1206,7 @@ title: Exam Questions
    A: AWS Trusted Advisor.
    </details>
 
-## KC - Prevention: Data Security
+### KC - Prevention: Data Security
 
 1. **Q:** Which term best describes the discipline that embodies the principles and techniques for providing data security?
    <details>
@@ -1238,7 +1238,7 @@ title: Exam Questions
    A: The recipient of the message
    </details>
 
-## KC - Prevention: PKI
+### KC - Prevention: PKI
 
 1. **Q:** What signs and issues certificates to entities and manages trusts and relationships?
    <details>
@@ -1270,7 +1270,7 @@ title: Exam Questions
    A: Through the exchange of public keys that validate the identities of the parties.
    </details>
 
-## KC - Prevention: Identity Management
+### KC - Prevention: Identity Management
 
 1. **Q:** What is the goal of authorization in identity management?
    <details>
@@ -1302,7 +1302,7 @@ title: Exam Questions
    A: Federated identities.
    </details>
 
-## KC - Prevention: AWS IAM
+### KC - Prevention: AWS IAM
 
 1. **Q:** What is the goal of identity management?
    <details>
@@ -1334,7 +1334,7 @@ title: Exam Questions
    A: Implement password policies.
    </details>
 
-## KC - Security Lifecycle: Detection
+### KC - Security Lifecycle: Detection
 
 1. **Q:** Which infection methods does malware use? (Select TWO.)
    <details>
@@ -1368,7 +1368,7 @@ title: Exam Questions
    A: Virtual private cloud (VPC) flow logs.
    </details>
 
-## KC - AWS CloudTrail
+### KC - AWS CloudTrail
 
 1. **Q:** What is AWS CloudTrail?
    <details>
@@ -1399,3 +1399,807 @@ title: Exam Questions
    <summary>Answer</summary>
    A: CloudWatch monitors and reacts to events recorded in CloudTrail log files.
    </details>
+
+### KC - AWS Config
+
+1. **Q:** What is AWS Config?
+   <details>
+   <summary>Answer</summary>
+   A: A tool that tracks changes to resources.
+   </details>
+
+2. **Q:** What are features of AWS Config? (Select TWO)
+   <details>
+   <summary>Answer</summary>
+   A: Send notifications when a configuration change in an Amazon Web Services (AWS) resource is detected. Retrieve inventory of Amazon Web Services (AWS) resources.
+   </details>
+
+3. **Q:** Which tool can customers use to define custom rules for AWS Config?
+   <details>
+   <summary>Answer</summary>
+   A: AWS Lambda
+   </details>
+
+4. **Q:** What are actions that AWS Config takes when a configuration change occurs on an Amazon Web Services (AWS) resource? (Select TWO)
+   <details>
+   <summary>Answer</summary>
+   A: AWS Config logs and then stores it in an Amazon Simple Storage Service (Amazon S3) bucket. AWS Config uses Amazon Simple Notification Service (Amazon SNS) to send a notification.
+   </details>
+
+5. **Q:** When is an AWS Config rule associated with a resource evaluated?
+   <details>
+   <summary>Answer</summary>
+   A: When there is a configuration change to the resource or on a periodic basis as defined in the rule.
+   </details>
+
+### KC - Security Lifecycle: Response
+
+1. **Q:** Which plans are used to minimize the impact of unplanned downtime? (Select TWO)
+   <details>
+   <summary>Answer</summary>
+   A: Disaster recovery plan (DRP) Business continuity plan (BCP)
+   </details>
+
+2. **Q:** What is the purpose of a business continuity plan (BCP)?
+   <details>
+   <summary>Answer</summary>
+   A: To define how to run the business in a reduced capacity.
+   </details>
+
+3. **Q:** What is the purpose of a disaster recovery plan (DRP)?
+   <details>
+   <summary>Answer</summary>
+   A: To define how to restore business functionality quickly after a disaster occurs.
+   </details>
+
+4. **Q:** Which statements describe the purpose of the recovery point objective (RPO)? (Select Two)
+   <details>
+   <summary>Answer</summary>
+   A: It represents how much data loss a business can tolerate. It focuses on recovering only data.
+   </details>
+
+5. **Q:** Which of the following disaster recovery options is a minimal version of an environment running in the cloud?
+   <details>
+   <summary>Answer</summary>
+   A: Pilot light.
+   </details>
+
+### KC - Security Lifecycle: Analysis 
+
+1. **Q:** Which phase of the security lifecycle reviews what happened after a security breach?
+   <details>
+   <summary>Answer</summary>
+   A: Analysis.
+   </details>
+
+2. **Q:** Which step is performed during root cause analysis (RCA)?
+   <details>
+   <summary>Answer</summary>
+   A: Establish a timeline starting with baseline operations and ending with the problem’s occurrence.
+   </details>
+
+3. **Q:** What is the benefit of monitoring and logging?
+   <details>
+   <summary>Answer</summary>
+   A: It provides the data that is used for problem identification.
+   </details>
+
+4. **Q:** A company has just recovered from a Trojan horse security breach and is performing a security analysis. Which questions should be reported during the analysis? (Select TWO)
+   <details>
+   <summary>Answer</summary>
+   A: How did the breach happen? How could the breach have been prevented?
+   </details>
+
+5. **Q:** What does a monitoring policy define? (Select TWO)
+   <details>
+   <summary>Answer</summary>
+   A: Who performs the monitoring? Which resources are monitored?
+   </details>
+
+### KC - Trusted Advisor
+
+1. **Q:** Which of the following are categories in which AWS Trusted Advisor provides recommendations? (Select TWO)
+   <details>
+   <summary>Answer</summary>
+   A: Cost optimization Fault tolerance
+   </details>
+
+2. **Q:** Which of the following AWS Trusted Advisor checks are available for free? (Select TWO)
+   <details>
+   <summary>Answer</summary>
+   A: AWS Identity and Access Management (IAM) use Multi-factor authentication (MFA) on the root account.
+   </details>
+
+3. **Q:** What does an AWS Trusted Advisor red check status (Exclamation point (!)) mean?
+   <details>
+   <summary>Answer</summary>
+   A: Action is recommended.
+   </details>
+
+4. **Q:** What is the service limit threshold that causes a warning from the service limits check?
+   <details>
+   <summary>Answer</summary>
+   A: 80 percent
+   </details>
+
+5. **Q:** AWS Trusted Advisor raises a Security Groups - Unrestricted Access red check status (Exclamation point (!)). Which action should be taken?
+   <details>
+   <summary>Answer</summary>
+   A: Add rules that give access to authorized IP addresses to the identified security group.
+   </details>
+
+### KC - Security Best Practices for Account Creation
+
+1. **Q:** What is used to authenticate the Amazon Web Services (AWS) account root user in the AWS Management Console?
+   <details>
+   <summary>Answer</summary>
+   A: Email address.
+   </details>
+
+2. **Q:** Which type of permissions does an Amazon Web Services (AWS) account root user have?
+   <details>
+   <summary>Answer</summary>
+   A: Complete access to all AWS services and resources.
+   </details>
+
+3. **Q:** Which logging service should be immediately activated as a best practice when creating an Amazon Web Services (AWS) account?
+   <details>
+   <summary>Answer</summary>
+   A: AWS CloudTrail.
+   </details>
+
+4. **Q:** What is a best practice when creating a user in an Amazon Web Services (AWS) account?
+   <details>
+   <summary>Answer</summary>
+   A: Require multi-factor authentication (MFA) for access.
+   </details>
+
+5. **Q:** What is a best practice when setting up your Amazon Web Services (AWS) account to receive billing reports?
+   <details>
+   <summary>Answer</summary>
+   A: Create an Amazon Simple Storage Service (Amazon S3) bucket and set up AWS Cost and Usage Reports
+   </details>
+
+### KC - AWS Security Compliance Program
+
+1. **Q:** Which type of requirements do security compliance standards address? (Select TWO.)
+   <details>
+   <summary>Answer</summary>
+   A: Regulatory Contractual
+   </details>
+
+2. **Q:** Which type of compliance violation can result in criminal penalties?
+   <details>
+   <summary>Answer</summary>
+   A: Government regulations.
+   </details>
+
+3. **Q:** Which statement accurately identifies who is responsible for satisfying security compliance requirements in the Amazon Web Services (AWS) Cloud?
+   <details>
+   <summary>Answer</summary>
+   A: The customer and AWS share the responsibility for satisfying compliance standards.
+   </details>
+
+4. **Q:** What is a goal of the Amazon Web Services (AWS) business risk management program?
+   <details>
+   <summary>Answer</summary>
+   A: Create and maintain security policies.
+   </details>
+
+5. **Q:** How does Amazon Web Services (AWS) share security information? (Select TWO)
+   <details>
+   <summary>Answer</summary>
+   A: By making the information available through the AWS Artifact portal. By publishing information about AWS security in technical papers.
+   </details>
+
+### KC - AWS Security Resources
+
+1. **Q:** Which Amazon Web Services (AWS) resources can customers use to make their applications more secure? (Select TWO)
+   <details>
+   <summary>Answer</summary>
+   A: AWS advisories and bulletins, AWS account teams.
+   </details>
+
+2. **Q:** Which Amazon Web Services (AWS) resources can customers use to support compliance for their applications? (Select TWO)
+   <details>
+   <summary>Answer</summary>
+   A: AWS account teams, AWS Auditor Learning Path.
+   </details>
+
+3. **Q:** A security engineer discovered a vulnerability in an Amazon Web Services (AWS) service. Where should this engineer report their findings?
+   <details>
+   <summary>Answer</summary>
+   A: AWS advisories and bulletins
+   </details>
+
+4. **Q:** What does Amazon Web Services (AWS) Enterprise Support offer? (Select TWO)
+   <details>
+   <summary>Answer</summary>
+   A: A dedicated AWS technical account manager (TAM), Support 24/7 through phone, chat, or email.
+   </details>
+
+5. **Q:** Which statement describes the service that Amazon Web Services (AWS) account teams provide?
+   <details>
+   <summary>Answer</summary>
+   A: They guide customers through deployment and implementation.
+   </details>
+
+## Databases
+
+### KC - Introduction to Databases
+
+1. **Q:** What is a database?
+   <details>
+   <summary>Answer</summary>
+   A: A collection of data that is organized into tables.
+   </details>
+
+2. **Q:** Which database attributes accurately represent elements of a relational database? (Select TWO)
+   <details>
+   <summary>Answer</summary>
+   A: Columns, Tables
+   </details>
+
+3. **Q:** What are the primary features of a NoSQL database? (Select TWO)
+   <details>
+   <summary>Answer</summary>
+   A: NoSQL databases have a flexible schema, NoSQL databases use data models that are not based on relational tables.
+   </details>
+
+4. **Q:** Which of the following is not a type of anomaly?
+   <details>
+   <summary>Answer</summary>
+   A: Structure anomaly.
+   </details>
+
+5. **Q:** What is the primary benefit of using a database as a service (DBaaS)?
+   <details>
+   <summary>Answer</summary>
+   A: These databases reduce the cost of installing and maintaining the servers.
+   </details>
+
+### KC - Data Interaction and Database Transaction
+
+1. **Q:** A customer is ordering a product from an online retailer. If the payment for the transaction is successful, the Orders table must be updated so that a new order row is inserted. The StockedItems table must also be updated so that product rows are removed for the purchased products. If one step fails, then all steps fail. Which type of database transaction property does this scenario represent?
+   <details>
+   <summary>Answer</summary>
+   A: Atomicity.
+   </details>
+
+2. **Q:** The daily duties of database administrators include all of the following except which option?
+   <details>
+   <summary>Answer</summary>
+   A: Create different applications that can receive data.
+   </details>
+
+3. **Q:** What is a database transaction?
+   <details>
+   <summary>Answer</summary>
+   A: A transaction is the reproduction of one or more changes that are performed on a database.
+   </details>
+
+4. **Q:** What does the term ACID compliance represent?
+   <details>
+   <summary>Answer</summary>
+   A: The ability to correctly process multiple transactions so that one transaction does not affect other transactions.
+   </details>
+
+5. **Q:** Which of the following options describes a successful transaction on a database?
+   <details>
+   <summary>Answer</summary>
+   A: A transaction on a database is successful if the transaction is committed.
+   </details>
+
+### KC - Creating Tables and Learning Different Data Types
+
+1. **Q:** What is the purpose of data definition language (DDL) statements in structured query language (SQL)?
+   <details>
+   <summary>Answer</summary>
+   A: They are used to create and modify the structure of a database.
+   </details>
+
+2. **Q:** What is the function of the SELECT statement in Structured Query Language(SQL)?
+   <details>
+   <summary>Answer</summary>
+   A: Retrieve data from a table.
+   </details>
+
+3. **Q:** Which statement describes a foreign key?
+   <details>
+   <summary>Answer</summary>
+   A: It is a reference to a column in another table.
+   </details>
+
+4. **Q:** Which statement defines referential integrity?
+   <details>
+   <summary>Answer</summary>
+   A: Foreign key values must match an existing primary key value.
+   </details>
+
+5. **Q:** What is the purpose of data manipulation language(DML) statements in structured query language(SQL)?
+   <details>
+   <summary>Answer</summary>
+   A: They are used to view, add, change, or delete data in a table.
+   </details>
+
+### KC - Inserting Data into a Database
+
+1. **Q:** What is the most common use of a comma-separated values(CSV) file?
+   <details>
+   <summary>Answer</summary>
+   A: To import data into or export data out of databases and spreadsheets.
+   </details>
+
+2. **Q:** What is the function of a NULL value in structured query language(SQL)?
+   <details>
+   <summary>Answer</summary>
+   A: It is used to represent a missing value.
+   </details>
+
+3. **Q:** How is a comma-separated values (CSV) file validated before it is imported into a database?
+   <details>
+   <summary>Answer</summary>
+   A: Confirm that the structure of the data in the file matches the number of columns in the table and the type of data in each column.
+   </details>
+
+4. **Q:** What is the purpose of the CONCAT function in structured query language (SQL)?
+   <details>
+   <summary>Answer</summary>
+   A: It combines strings from several columns and puts them together in one line.
+   </details>
+
+5. **Q:** What are two ways to use the INSERT INTO statement? (Select TWO.)
+   <details>
+   <summary>Answer</summary>
+   A: To add new data to a database, To add a new record to a table.
+   </details>
+
+### KC - Selecting Data from a Database
+
+1. **Q:** Which statement describes the purpose of a WHERE clause in a SELECT statement?
+   <details>
+   <summary>Answer</summary>
+   A: The WHERE clause requests only specific rows from the table.
+   </details>
+
+2. **Q:** Which clause is required to complete a SELECT statement?
+   <details>
+   <summary>Answer</summary>
+   A: FROM.
+   </details>
+
+3. **Q:** Which term describes what the WHERE clause represents in the SELECT-FROM-WHERE statement?
+   <details>
+   <summary>Answer</summary>
+   A: Condition.
+   </details>
+
+4. **Q:** What does an asterisk(*) do in a structured query language(SQL) query?
+   <details>
+   <summary>Answer</summary>
+   A: Select all columns.
+   </details>
+
+5. **Q:** A database developer created a complex SELECT query. They want to ensure that other developers can understand each line in this query. What is the correct way for the developer to create a single-line comment within the query?
+   <details>
+   <summary>Answer</summary>
+   A: -- comment.
+   </details>
+
+### KC - Performing a Conditional Search
+
+1. **Q:** Which logical operator selects values in a given range?
+   <details>
+   <summary>Answer</summary>
+   A: BETWEEN.
+   </details>
+
+2. **Q:** Which logical operator determines whether a specific character string matches a specified pattern?
+   <details>
+   <summary>Answer</summary>
+   A: LIKE.
+   </details>
+
+3. **Q:** What is the purpose of using aliases in structured query language(SQL) statements?
+   <details>
+   <summary>Answer</summary>
+   A: Aliases create temporary names for the columns.
+   </details>
+
+4. **Q:** Consider the following structured query language (SQL) statement:
+   ```sql
+   SELECT ID, Name, CountryCode 
+   FROM city 
+   WHERE Name SQL_OPERATOR 'c%'
+   ```
+   Which structured query language (SQL) operator compares a value to similar values by using the wildcard operators?
+   <details>
+   <summary>Answer</summary>
+   A: LIKE.
+   </details>
+
+5. **Q:** Which value is tested for by the IS NULL condition in structured query language (SQL)?
+   <details>
+   <summary>Answer</summary>
+   A: NULL value.
+   </details>
+
+### KC - Working with Functions
+
+1. **Q:** Which function calculates the number of rows in a table?
+   <details>
+   <summary>Answer</summary>
+   A: COUNT().
+   </details>
+
+2. **Q:** Which SELECT statement displays only the unique combinations of values of district and countrycode?
+   <details>
+   <summary>Answer</summary>
+   A: SELECT DISTINCT district, countrycode FROM city;
+   </details>
+
+3. **Q:** Which string function removes the leading space on entries in a column?
+   <details>
+   <summary>Answer</summary>
+   A: LTRIM().
+   </details>
+
+4. **Q:** Which structured query language (SQL) function calculates the sum of a set of values or the sum of an expression?
+   <details>
+   <summary>Answer</summary>
+   A: SUM.
+   </details>
+
+5. **Q:** Which keyword is commonly used with individual columns to ensure that the retrieved column has unique values?
+   <details>
+   <summary>Answer</summary>
+   A: DISTINCT.
+   </details>
+
+### KC - Organizing Data
+
+1. **Q:** A database manager must sometimes aggregate data from different rows in a table. They must correlate the data into specified columns. Which clause should the manager use?
+   <details>
+   <summary>Answer</summary>
+   A: GROUP BY.
+   </details>
+
+2. **Q:** Which operator can be used to filter query results after applying a GROUP BY clause?
+   <details>
+   <summary>Answer</summary>
+   A: HAVING.
+   </details>
+
+3. **Q:** A database administrator must query a column that contains sequential dates. They want to see the output from their query in descending order. Which clause should the manager use with GROUP BY so that they can get results in descending order?
+   <details>
+   <summary>Answer</summary>
+   A: ORDER BY column_name DESC.
+   </details>
+
+4. **Q:** A database developer wrote a query which includes the clause ORDER BY 3. What effect will this ORDER BY clause have on the structured query language (SQL) query?
+   <details>
+   <summary>Answer</summary>
+   A: The query output will be sorted by the third column in the SELECT clause of the SQL statement.
+   </details>
+
+5. **Q:** If a database developer wants to limit the output of a query to only those customers with sales that are more than 5,000 units, which structured query language (SQL) clause should they use?
+   <details>
+   <summary>Answer</summary>
+   A: HAVING SUM(sales) > 5000.
+   </details>
+
+### KC - Retrieving Data from Multiple Tables
+
+1. **Q:** Which operator can be used to combine the results of two or more SELECT statements into a single set?
+   <details>
+   <summary>Answer</summary>
+   A: UNION.
+   </details>
+
+2. **Q:** Which structured query language (SQL) statement represents the correct way to create a qualified column name?
+   <details>
+   <summary>Answer</summary>
+   A: table_name.column_name.
+   </details>
+
+3. **Q:** A database administrator is working on a database. Two tables in the database contain important information that the administrator wants to query against. They want to display the matching values from both tables only if there are matching columns between the tables. Which clause should the administrator use?
+   <details>
+   <summary>Answer</summary>
+   A: INNER JOIN.
+   </details>
+
+4. **Q:** A database administrator is working on a database. Two tables in the database contain important information that the administrator wants to query against. They want to use a JOIN clause to retrieve all rows from the first table and all matching rows from the second table. Which clause should the administrator use?
+   <details>
+   <summary>Answer</summary>
+   A: LEFT JOIN.
+   </details>
+
+5. **Q:** Which statement is used to create an alias so that the table name is not repeated twice in a self JOIN query?
+   <details>
+   <summary>Answer</summary>
+   A: AS.
+   </details>
+
+### KC - Amazon RDS
+
+1. **Q:** Which task can be automatically performed by Amazon Relational Database Service (Amazon RDS) or manually performed by a user?
+   <details>
+   <summary>Answer</summary>
+   A: Periodic backups.
+   </details>
+
+2. **Q:** Which option must be specified first when creating a database (DB) instance in Amazon Relational Database Service (Amazon RDS)?
+   <details>
+   <summary>Answer</summary>
+   A: Choose the DB engine.
+   </details>
+
+3. **Q:** Which task is a best practice for high availability in an Amazon Relational Database Service (Amazon RDS) database (DB) instance?
+   <details>
+   <summary>Answer</summary>
+   A: Deploying the DB instance in multiple Availability Zones (multi-AZ deployment).
+   </details>
+
+4. **Q:** Which use case represents a reason for using Amazon Relational Database Service (Amazon RDS) instead of other database solutions?
+   <details>
+   <summary>Answer</summary>
+   A: Complex transactions and complex queries.
+   </details>
+
+5. **Q:** What is an Amazon Aurora database (DB) cluster?
+   <details>
+   <summary>Answer</summary>
+   A: An Aurora DB cluster consists of one or more DB instances and a cluster volume that manages the data for those DB instances.
+   </details>
+
+### KC - Amazon DynamoDB
+
+1. **Q:** Which type of database is Amazon DynamoDB?
+   <details>
+   <summary>Answer</summary>
+   A: NoSQL Database.
+   </details>
+
+2. **Q:** How does Amazon DynamoDB achieve high availability and scalability across Regions?
+   <details>
+   <summary>Answer</summary>
+   A: By using a collection of multiple replica tables.
+   </details>
+
+3. **Q:** Which statement describes the concept of partitioning in Amazon DynamoDB?
+   <details>
+   <summary>Answer</summary>
+   A: Partitioning is the allocation of storage for a table.
+   </details>
+
+4. **Q:** Which statement about Amazon DynamoDB partition keys is true?
+   <details>
+   <summary>Answer</summary>
+   A: Partition keys uniquely identify each item in the table.
+   </details>
+
+5. **Q:** How many ways can Amazon DynamoDB retrieve data from a DynamoDB table?
+   <details>
+   <summary>Answer</summary>
+   A: Two ways.
+   </details>
+
+## AWS Architecture
+
+### KC – AWS Architecture
+
+1. **Q:** Which resource provides a set of foundational questions that customers can use to understand if their architecture aligns with cloud best practices?
+   <details>
+   <summary>Answer</summary>
+   A: AWS Well-Architected Framework documents.
+   </details>
+
+2. **Q:** Which AWS Well-Architected Framework pillar provides details about how to recover from failure and mitigate disruption?
+   <details>
+   <summary>Answer</summary>
+   A: Reliability.
+   </details>
+
+3. **Q:** What is a key design principle when designing a framework in the cloud?
+   <details>
+   <summary>Answer</summary>
+   A: Test systems at production scale.
+   </details>
+
+4. **Q:** A company is migrating to an Amazon Web Services (AWS) Cloud environment. Their servers are the last set of resources that they will migrate. Which AWS service resource can replace a traditional server?
+   <details>
+   <summary>Answer</summary>
+   A: Amazon Elastic Compute Cloud (Amazon EC2) instance.
+   </details>
+
+5. **Q:** What are the two primary perspectives in the AWS Cloud Adoption Framework (AWS CAF)?
+   <details>
+   <summary>Answer</summary>
+   A: Business and Technical.
+   </details>
+
+## Systems Operations
+
+### KC - System Operations
+
+1. **Q:** What is a benefit of automating systems operations tasks?
+   <details>
+   <summary>Answer</summary>
+   A: Repeatable deployment of infrastructure on demand.
+   </details>
+
+2. **Q:** Which of the following is a systems operation task?
+   <details>
+   <summary>Answer</summary>
+   A: Develop reusable templates to build the infrastructure where an application runs.
+   </details>
+
+3. **Q:** A network engineer must create an AWS Identity and Access Management (IAM) policy for an Amazon S3 bucket. Which policy type should the engineer use?
+   <details>
+   <summary>Answer</summary>
+   A: Resource-based policy.
+   </details>
+
+4. **Q:** Which statements are best practices for AWS Identity and Access Management (IAM)? (Select TWO)
+   <details>
+   <summary>Answer</summary>
+   A: Use IAM roles to provide cross-account access.
+   A: Delegate administrative functions according to the principle of least privilege.
+   </details>
+
+5. **Q:** Which part of the following AWS Command Line Interface (AWS CLI) command specifies the operation to be performed?
+   ```
+   aws ec2 stop-instances --instance-id i-1234567890abcdef0 --output json
+   ```
+   <details>
+   <summary>Answer</summary>
+   A: stop-instances.
+   </details>
+
+## Tooling and Automation
+
+### KC - Tooling and Automation
+
+1. **Q:** Which type of AWS Systems Manager document can take a snapshot of an Amazon EC2 instance?
+   <details>
+   <summary>Answer</summary>
+   A: Automation document.
+   </details>
+
+2. **Q:** Which AWS Systems Manager capability can store configuration data?
+   <details>
+   <summary>Answer</summary>
+   A: Parameter store.
+   </details>
+
+3. **Q:** Which AWS Systems Manager capability can connect to an instance directly from the AWS Management Console?
+   <details>
+   <summary>Answer</summary>
+   A: Session Manager.
+   </details>
+
+4. **Q:** Which markup languages are supported in AWS CloudFormation? (Select TWO)
+   <details>
+   <summary>Answer</summary>
+   A: YAML.
+   A2: JSON.
+   </details>
+
+5. **Q:** Which AWS service is based on the Chef and Puppet automation platforms?
+   <details>
+   <summary>Answer</summary>
+   A: AWS OpsWorks.
+   </details>
+
+## Servers
+
+### KC - Servers
+
+1. **Q:** Which resource is a template that Amazon EC2 uses to launch an instance?
+   <details>
+   <summary>Answer</summary>
+   A: Amazon Machine Image (AMI).
+   </details>
+
+2. **Q:** Which resource acts as a firewall at the instance level?
+   <details>
+   <summary>Answer</summary>
+   A: Security group.
+   </details>
+
+3. **Q:** Which type of IP address is considered to be static and can be reassigned to different instances?
+   <details>
+   <summary>Answer</summary>
+   A: Elastic IP address.
+   </details>
+
+4. **Q:** What is an instance profile used for?
+   <details>
+   <summary>Answer</summary>
+   A: To assign an AWS Identity and Access Management (IAM) role to an Amazon EC2 instance.
+   </details>
+
+5. **Q:** Which Amazon EC2 instance type is designed for diverse workloads?
+   <details>
+   <summary>Answer</summary>
+   A: General purpose.
+   </details>
+
+## Scaling and Name Resolution
+
+### KC - Scaling and Name Resolution
+
+1. **Q:** A systems administrator wants to create a blue/green deployment infrastructure by using Amazon Route 53 to gradually phase out the blue environment. Which Route 53 routing policy should the administrator use?
+   <details>
+   <summary>Answer</summary>
+   A: Weighted Routing policy.
+   </details>
+
+2. **Q:** Which type of scaling policy uses an Amazon CloudWatch alarm and varies the scaling response based on the size of the alarm breach?
+   <details>
+   <summary>Answer</summary>
+   A: Step scaling.
+   </details>
+
+3. **Q:** Which Amazon Web Services (AWS) service is a content delivery network (CDN)?
+   <details>
+   <summary>Answer</summary>
+   A: Amazon CloudFront.
+   </details>
+
+4. **Q:** Which type of Elastic Load Balancing (ELB) load balancer should a network engineer use to distribute requests to a website running on an Amazon Elastic Compute Cloud (Amazon EC2) instance in a virtual private cloud (VPC)?
+   <details>
+   <summary>Answer</summary>
+   A: Application Load Balancer.
+   </details>
+
+5. **Q:** Which component of an Application Load Balancer checks for connection requests from clients?
+   <details>
+   <summary>Answer</summary>
+   A: Listener.
+   </details>
+
+## AWS Database Services
+
+### KC - AWS Database Services
+
+1. **Q:** Which fully managed Amazon Web Services (AWS) relational database is compatible with MySQL and PostgreSQL?
+   <details>
+   <summary>Answer</summary>
+   A: Amazon Aurora.
+   </details>
+
+2. **Q:** A customer has decided to migrate from a MySQL database that runs in their data center to Amazon Aurora. Their database must remain fully operational during the migration. In addition, the customer would like to automate data conversion when the data is migrated to AWS. Which AWS service or feature should the customer use?
+   <details>
+   <summary>Answer</summary>
+   A: AWS Database Migration Service (AWS DMS).
+   </details>
+
+3. **Q:** Which Amazon Web Services (AWS) service is a fully managed data warehouse that can be used to run complex analytic queries?
+   <details>
+   <summary>Answer</summary>
+   A: Amazon Redshift.
+   </details>
+
+4. **Q:** What is the maximum number of read replicas that an Amazon Aurora database cluster can have?
+   <details>
+   <summary>Answer</summary>
+   A: 15.
+   </details>
+
+5. **Q:** What is a NoSQL database option?
+   <details>
+   <summary>Answer</summary>
+   A: Amazon DynamoDB.
+   </details>
+
+## AWS Networking Services
+### KC - AWS Networking Services
+
+## AWS Storage and Archiving
+### KC - AWS Storage and Archiving
+
+## Jumpstart on AWS
+### KC - Monitoring and Security
+### KC - Managing Resource Consumption
+### KC - Creating Automated Repeatable Deployments
