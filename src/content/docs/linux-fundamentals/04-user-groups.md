@@ -1,9 +1,5 @@
 ---
 title: User & Groups
-sidebar: 
-    badge:
-        text: tbc
-        variant: danger
 ---
 ![IIntro](../../../assets/linux-fundamentals/user-and-groups/intro.png)
 
