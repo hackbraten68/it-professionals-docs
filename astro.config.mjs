@@ -6,9 +6,13 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'AWS re/start course docs',
-			social: {
-				github: 'https://github.com/hackbraten68/aws-restart-docs',
-			},
+			social: [
+				{
+					label: "GitHub",
+					icon: "github",
+					href: "https://github.com/hackbraten68"
+				}
+			],
 			sidebar: [
 				{
 					label: 'Getting Started',
