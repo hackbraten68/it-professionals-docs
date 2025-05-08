@@ -1,9 +1,5 @@
 ---
 title: Editing Files
-sidebar: 
-    badge:
-        text: tbc
-        variant: danger
 ---
 
 ![Intro](../../../assets/linux-fundamentals/editing_files/intro.png)
