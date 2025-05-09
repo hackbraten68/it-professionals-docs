@@ -1,9 +1,5 @@
 ---
 title: Managing Linux Services
-sidebar: 
-    badge:
-        text: tbc
-        variant: danger
 ---
 ![Managing Processes](../../../assets/linux-fundamentals/managing-processes/intro.png)
 
