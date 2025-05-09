@@ -5,7 +5,7 @@ sidebar:
         text: tbc
         variant: danger
 ---
-![Intro](../../../assets/linux-fundamentals/working-with-linux-commands/target.png)
+![Intro](../../../assets/linux-fundamentals/working-with-linux-commands/intro.png)
 
 Welcome to Working with Commands.
 
