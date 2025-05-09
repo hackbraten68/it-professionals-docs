@@ -1,9 +1,5 @@
 ---
 title: Working with Linux Commands
-sidebar: 
-    badge:
-        text: tbc
-        variant: danger
 ---
 ![Intro](../../../assets/linux-fundamentals/working-with-linux-commands/intro.png)
 
