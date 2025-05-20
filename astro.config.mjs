@@ -54,47 +54,54 @@ export default defineConfig({
 						{
 							label: 'AWS Architecture',
 							collapsed: true,
-							badge: { text: 'todo', variant: 'success' },
 							autogenerate: { directory: 'aws-architecture' }
 						},
 						{
 							label: 'Systems Operations',
 							collapsed: true,
+							badge: { text: 'todo', variant: 'success' },
 							autogenerate: { directory: 'system-operations' }
 						},
 						{
 							label: 'Tooling and Automation',
 							collapsed: true,
+							badge: { text: 'todo', variant: 'success' },
 							autogenerate: { directory: 'tooling-automation' }
 						},
 						{
 							label: 'Servers',
 							collapsed: true,
+							badge: { text: 'todo', variant: 'success' },
 							autogenerate: { directory: 'servers' }
 						},
 						{
 							label: 'Scaling and Name Resolution',
 							collapsed: true,
+							badge: { text: 'todo', variant: 'success' },
 							autogenerate: { directory: 'scaling-name-resolution' }
 						},
 						{
 							label: 'Serverless and Containers',
 							collapsed: true,
+							badge: { text: 'todo', variant: 'success' },
 							autogenerate: { directory: 'serverless-and-containers' }
 						},
 						{
 							label: 'AWS Database Services',
 							collapsed: true,
+							badge: { text: 'todo', variant: 'success' },
 							autogenerate: { directory: 'aws-database-services' }
 						},
 						{
 							label: 'AWS Networking Services',
 							collapsed: true,
+							badge: { text: 'todo', variant: 'success' },
 							autogenerate: { directory: 'aws-networking-services' }
 						},
 						{
 							label: 'Storage and Archiving',
 							collapsed: true,
+							badge: { text: 'todo', variant: 'success' },
 							autogenerate: { directory: 'storage-archiving' }
 						},
 					]
