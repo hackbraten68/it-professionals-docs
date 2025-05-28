@@ -59,13 +59,11 @@ export default defineConfig({
 						{
 							label: 'Systems Operations',
 							collapsed: true,
-							badge: { text: 'todo', variant: 'success' },
 							autogenerate: { directory: 'system-operations' }
 						},
 						{
 							label: 'Tooling and Automation',
 							collapsed: true,
-							badge: { text: 'todo', variant: 'success' },
 							autogenerate: { directory: 'tooling-automation' }
 						},
 						{
