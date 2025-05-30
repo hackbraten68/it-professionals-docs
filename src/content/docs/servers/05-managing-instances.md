@@ -329,8 +329,7 @@ When an AMI becomes outdated, AWS **deprecates** it.
 
 ![Checkpooint questions](../../../assets/servers/managing_ec2_instances/questions.png)
 
-```markdown
-## EC2 Knowledge Check – Part 2
+## Knowledge Check
 
 <details>
 <summary><strong>1. Why can't users access an EC2 application after restarting a previously stopped instance?</strong></summary>
@@ -373,6 +372,5 @@ To change an EC2 instance's type, the following conditions must be met:
 - ✅ The instance must be **stopped** before the type can be modified
 
 </details>
-```
 
 ![Key takeaways](../../../assets/servers/managing_ec2_instances/takeaways.png)
