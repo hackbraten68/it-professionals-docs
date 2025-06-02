@@ -1,0 +1,3 @@
+---
+title: Amazon EC2 Auto Scaling
+---
