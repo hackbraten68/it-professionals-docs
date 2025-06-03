@@ -17,7 +17,6 @@ export default defineConfig({
 				{
 					label: 'Getting Started',
 					items: [
-						// Each item here is one entry in the navigation menu.
 						{ label: 'Documentation Guide', link: '/guides/navigation/' },
 						{ label: 'Exam Questions', link: '/exams/kc' }
 					],
@@ -115,6 +114,13 @@ export default defineConfig({
 					autogenerate: { directory: 'python' }
 				},
 			],
+			setup: () => {
+				return {
+					scripts: [
+						{ src: '/embed.js' } // ← bindet das Embed-Skript global ein
+					]
+				};
+			}
 		}),
 	],
 });
