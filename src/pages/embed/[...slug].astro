@@ -1,0 +1,38 @@
+---
+import { getEntryBySlug } from "astro:content";
+
+// Handle deeply nested slugs like /foo/bar
+const { slug } = Astro.params;
+const fullSlug = Array.isArray(slug) ? slug.join("/") : slug;
+
+const entry = await getEntryBySlug("docs", fullSlug);
+
+if (!entry) {
+  throw new Error(`Inhalt nicht gefunden für ${fullSlug}`);
+}
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{entry.data.title}</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 0;
+        padding: 1rem;
+        max-width: 100%;
+        background: white;
+        color: black;
+      }
+      img {
+        max-width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <entry.Content />
+    </main>
+  </body>
+</html>
