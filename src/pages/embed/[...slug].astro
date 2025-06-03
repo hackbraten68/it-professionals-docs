@@ -1,11 +1,19 @@
 ---
-import { getEntryBySlug } from "astro:content";
+import { getCollection, getEntryBySlug } from 'astro:content';
 
-// Handle deeply nested slugs like /foo/bar
+// 1. Liste aller Seiten generieren
+export async function getStaticPaths() {
+  const docs = await getCollection('docs');
+  return docs.map((entry) => ({
+    params: { slug: entry.slug.split('/') },
+  }));
+}
+
+// 2. Einzelnen Eintrag anhand des Slugs laden
 const { slug } = Astro.params;
-const fullSlug = Array.isArray(slug) ? slug.join("/") : slug;
+const fullSlug = Array.isArray(slug) ? slug.join('/') : slug;
 
-const entry = await getEntryBySlug("docs", fullSlug);
+const entry = await getEntryBySlug('docs', fullSlug);
 
 if (!entry) {
   throw new Error(`Inhalt nicht gefunden für ${fullSlug}`);
@@ -27,6 +35,10 @@ if (!entry) {
       }
       img {
         max-width: 100%;
+      }
+      a {
+        color: #0b62d6;
+        text-decoration: none;
       }
     </style>
   </head>
