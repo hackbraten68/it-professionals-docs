@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 
+// Dynamic Route: Generate static paths for all slugs
 export async function getStaticPaths() {
   const docs = await getCollection('docs');
   return docs.map((entry) => ({
@@ -8,18 +9,23 @@ export async function getStaticPaths() {
   }));
 }
 
+// Get current slug
 const fullSlug = Astro.params.slug;
 const allDocs = await getCollection('docs');
 const entry = allDocs.find((e) => e.slug === fullSlug);
 
+// Debugging output (optional)
 console.log("FullSlug:", fullSlug);
 console.log("All slugs:", allDocs.map(e => e.slug));
 console.log("Gefundener Entry:", entry);
 
-
+// Error fallback
 if (!entry) {
   throw new Error(`Eintrag nicht gefunden: ${fullSlug}`);
 }
+
+// Render content component
+const { Content } = await entry.render();
 ---
 
 <html lang="en">
@@ -41,7 +47,7 @@ if (!entry) {
   </head>
   <body>
     <main>
-      <entry.Content />
+      <Content />
     </main>
   </body>
 </html>
