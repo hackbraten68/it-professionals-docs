@@ -13,9 +13,6 @@ export default defineConfig({
 					href: "https://github.com/hackbraten68"
 				}
 			],
-			headScripts: [
-				{ src: '/embed.js' }  // ✅ Script wird in <head> geladen
-			],
 			sidebar: [
 				{
 					label: 'Getting Started',
