@@ -12,6 +12,11 @@ const fullSlug = Astro.params.slug;
 const allDocs = await getCollection('docs');
 const entry = allDocs.find((e) => e.slug === fullSlug);
 
+console.log("FullSlug:", fullSlug);
+console.log("All slugs:", allDocs.map(e => e.slug));
+console.log("Gefundener Entry:", entry);
+
+
 if (!entry) {
   throw new Error(`Eintrag nicht gefunden: ${fullSlug}`);
 }
