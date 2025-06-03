@@ -1,22 +1,18 @@
 ---
 import { getCollection, getEntryBySlug } from 'astro:content';
 
-// 1. Liste aller Seiten generieren
 export async function getStaticPaths() {
   const docs = await getCollection('docs');
   return docs.map((entry) => ({
-    params: { slug: entry.slug.split('/') },
+    params: { slug: entry.slug }, // ✅ string, nicht Array!
   }));
 }
 
-// 2. Einzelnen Eintrag anhand des Slugs laden
-const { slug } = Astro.params;
-const fullSlug = Array.isArray(slug) ? slug.join('/') : slug;
-
+const fullSlug = Astro.params.slug;
 const entry = await getEntryBySlug('docs', fullSlug);
 
 if (!entry) {
-  throw new Error(`Inhalt nicht gefunden für ${fullSlug}`);
+  throw new Error(`Eintrag nicht gefunden: ${fullSlug}`);
 }
 ---
 
@@ -27,18 +23,13 @@ if (!entry) {
     <style>
       body {
         font-family: sans-serif;
-        margin: 0;
         padding: 1rem;
-        max-width: 100%;
+        margin: 0;
         background: white;
         color: black;
       }
       img {
         max-width: 100%;
-      }
-      a {
-        color: #0b62d6;
-        text-decoration: none;
       }
     </style>
   </head>
