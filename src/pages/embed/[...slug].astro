@@ -1,15 +1,16 @@
 ---
-import { getCollection, getEntryBySlug } from 'astro:content';
+import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
   const docs = await getCollection('docs');
   return docs.map((entry) => ({
-    params: { slug: entry.slug }, // ✅ string, nicht Array!
+    params: { slug: entry.slug },
   }));
 }
 
 const fullSlug = Astro.params.slug;
-const entry = await getEntryBySlug('docs', fullSlug);
+const allDocs = await getCollection('docs');
+const entry = allDocs.find((e) => e.slug === fullSlug);
 
 if (!entry) {
   throw new Error(`Eintrag nicht gefunden: ${fullSlug}`);
@@ -23,8 +24,8 @@ if (!entry) {
     <style>
       body {
         font-family: sans-serif;
-        padding: 1rem;
         margin: 0;
+        padding: 1rem;
         background: white;
         color: black;
       }
