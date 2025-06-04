@@ -6,6 +6,7 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'AWS re/start course docs',
+			customCss: ['./src/styles/custom.css'],
 			social: [
 				{
 					label: "GitHub",
