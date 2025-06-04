@@ -1,14 +1,15 @@
 ---
 import { getCollection } from 'astro:content';
 import '../../styles/custom.css';
+export const prerender = false;
 
 // Dynamic Route: Generate static paths for all slugs
-export async function getStaticPaths() {
-  const docs = await getCollection('docs');
-  return docs.map((entry) => ({
-    params: { slug: entry.slug },
-  }));
-}
+// export async function getStaticPaths() {
+//  const docs = await getCollection('docs');
+//  return docs.map((entry) => ({
+//    params: { slug: entry.slug },
+//  }));
+//}
 
 // Get current slug
 const fullSlug = Astro.params.slug;

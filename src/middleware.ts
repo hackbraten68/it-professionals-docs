@@ -1,15 +1,17 @@
 import type { MiddlewareHandler } from 'astro';
 
-export const onRequest: MiddlewareHandler = async ({ request, redirect, url }, next) => {
+export const onRequest: MiddlewareHandler = async ({ url }, next) => {
   const token = url.searchParams.get('token');
   const validToken = import.meta.env.PUBLIC_MOODLE_TOKEN;
 
-  // Optional: Nur bestimmte Routen absichern
-  if (url.pathname.startsWith('/embed')) {
-    if (token !== validToken) {
-      return new Response('Forbidden', { status: 403 });
-    }
-  }
+  console.log('📥 token (aus URL):', token);
+  console.log('🔐 gültiger Token (aus .env):', validToken);
 
+  if (token !== validToken) {
+    console.log('⛔ Token ungültig!');
+    return new Response('Zugriff verweigert', { status: 403 });
+  }
+  
+  console.log('✅ Zugriff erlaubt!');
   return next();
 };
