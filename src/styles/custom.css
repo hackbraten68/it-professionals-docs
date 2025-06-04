@@ -1,6 +1,6 @@
 /* Gilt für alle Bilder im Content-Bereich */
 p > img {
-  max-width: 600px;
+  max-width: 1024px;
   width: 100%;
   height: auto;
   display: block;
