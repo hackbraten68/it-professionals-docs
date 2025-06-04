@@ -1,4 +1,32 @@
 ---
+/**
+ * Dynamic Route Renderer for Markdown-based Documentation Pages
+ *
+ * This file defines a dynamic route that loads content from the `docs` collection
+ * based on the URL slug. It supports nested routes using Astro's `[...slug]` syntax.
+ *
+ * ✅ What it does:
+ * - Uses `getStaticPaths()` to define all possible documentation paths at build time
+ * - Extracts the current `slug` from the URL
+ * - Looks up the corresponding entry in the `docs` content collection
+ * - If found, renders the associated Markdown/MDX content via `entry.render()`
+ * - If not found, throws an error (handled by Astro’s error page)
+ *
+ * 🔁 This setup allows you to organize your documentation files inside `/src/content/docs/`
+ * using nested folders and access them via clean, SEO-friendly URLs.
+ *
+ * Example:
+ *    /databases/01-intro-to-sql → loads `src/content/docs/databases/01-intro-to-sql.md`
+ *
+ * Styling is handled via a custom CSS file at `/src/styles/custom.css`.
+ *
+ * Author:      hackbraten68 <mosdev@posteo.com>
+ * GitHub:      https://github.com/hackbraten68
+ * Version:     1.0.0
+ * Created:     2025-06-04
+ * Environment: Astro + Netlify Functions
+ * License:     MIT
+ */
 import { getCollection } from 'astro:content';
 import '../../styles/custom.css';
 
