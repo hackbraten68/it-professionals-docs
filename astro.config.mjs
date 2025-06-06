@@ -85,7 +85,7 @@ export default defineConfig({
 							label: 'Serverless and Containers',
 							collapsed: true,
 							badge: { text: 'todo', variant: 'success' },
-							autogenerate: { directory: 'serverless-and-containers' }
+							autogenerate: { directory: 'serverless-containers' }
 						},
 						{
 							label: 'AWS Database Services',
