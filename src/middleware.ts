@@ -32,7 +32,7 @@
 import type { MiddlewareHandler } from 'astro';
 
 export const onRequest: MiddlewareHandler = async ({ url }, next) => {
-  const protect = import.meta.env.PROTECT === 'true';
+  const protect = import.meta.env.PUBLIC_PROTECT === 'true';
 
   if (!protect) {
     console.log('🟢 PROTECT=false → access protection disabled');
