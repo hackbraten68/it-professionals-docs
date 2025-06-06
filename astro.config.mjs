@@ -105,6 +105,12 @@ export default defineConfig({
 							badge: { text: 'todo', variant: 'success' },
 							autogenerate: { directory: 'storage-archiving' }
 						},
+						{
+							label: 'Jumpstart AWS',
+							collapsed: true,
+							badge: { text: 'todo', variant: 'success' },
+							autogenerate: { directory: 'jumpstart-aws' }
+						},
 					]
 				},
 				{
