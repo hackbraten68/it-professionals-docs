@@ -72,19 +72,16 @@ export default defineConfig({
 						{
 							label: 'Servers',
 							collapsed: true,
-							badge: { text: 'todo', variant: 'success' },
 							autogenerate: { directory: 'servers' }
 						},
 						{
 							label: 'Scaling and Name Resolution',
 							collapsed: true,
-							badge: { text: 'todo', variant: 'success' },
 							autogenerate: { directory: 'scaling-name-resolution' }
 						},
 						{
 							label: 'Serverless and Containers',
 							collapsed: true,
-							badge: { text: 'todo', variant: 'success' },
 							autogenerate: { directory: 'serverless-containers' }
 						},
 						{
