@@ -87,7 +87,6 @@ export default defineConfig({
 						{
 							label: 'AWS Database Services',
 							collapsed: true,
-							badge: { text: 'todo', variant: 'success' },
 							autogenerate: { directory: 'aws-database-services' }
 						},
 						{
