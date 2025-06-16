@@ -92,7 +92,6 @@ export default defineConfig({
 						{
 							label: 'AWS Networking Services',
 							collapsed: true,
-							badge: { text: 'todo', variant: 'success' },
 							autogenerate: { directory: 'aws-networking-services' }
 						},
 						{
