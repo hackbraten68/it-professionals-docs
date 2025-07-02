@@ -101,7 +101,7 @@ In this case:
 
 ### responseElements (failure example)
 
-![CloudTrail log entry: responseElements (failure example)](../../../assets/jumpstart/cloudtrail/cloudtrail_log_example_failure.png
+![CloudTrail log entry: responseElements (failure example)](../../../assets/jumpstart/cloudtrail/cloudtrail_log_example_failure.png)
 
 This example is the `responseElements` section of a login attempt for a different sample log entry.
 
