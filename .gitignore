@@ -19,3 +19,4 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
+src/assets/jumpstart/cost-management/AWS_BILLING_DASHBOARD.png
