@@ -21,12 +21,6 @@ Before studying how to define infrastructure in code it is necessary to study th
 
 ## What is JSON?
 
-![What is JSON?](../../../assets/jumpstart/introduction-json-yaml/whats_json.png)
-
-Some of the AWS services covered in this module—such as **AWS CloudFormation**—use **JavaScript Object Notation (JSON)** as a data format.
-
-## AWS CloudFormation and JSON
-
 **AWS CloudFormation** allows you to write or modify **templates** that can:
 - **Create**, **update**, or **delete** related AWS resources
 - Deploy resources together as a **stack**
@@ -106,7 +100,9 @@ Imagine a table with **three columns** and **five rows**:
 
 This can be stored in JSON as:
 
-```json
+```
+
+json
 [
   { "ID": 1, "Name": "Alice", "Score": 92 },
   { "ID": 2, "Name": "Bob", "Score": 87 },
@@ -130,15 +126,23 @@ This can be stored in JSON as:
 ### Advantages of JSON
 
 - **Lightweight format**  
+
+
   → JSON has minimal syntax rules and is easy to work with.
 
 - **Widely used in APIs**  
+
+
   → Especially in modern **RESTful web services**.
 
 - **Human-readable and easy to write**  
+
+
   → Simple structure with key-value pairs.
 
 - **Easy for machines to parse and generate**  
+
+
   → Supported natively by many programming languages.
 
 ---
@@ -146,10 +150,14 @@ This can be stored in JSON as:
 ### Disadvantages of JSON
 
 - **Verbose syntax**  
+
+
   → JSON documents can become long, especially with nested data.  
   → Many lines might contain only `{` or `}`.
 
 - **No native multimedia support**  
+
+
   → JSON does **not** directly support storing **images**, **videos**, or other binary formats.  
   → These must be encoded (e.g., Base64), which increases file size.
 
@@ -181,7 +189,9 @@ JSON objects are **enclosed in curly braces `{}`** and consist of an **unordered
 
 ### Example: JSON Object
 
-```json
+```
+
+json
 {
   "type": "pie",
   "flavor": "apple",
@@ -211,7 +221,9 @@ In JSON, **arrays** are used when a key can have **multiple values**. Arrays are
 
 ### Example: JSON Object with an Array
 
-```json
+```
+
+json
 {
   "type": "pie",
   "flavor": "apple",
@@ -235,6 +247,8 @@ In JSON, an **array** is an **ordered collection** of values. Arrays are enclose
 
 - Arrays preserve **order**, so you can access items by **index**.
 - Valid value types inside an array:
+
+
   - **String** (e.g., `"mint"`)
   - **Number** (e.g., `42`)
   - **Object** (e.g., `{ "name": "Alice" }`)
@@ -245,7 +259,9 @@ In JSON, an **array** is an **ordered collection** of values. Arrays are enclose
 
 #### Example:
 
-```json
+```
+
+json
 {
   "type": "pie",
   "flavor": "apple",
@@ -257,7 +273,9 @@ In JSON, an **array** is an **ordered collection** of values. Arrays are enclose
 
 To access the second ingredient (`"mint"`), use:
 
-```json
+```
+
+json
 objectName.additional_ingredients[1]
 ```
 
@@ -293,15 +311,21 @@ Some AWS services—such as **AWS CloudFormation**—support **YAML** as a data 
 ### Example: Key-Value Pairs
 
 YAML:
-```yaml
+```
+
+yaml
 - type: pie  
 - flavor: apple  
 - price: 16  
 - feeds: 6  
+
+
 ```
 
 JSON equivalent:
-```json
+```
+
+json
 {  
   "type": "pie",  
   "flavor": "apple",  
@@ -313,8 +337,12 @@ JSON equivalent:
 ### Example: List in YAML
 
 YAML:
-```yaml
+```
+
+yaml
 - additional_ingredients:  
+
+
   - blueberries  
   - mint  
 ```
