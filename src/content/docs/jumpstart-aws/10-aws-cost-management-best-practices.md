@@ -61,7 +61,7 @@ For example:
 
 ## AWS billing dashboard
 
-![AWS billing dashboard](../../../assets/jumpstart/cost-management/aws_billing_dashboard.png)
+![AWS billing dashboard](../../../assets/jumpstart/cost-management/aws_billing_dashboard_.png)
 
 The **AWS Billing Dashboard** enables you to view the **status of your month-to-date AWS expenditure**.  
 You can also use it to:
