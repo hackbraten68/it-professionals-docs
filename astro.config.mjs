@@ -31,7 +31,6 @@ export default defineConfig({
 						{
 							label: 'Cloud Foundation',
 							collapsed: true,
-							badge: { text: 'revisit', variant: 'tip' },
 							autogenerate: { directory: 'week-1' }
 						},
 						{
@@ -97,13 +96,11 @@ export default defineConfig({
 						{
 							label: 'Storage and Archiving',
 							collapsed: true,
-							badge: { text: 'todo', variant: 'success' },
 							autogenerate: { directory: 'storage-archiving' }
 						},
 						{
 							label: 'Jumpstart AWS',
 							collapsed: true,
-							badge: { text: 'todo', variant: 'success' },
 							autogenerate: { directory: 'jumpstart-aws' }
 						},
 					]

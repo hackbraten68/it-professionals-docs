@@ -1,9 +1,5 @@
 ---
 title: AWS Elastic Compute
-sidebar: 
-    badge:
-        text: tbc
-        variant: danger
 ---
 ![Intro](../../../assets/cloud_foundation/ec2/intro.png)
 
