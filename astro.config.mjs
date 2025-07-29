@@ -8,7 +8,7 @@ export default defineConfig({
   	adapter: netlify(),
 	integrations: [
 		starlight({
-			title: 'AWS re/start course docs',
+			title: 'Codingschule | IT Professionals - Documentation',
 			customCss: ['./src/styles/custom.css'],
 			social: [
 				{
@@ -19,13 +19,6 @@ export default defineConfig({
 			],
 			sidebar: [
 				{
-					label: 'Getting Started',
-					items: [
-						{ label: 'Documentation Guide', link: '/guides/navigation/' },
-						{ label: 'Exam Questions', link: '/exams/kc' }
-					],
-				},
-				{
 					label: 'Docker',
 					items: [
 						{
@@ -33,97 +26,47 @@ export default defineConfig({
 							collapsed: true,
 							autogenerate: { directory: '07-docker-vcs/docker/01-docker-container-fundamentals/' }
 						},
-					]
-				},
-				{
-					label: 'AWS Course Scripts',
-					items: [
 						{
-							label: 'Cloud Foundation',
+							label: 'Docker CLI Basics',
 							collapsed: true,
-							autogenerate: { directory: 'week-1' }
+							autogenerate: { directory: '07-docker-vcs/docker/02-docker-cli-basics/' }
 						},
 						{
-							label: 'Linux Fundamentals',
+							label: 'Dockerfiles and Images',
 							collapsed: true,
-							autogenerate: { directory: 'linux-fundamentals' }
+							autogenerate: { directory: '07-docker-vcs/docker/03-dockerfiles-and-images/' }
 						},
 						{
-							label: 'Networking',
+							label: 'Compose and Multi-Container Setups',
 							collapsed: true,
-							autogenerate: { directory: 'networking' }
+							autogenerate: { directory: '07-docker-vcs/docker/04-compose-and-multi-container-setups/' }
 						},
 						{
-							label: 'Security',
+							label: 'Persistant Data',
 							collapsed: true,
-							autogenerate: { directory: 'security' }
+							autogenerate: { directory: '07-docker-vcs/docker/05-persistant-data/' }
 						},
 						{
-							label: 'Databases',
+							label: 'Docker Networking',
 							collapsed: true,
-							autogenerate: { directory: 'databases' }
+							autogenerate: { directory: '07-docker-vcs/docker/06-docker-networking/' }
 						},
 						{
-							label: 'AWS Architecture',
+							label: 'Security and Troubleshooting',
 							collapsed: true,
-							autogenerate: { directory: 'aws-architecture' }
+							autogenerate: { directory: '07-docker-vcs/docker/07-security-and-troubleshooting/' }
 						},
 						{
-							label: 'Systems Operations',
+							label: 'Deployment Scenarios',
 							collapsed: true,
-							autogenerate: { directory: 'system-operations' }
+							autogenerate: { directory: '07-docker-vcs/docker/08-deployment-scenarios/' }
 						},
 						{
-							label: 'Tooling and Automation',
+							label: 'Final Project',
 							collapsed: true,
-							autogenerate: { directory: 'tooling-automation' }
-						},
-						{
-							label: 'Servers',
-							collapsed: true,
-							autogenerate: { directory: 'servers' }
-						},
-						{
-							label: 'Scaling and Name Resolution',
-							collapsed: true,
-							autogenerate: { directory: 'scaling-name-resolution' }
-						},
-						{
-							label: 'Serverless and Containers',
-							collapsed: true,
-							autogenerate: { directory: 'serverless-containers' }
-						},
-						{
-							label: 'AWS Database Services',
-							collapsed: true,
-							autogenerate: { directory: 'aws-database-services' }
-						},
-						{
-							label: 'AWS Networking Services',
-							collapsed: true,
-							autogenerate: { directory: 'aws-networking-services' }
-						},
-						{
-							label: 'Storage and Archiving',
-							collapsed: true,
-							autogenerate: { directory: 'storage-archiving' }
-						},
-						{
-							label: 'Jumpstart AWS',
-							collapsed: true,
-							autogenerate: { directory: 'jumpstart-aws' }
+							autogenerate: { directory: '07-docker-vcs/docker/09-final-project/' }
 						},
 					]
-				},
-				{
-					label: 'Cheat Sheets',
-					collapsed: true,
-					autogenerate: { directory: 'cheatsheets' }
-				},
-				{
-					label: 'Python',
-					collapsed: true,
-					autogenerate: { directory: 'python' }
 				},
 			],
 		}),
