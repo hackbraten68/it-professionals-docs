@@ -26,6 +26,16 @@ export default defineConfig({
 					],
 				},
 				{
+					label: 'Docker',
+					items: [
+						{
+							label: 'Docker Fundamentals',
+							collapsed: true,
+							autogenerate: { directory: '07-docker-vcs/docker/01-docker-container-fundamentals/' }
+						},
+					]
+				},
+				{
 					label: 'AWS Course Scripts',
 					items: [
 						{

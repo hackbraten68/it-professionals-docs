@@ -1046,3 +1046,6 @@ AWS CloudFormation allows you to create and provision AWS infrastructure **predi
 - They make your templates **more flexible and reusable**.
 
 ---
+
+[![Mein Video-Titel](https://img.youtube.com/vi/PcBQY2jZ7sg/hqdefault.jpg)](https://youtu.be/PcBQY2jZ7sg?si=aKST4krbfFNgRoKE)
+
