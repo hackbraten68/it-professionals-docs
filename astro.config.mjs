@@ -68,6 +68,46 @@ export default defineConfig({
 						},
 					]
 				},
+				{
+					label: 'Git',
+					items: [
+						{
+							label: 'Introduction to Version Control Systems',
+							collapsed: true,
+							autogenerate: { directory: '07-docker-vcs/github/01-introduction-to-vcs/' }
+						},
+						{
+							label: 'Git Basics',
+							collapsed: true,
+							autogenerate: { directory: '07-docker-vcs/github/02-git-basics/' }
+						},
+						{
+							label: 'Git Branching and Merging',
+							collapsed: true,
+							autogenerate: { directory: '07-docker-vcs/github/03-git-branching-and-merging/' }
+						},
+						{
+							label: 'Introduction to GitHub',
+							collapsed: true,
+							autogenerate: { directory: '07-docker-vcs/github/04-introduction-to-github/' }
+						},
+						{
+							label: 'Collaboration in GitHub',
+							collapsed: true,
+							autogenerate: { directory: '07-docker-vcs/github/05-collaboration-in-github/' }
+						},
+						{
+							label: 'Rebase, Stashing and Tags',
+							collapsed: true,
+							autogenerate: { directory: '07-docker-vcs/github/06-rebase-stashing-tags/' }
+						},
+						{
+							label: 'GitHub Actions',
+							collapsed: true,
+							autogenerate: { directory: '07-docker-vcs/github/07-github-actions/' }
+						},
+					]
+				},
 			],
 		}),
 	],
