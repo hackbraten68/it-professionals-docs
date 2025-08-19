@@ -34,7 +34,7 @@ volumes:
 
 ---
 
-## 1) What this stack does
+## 1. What this stack does
 
 * **frontend**: a static site or SPA (e.g., React/Vite) served by a tiny web server (often Nginx).
 * **backend**: an API (Node/Express, Flask/FastAPI, Spring Boot, etc.) that connects to the database.
@@ -48,7 +48,7 @@ volumes:
 
 ---
 
-## 2) Recommended project layout
+## 2. Recommended project layout
 
 ```bash
 project-root/
@@ -70,7 +70,7 @@ project-root/
 
 ---
 
-## 3) A fuller `compose.yaml` you can teach from (dev-friendly)
+## 3. A fuller `compose.yaml` you can teach from (dev-friendly)
 
 ```yaml
 name: fullstack-app
@@ -161,7 +161,7 @@ volumes:
 
 ---
 
-## 4) `.env` example (checked into repo, **no secrets**)
+## 4. `.env` example (checked into repo, **no secrets**)
 
 ```bash
 # .env
@@ -178,7 +178,7 @@ DB_PASS=pass
 
 ---
 
-## 5) Service-by-service details
+## 5. Service-by-service details
 
 ### Frontend
 
@@ -235,7 +235,7 @@ CMD ["node", "src/index.js"]
 
 ---
 
-## 6) Networking & addressing
+## 6. Networking & addressing
 
 * All services share a default user-defined network created by Compose.
 * Service names act as DNS hostnames: the backend connects to `postgres://...@db:5432/...`
@@ -247,7 +247,7 @@ CMD ["node", "src/index.js"]
 
 ---
 
-## 7) Data persistence & backups
+## 7. Data persistence & backups
 
 ### Why a named volume?
 
@@ -270,7 +270,7 @@ cat ./ops/backups/backup_2025-08-18.sql | \
 
 ---
 
-## 8) Migrations, seeding & test data
+## 8. Migrations, seeding & test data
 
 * Use a migration tool (e.g., Prisma Migrate, Sequelize, Knex, Alembic, Flyway, Liquibase).
 * Add a **migrator** service or `backend` command to run on startup:
@@ -284,7 +284,7 @@ cat ./ops/backups/backup_2025-08-18.sql | \
 
 ---
 
-## 9) Health checks & startup ordering
+## 9. Health checks & startup ordering
 
 * `depends_on` without conditions only controls start **order**, not readiness.
 * Use **health checks** to ensure services are actually ready:
@@ -296,7 +296,7 @@ cat ./ops/backups/backup_2025-08-18.sql | \
 
 ---
 
-## 10) Observability (logs, metrics)
+## 10. Observability (logs, metrics)
 
 * View logs:
 
@@ -313,7 +313,7 @@ cat ./ops/backups/backup_2025-08-18.sql | \
 
 ---
 
-## 11) Everyday commands
+## 11. Everyday commands
 
 ```bash
 # Start everything (foreground)
@@ -346,7 +346,7 @@ docker compose --profile tools up -d
 
 ---
 
-## 12) Troubleshooting cheatsheet
+## 12. Troubleshooting cheatsheet
 
 * **Backend can’t reach DB**
   Verify `DATABASE_URL` host is `db` (service name), not `localhost`.
@@ -366,7 +366,7 @@ docker compose --profile tools up -d
 
 ---
 
-## 13) Security & secrets (minimum viable hygiene)
+## 13. Security & secrets (minimum viable hygiene)
 
 * **Never** commit real credentials. Use `.env.local` (git-ignored) or `secrets:`:
 
@@ -388,7 +388,7 @@ docker compose --profile tools up -d
 
 ---
 
-## 14) From dev to prod: what changes?
+## 14. From dev to prod: what changes?
 
 * **Reverse proxy + TLS**: Put Caddy/Traefik/Nginx in front, terminate HTTPS.
 * **Externalize the DB**: Use a managed Postgres (Cloud SQL/RDS/Neon/Supabase) and point `DATABASE_URL` to it. Remove the local `db` service in prod.
@@ -398,7 +398,7 @@ docker compose --profile tools up -d
 
 ---
 
-## 15) Minimal test plan (for a class or team)
+## 15. Minimal test plan (for a class or team)
 
 1. **Build**: `docker compose build` completes without error.
 2. **Health**: `docker compose ps` shows all services `healthy`.
@@ -409,7 +409,7 @@ docker compose --profile tools up -d
 
 ---
 
-## 16) Quick reference: improving the original snippet
+## 16. Quick reference: improving the original snippet
 
 * Add **health checks** + `depends_on` with conditions to avoid race conditions.
 * Use `.env` and/or `secrets:` for configs and credentials.
@@ -420,7 +420,7 @@ docker compose --profile tools up -d
 
 ---
 
-## 17) Short “lab” exercises
+## 17. Short “lab” exercises
 
 1. Add a `/health` endpoint to the backend and wire the healthcheck.
 2. Introduce a migration tool (e.g., Prisma) and run `migrate dev` on container start.

@@ -7,7 +7,7 @@ title: What is Docker Compose ?
 
 ---
 
-## 1) Concept & Purpose
+## 1. Concept & Purpose
 
 **Docker Compose** is a tool that lets you define, run, and manage **multi-container** applications using a single declarative file, typically `docker-compose.yml` or `compose.yaml`.
 Instead of orchestrating many `docker run` commands and manual networks/volumes, you **describe** your services (containers), how they connect, and the resources they need—then start everything with one command.
@@ -21,7 +21,7 @@ Instead of orchestrating many `docker run` commands and manual networks/volumes,
 
 ---
 
-## 2) Core Building Blocks
+## 2. Core Building Blocks
 
 Compose centers around a **YAML** file with a few top-level sections:
 
@@ -55,7 +55,7 @@ docker compose down
 
 ---
 
-## 3) Typical Multi-Service Example
+## 3. Typical Multi-Service Example
 
 ```yaml
 # compose.yaml
@@ -107,7 +107,7 @@ volumes:
 
 ---
 
-## 4) Essential Commands (Compose V2 syntax)
+## 4. Essential Commands (Compose V2 syntax)
 
 > Modern Docker installs use **`docker compose`** (space), not `docker-compose` (hyphen).
 
@@ -148,7 +148,7 @@ docker compose up -d --scale worker=3
 
 ---
 
-## 5) Key Service Options (Most Common)
+## 5. Key Service Options (Most Common)
 
 Inside `services.<name>`:
 
@@ -179,7 +179,7 @@ services:
 
 ---
 
-## 6) Networking Model
+## 6. Networking Model
 
 * Each Compose project gets a **default network**; services can reach each other by **service name** (DNS).
   Example: app calls `http://db:5432`.
@@ -204,7 +204,7 @@ services:
 
 ---
 
-## 7) Volumes & File Mounts
+## 7. Volumes & File Mounts
 
 * **Bind mounts** (host path ↔ container path) are best for **development** & hot reload.
 * **Named volumes** are managed by Docker and are best for **persistent data** across machines or paths.
@@ -223,7 +223,7 @@ volumes:
 
 ---
 
-## 8) Environment Variables & `.env`
+## 8. Environment Variables & `.env`
 
 Compose supports **variable substitution** from the shell and `.env` file located next to the compose file:
 
@@ -250,7 +250,7 @@ API_URL=http://localhost:3000
 
 ---
 
-## 9) Profiles (Selective Enablement)
+## 9. Profiles (Selective Enablement)
 
 **Profiles** let you toggle groups of services (e.g., dev-only dependencies):
 
@@ -270,7 +270,7 @@ docker compose --profile dev up -d
 
 ---
 
-## 10) Multiple Files & Overrides
+## 10. Multiple Files & Overrides
 
 Compose automatically applies **override files** in order; later files override earlier ones. Common patterns:
 
@@ -286,7 +286,7 @@ docker compose -f compose.yaml -f compose.prod.yaml up -d
 
 ---
 
-## 11) Healthchecks & Startup Order
+## 11. Healthchecks & Startup Order
 
 Use healthchecks to gate dependent services:
 
@@ -311,7 +311,7 @@ This avoids connection races during startup.
 
 ---
 
-## 12) CI, Testing, and Ephemeral Environments
+## 12. CI, Testing, and Ephemeral Environments
 
 * **CI Pipelines:** Build images with `docker compose build`, run integration tests with `docker compose up -d`, then `docker compose exec` to run test commands.
 * **Ephemeral stacks:** Spin up per-branch stacks for review; tear down with `down -v`.
@@ -319,7 +319,7 @@ This avoids connection races during startup.
 
 ---
 
-## 13) Logs, Debugging, and Troubleshooting
+## 13. Logs, Debugging, and Troubleshooting
 
 * `docker compose logs -f <svc>` to tail logs.
 * `docker compose exec <svc> sh` to shell in and inspect (`env`, `ls`, `curl`).
@@ -333,7 +333,7 @@ This avoids connection races during startup.
 
 ---
 
-## 14) Patterns & Recipes
+## 14. Patterns & Recipes
 
 **Reverse proxy + app + db**
 
@@ -373,7 +373,7 @@ services:
 
 ---
 
-## 15) Best Practices
+## 15. Best Practices
 
 * **Keep images lean:** Use multi-stage Dockerfiles and small base images.
 * **One responsibility per service:** Separate API, worker, db, cache, proxy.
@@ -386,14 +386,14 @@ services:
 
 ---
 
-## 16) Compose V2 vs. V1 (Quick Note)
+## 16. Compose V2 vs. V1 (Quick Note)
 
 * **V2** is the modern implementation integrated into Docker: `docker compose`.
 * The old standalone **V1** (`docker-compose`) is deprecated; prefer V2 syntax and features.
 
 ---
 
-## 17) Clean-Up & Lifecycle Tips
+## 17. Clean-Up & Lifecycle Tips
 
 ```bash
 # Stop containers but keep them
@@ -412,7 +412,7 @@ docker volume prune
 
 ---
 
-## 18) Quick Reference Checklist
+## 18. Quick Reference Checklist
 
 * Do I have **separate services** for API, DB, cache, proxy?
 * Are **ports** correct and non-conflicting?
@@ -424,7 +424,7 @@ docker volume prune
 
 ---
 
-## 19) Further Learning Ideas
+## 19. Further Learning Ideas
 
 * Add **TLS** and hostnames with a reverse proxy (Caddy/Traefik).
 * Use **Compose profiles** to toggle optional services.

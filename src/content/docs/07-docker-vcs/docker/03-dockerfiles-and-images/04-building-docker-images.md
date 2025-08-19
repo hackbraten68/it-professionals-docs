@@ -7,7 +7,7 @@ title: Building Docker Images
 
 ---
 
-## 1) Quick Start
+## 1. Quick Start
 
 ```bash
 # in the directory containing your Dockerfile and app sources
@@ -26,7 +26,7 @@ docker build -t myapp:latest .
 
 ---
 
-## 2) Core Concepts
+## 2. Core Concepts
 
 ### Image, Layers, and Cache
 
@@ -52,32 +52,32 @@ Dockerfile*
 
 ---
 
-## 3) Dockerfile Anatomy (Minimal → Solid)
+## 3. Dockerfile Anatomy (Minimal → Solid)
 
 ```dockerfile
-# 1) Base image
+# 1. Base image
 FROM node:22-slim
 
-# 2) Metadata (useful for traceability)
+# 2. Metadata (useful for traceability)
 LABEL org.opencontainers.image.source="https://github.com/acme/myapp" \
       org.opencontainers.image.version="1.2.3"
 
-# 3) Working directory
+# 3. Working directory
 WORKDIR /app
 
-# 4) Copy only dependency manifests first for better cache
+# 4. Copy only dependency manifests first for better cache
 COPY package*.json ./
 
-# 5) Install deps (cache-friendly)
+# 5. Install deps (cache-friendly)
 RUN npm ci --omit=dev
 
-# 6) Copy the rest
+# 6. Copy the rest
 COPY . .
 
-# 7) Build (if needed)
+# 7. Build (if needed)
 RUN npm run build
 
-# 8) Runtime command
+# 8. Runtime command
 CMD ["node", "dist/server.js"]
 ```
 
@@ -89,7 +89,7 @@ CMD ["node", "dist/server.js"]
 
 ---
 
-## 4) Tagging, Naming, and Versioning
+## 4. Tagging, Naming, and Versioning
 
 * Format: `registry/namespace/name:tag`
 
@@ -107,7 +107,7 @@ CMD ["node", "dist/server.js"]
 
 ---
 
-## 5) Caching Like a Pro
+## 5. Caching Like a Pro
 
 * Default cache: automatic layer reuse.
 * `--no-cache` — rebuild everything (use sparingly).
@@ -119,7 +119,7 @@ CMD ["node", "dist/server.js"]
 
 ---
 
-## 6) Multi-Stage Builds (smaller, safer images)
+## 6. Multi-Stage Builds (smaller, safer images)
 
 Use a **builder stage** to compile, then copy only the artifacts into a **thin runtime** stage.
 
@@ -149,7 +149,7 @@ ENTRYPOINT ["/app/app"]
 
 ---
 
-## 7) Build Arguments, ENV, and Secrets
+## 7. Build Arguments, ENV, and Secrets
 
 ### Build Args (build-time only)
 
@@ -202,7 +202,7 @@ docker build --ssh default -t myapp:with-ssh .
 
 ---
 
-## 8) Reproducible & Secure Builds
+## 8. Reproducible & Secure Builds
 
 * Pin versions and use **digest** for bases:
 
@@ -230,7 +230,7 @@ docker build --ssh default -t myapp:with-ssh .
 
 ---
 
-## 9) BuildKit & Advanced Outputs
+## 9. BuildKit & Advanced Outputs
 
 **Enable BuildKit**
 
@@ -265,7 +265,7 @@ docker build --target builder -t myapp:builder .
 
 ---
 
-## 10) Language-Specific Patterns (Examples)
+## 10. Language-Specific Patterns (Examples)
 
 ### Node.js
 
@@ -309,7 +309,7 @@ CMD ["python", "-m", "myapp"]
 
 ---
 
-## 11) Testing Images Locally
+## 11. Testing Images Locally
 
 ```bash
 # run and hit a health endpoint
@@ -325,7 +325,7 @@ HEALTHCHECK --interval=30s --timeout=3s CMD wget -qO- http://localhost:8080/heal
 
 ---
 
-## 12) Pushing to a Registry
+## 12. Pushing to a Registry
 
 ```bash
 docker login ghcr.io
@@ -339,7 +339,7 @@ Tips:
 
 ---
 
-## 13) CI/CD Tips
+## 13. CI/CD Tips
 
 * Cache across builds:
 
@@ -349,7 +349,7 @@ Tips:
 
 ---
 
-## 14) Size Optimization Checklist
+## 14. Size Optimization Checklist
 
 * Prefer **slim/alpine/distroless** bases where appropriate.
 * Use **multi-stage** to exclude build tools.
@@ -359,7 +359,7 @@ Tips:
 
 ---
 
-## 15) Troubleshooting
+## 15. Troubleshooting
 
 * “Why is my build slow?”
 
@@ -377,7 +377,7 @@ Tips:
 
 ---
 
-## 16) Clean Up
+## 16. Clean Up
 
 ```bash
 # remove dangling images and cache
@@ -389,7 +389,7 @@ docker system prune -a
 
 ---
 
-## 17) Command Reference (Cheat-Sheet)
+## 17. Command Reference (Cheat-Sheet)
 
 ```bash
 # Build
@@ -419,7 +419,7 @@ docker push myorg/myapp:1.4.0
 
 ---
 
-## 18) Suggested Exercise
+## 18. Suggested Exercise
 
 1. Write a **multi-stage** Dockerfile for your app.
 2. Add `.dockerignore` and optimize layer order.

@@ -5,13 +5,13 @@ title: Basic Structure of a docker-compose.yml File
 
 ---
 
-## 1) Purpose & Big Picture
+## 1. Purpose & Big Picture
 
 Docker Compose lets you **define, run, and manage multi-container apps** using a single YAML file. The file declares your **services** (containers), how they connect via **networks**, where they store data via **volumes**, and how they’re configured (env vars, ports, healthchecks, etc.).
 
 ---
 
-## 2) Minimal Example (Annotated)
+## 2. Minimal Example (Annotated)
 
 ```yaml
 # docker-compose.yml
@@ -35,11 +35,11 @@ services:
 * `services`: each item is a container definition (`web`, `app`, `db`).
 * `image` or `build`: use a prebuilt image or build your own.
 * `ports`, `environment`, etc.: per-service config.
-* `depends_on`: orchestrates **start order** (not health; see §8.2).
+* `depends_on`: orchestrates **start order** (not health; see §8.2..
 
 ---
 
-## 3) File Layout & Top-Level Keys
+## 3. File Layout & Top-Level Keys
 
 A typical Compose file includes some or all of:
 
@@ -55,7 +55,7 @@ configs:    # OPTIONAL: Runtime configs (Swarm/Compose)
 
 ---
 
-## 4) Core Building Blocks
+## 4. Core Building Blocks
 
 ### 4.1 Services
 
@@ -188,7 +188,7 @@ services:
 
 ---
 
-## 5) Environment Variables & Interpolation
+## 5. Environment Variables & Interpolation
 
 Compose supports **variable interpolation** from the shell and `.env` files:
 
@@ -219,7 +219,7 @@ services:
 
 ---
 
-## 6) Profiles (conditional services)
+## 6. Profiles (conditional services)
 
 Enable groups of services per scenario (dev/test/ci):
 
@@ -242,7 +242,7 @@ docker compose --profile dev up -d
 
 ---
 
-## 7) Reuse, Overrides, and DRY Techniques
+## 7. Reuse, Overrides, and DRY Techniques
 
 ### 7.1 Multiple Files & Overrides
 
@@ -290,7 +290,7 @@ services:
 
 ---
 
-## 8) Service Coordination & Health
+## 8. Service Coordination & Health
 
 ### 8.1 Healthchecks
 
@@ -325,7 +325,7 @@ If conditional `depends_on` isn’t available in your environment, rely on app-l
 
 ---
 
-## 9) Port Publishing & Networking
+## 9. Port Publishing & Networking
 
 * `ports: ["8000:80"]` publishes container port 80 to host port 8000.
 * `expose: ["80"]` makes port 80 available **to other services on the same network only** (not the host).
@@ -333,7 +333,7 @@ If conditional `depends_on` isn’t available in your environment, rely on app-l
 
 ---
 
-## 10) Build Options (when `build:` is used)
+## 10. Build Options (when `build:` is used)
 
 ```yaml
 services:
@@ -349,7 +349,7 @@ services:
 
 ---
 
-## 11) Data Persistence Patterns
+## 11. Data Persistence Patterns
 
 * **Named volumes** (recommended) for database and app data:
 
@@ -373,7 +373,7 @@ services:
 
 ---
 
-## 12) Logging & Observability
+## 12. Logging & Observability
 
 ```yaml
 services:
@@ -390,7 +390,7 @@ services:
 
 ---
 
-## 13) Common Commands (Compose V2+)
+## 13. Common Commands (Compose V2+)
 
 ```bash
 # Start in foreground (Ctrl+C to stop)
@@ -419,7 +419,7 @@ docker compose config
 
 ---
 
-## 14) Typical Multi-Service Template (Comprehensive)
+## 14. Typical Multi-Service Template (Comprehensive)
 
 ```yaml
 services:
@@ -479,7 +479,7 @@ networks:
 
 ---
 
-## 15) Dev vs. Prod Patterns
+## 15. Dev vs. Prod Patterns
 
 * **Dev**:
 
@@ -495,7 +495,7 @@ networks:
 
 ---
 
-## 16) Pitfalls & Best Practices
+## 16. Pitfalls & Best Practices
 
 * **Don’t commit real secrets** to Git; use `secrets:` or external secret stores.
 * Prefer **named volumes** over bind mounts for databases.
@@ -507,7 +507,7 @@ networks:
 
 ---
 
-## 17) Quick Reference: Most-Used Service Keys
+## 17. Quick Reference: Most-Used Service Keys
 
 * **Image/Build**: `image`, `build.context`, `build.dockerfile`, `build.args`, `build.target`
 * **Runtime**: `command`, `entrypoint`, `environment`, `env_file`, `working_dir`, `user`
@@ -519,7 +519,7 @@ networks:
 
 ---
 
-## 18) Practice Tasks
+## 18. Practice Tasks
 
 1. Convert a single-container app to Compose with separate `web`, `api`, and `db` services.
 2. Add a **healthcheck** to each service and use `depends_on` conditions where supported.

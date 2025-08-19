@@ -10,7 +10,7 @@ outcomes:
   - Apply best practices for security, caching, and organization.
 ---
 
-## 1) Key Concepts & Mental Model
+## 1. Key Concepts & Mental Model
 
 **Image**  
 A read-only, content-addressed bundle of filesystem layers + metadata (config, env, entrypoint). Images are immutable and referenced by **name:tag** (human-friendly) or **digest** (cryptographic).
@@ -27,7 +27,7 @@ Images are built from layered filesystems. Layers are reused across tags/reposit
 
 ---
 
-## 2) Searching & Pulling
+## 2. Searching & Pulling
 
 ### 2.1 Search on Docker Hub
 
@@ -69,7 +69,7 @@ docker pull redis:7
 
 ---
 
-## 3) Listing, Tagging & Naming
+## 3. Listing, Tagging & Naming
 
 ### 3.1 List Local Images
 
@@ -103,7 +103,7 @@ docker tag redis:7 myrepo/redis:7-custom
 
 ---
 
-## 4) Inspecting & History
+## 4. Inspecting & History
 
 ### 4.1 Inspect Metadata
 
@@ -131,7 +131,7 @@ Shows each layer’s command (when available) and size. Use this to:
 
 ---
 
-## 5) Pushing to Registries
+## 5. Pushing to Registries
 
 ### 5.1 Login, Tag, Push
 
@@ -154,7 +154,7 @@ docker push myregistry.example.com/team/redis:7-custom
 
 ---
 
-## 6) Cleaning Up & Disk Hygiene
+## 6. Cleaning Up & Disk Hygiene
 
 ### 6.1 Remove a Specific Image
 
@@ -187,7 +187,7 @@ Inspect which images/volumes/containers consume space and their shared layer siz
 
 ---
 
-## 7) Working with Platforms & Manifests (Multi-Arch)
+## 7. Working with Platforms & Manifests (Multi-Arch)
 
 **Why it matters**: ARM64 (e.g., Apple Silicon, Raspberry Pi) vs AMD64 (most servers).
 
@@ -209,7 +209,7 @@ Inspect which images/volumes/containers consume space and their shared layer siz
 
 ---
 
-## 8) Advanced Image Operations
+## 8. Advanced Image Operations
 
 ### 8.1 Pull by Digest & Pin Deployments
 
@@ -245,7 +245,7 @@ docker inspect --format='{{index .RepoDigests 0}}' redis:7
 
 ---
 
-## 9) Security & Provenance (Operator’s View)
+## 9. Security & Provenance (Operator’s View)
 
 * **Verify Publisher**: Prefer official/verified images; read tags/notes on the registry page.
 * **Minimal Base Images**: Use `-slim` or `alpine` variants when appropriate; verify compatibility and glibc vs musl differences.
@@ -262,7 +262,7 @@ docker inspect --format='{{index .RepoDigests 0}}' redis:7
 
 ---
 
-## 10) Common Errors & Fixes
+## 10. Common Errors & Fixes
 
 * **`pull access denied` / `repository does not exist`**
   → Check repo spelling, tags, and run `docker login` to the correct registry.
@@ -281,7 +281,7 @@ docker inspect --format='{{index .RepoDigests 0}}' redis:7
 
 ---
 
-## 11) Practical Walkthrough (End-to-End)
+## 11. Practical Walkthrough (End-to-End)
 
 1. **Find an image**
 
@@ -332,7 +332,7 @@ docker inspect --format='{{index .RepoDigests 0}}' redis:7
 
 ---
 
-## 12) Cheat Sheet (CLI Quick Reference)
+## 12. Cheat Sheet (CLI Quick Reference)
 
 ```bash
 # Search & Pull
@@ -367,7 +367,7 @@ docker manifest inspect <image[:tag]|@digest>
 
 ---
 
-## 13) Best Practices Summary
+## 13. Best Practices Summary
 
 * Prefer **immutable references** (digests) in production.
 * Maintain **clear tagging strategy** (semver + floating tags you control).

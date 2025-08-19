@@ -3,7 +3,7 @@ title: Docker CLI Fundamentals
 ---
 ## Part 1 — What *is* a CLI?
 
-### 1) Definition
+### 1. Definition
 
 A **Command-Line Interface (CLI)** is a text-based interface for interacting with software or an operating system by typing commands. Instead of clicking buttons, you enter instructions (commands) that the computer parses and executes.
 
@@ -11,13 +11,13 @@ A **Command-Line Interface (CLI)** is a text-based interface for interacting wit
 - **Shell:** The command interpreter (e.g., `bash`, `zsh`, `fish`, `PowerShell`) that reads your input and runs programs.
 - **Programs/Utilities:** Executables you call from the shell (e.g., `ls`, `git`, `docker`).
 
-### 2) Why use a CLI?
+### 2. Why use a CLI?
 
 - **Precision & Automation:** Scriptable, repeatable workflows; easy to automate with shell scripts and CI/CD.
 - **Speed & Resource Use:** Fast and lightweight; ideal for remote servers and headless environments.
 - **Composability:** You can “pipe” outputs of one command into another for powerful data flows.
 
-### 3) How a CLI call is structured
+### 3. How a CLI call is structured
 
 ```bash
 <program> <subcommand> \[options/flags] \[positional-arguments]
@@ -29,7 +29,7 @@ A **Command-Line Interface (CLI)** is a text-based interface for interacting wit
 - **Std Streams:** `stdin` (input), `stdout` (normal output), `stderr` (errors).
 - **Environment Variables:** Key-value pairs available to processes (e.g., `PATH`, `HOME`).
 
-### 4) Core skills
+### 4. Core skills
 
 - **Navigation & Files:** `pwd`, `ls`, `cd`, `cat`, `less`, `cp`, `mv`, `rm`, `mkdir`.
 - **Help & Docs:** `<program> --help`, `man <program>`, official docs.
@@ -41,7 +41,7 @@ A **Command-Line Interface (CLI)** is a text-based interface for interacting wit
 
 ## Part 2 — The Docker CLI (the `docker` client)
 
-### 1) What it is
+### 1. What it is
 
 The **Docker CLI** (`docker`) is the primary interface to the **Docker daemon** (`dockerd`). The CLI sends requests (via a local Unix socket or TCP) to the daemon, which performs actions like pulling images, building, and running containers.
 
@@ -51,7 +51,7 @@ The **Docker CLI** (`docker`) is the primary interface to the **Docker daemon** 
 
 > Tip: On Linux, if your user is **not** in the `docker` group, prefix Docker commands with `sudo`. Alternatively, add your user to the `docker` group for password-less use (be aware of the security implications).
 
-### 2) Command shape
+### 2. Command shape
 
 ```bash
 docker <command> \[subcommand] \[options] \[args]
@@ -63,7 +63,7 @@ Common global patterns:
 - `--format '{{json .}}'` to output JSON-like structures for scripting.
 - `--log-level debug` to increase verbosity for troubleshooting.
 
-### 3) Image discovery: `docker search`
+### 3. Image discovery: `docker search`
 
 Use `docker search` to find images on Docker Hub (or configured default registry).
 
@@ -91,7 +91,7 @@ docker search --filter=stars=100 --no-trunc postgres
 - Shows name, description, stars, official/verified labels.
 - Discovery on private registries may be limited or require web UI/API instead.
 
-### 4) Download images: `docker pull`
+### 4. Download images: `docker pull`
 
 `docker pull` fetches an image (and its layers) to your local cache.
 
@@ -126,7 +126,7 @@ docker pull nginx\@sha256:<digest>
 - **Name format:** `[registry/][namespace/]repo[:tag|@digest]`
 - Layers are shared across images to save disk space.
 
-### 5) Build images: `docker build`
+### 5. Build images: `docker build`
 
 Build images from a **build context** (directory) and a `Dockerfile`.
 
@@ -170,7 +170,7 @@ docker build --platform linux/amd64 -t myapp\:x86 .
 - Use **multi-stage builds** to keep runtime images small.
 - Avoid copying secrets into images (prefer build args or secret mounts).
 
-### 6) Run containers: `docker run`
+### 6. Run containers: `docker run`
 
 Starts a new container from an image.
 
@@ -207,7 +207,7 @@ docker run -d -v data:/var/lib/postgresql/data postgres:16
 - Container stops when its **PID 1** process exits.
 - Use `--rm` to auto-remove when it exits (for throwaway runs).
 
-### 7) Inspect, monitor, and manage
+### 7. Inspect, monitor, and manage
 
 **List & query**
 
@@ -322,7 +322,7 @@ docker network ls
 docker network inspect <net>
 ```
 
-### 8) Permissions & the `sudo` tip
+### 8. Permissions & the `sudo` tip
 - On Linux, `dockerd` typically listens on `/var/run/docker.sock`. Access is controlled by group membership.
 - If you’re **not** in the `docker` group, either:
 - Prefix commands with `sudo`:
@@ -339,7 +339,7 @@ docker network inspect <net>
 
 **Security note:** Members of the `docker` group can effectively gain root on the host via the Docker socket. Only grant to trusted users.
 
-### 9) Troubleshooting quick wins
+### 9. Troubleshooting quick wins
 
 - **“Cannot connect to the Docker daemon”**
 
@@ -354,7 +354,7 @@ docker network inspect <net>
 - **Name conflicts**
     - Remove or rename existing containers/images; `docker rm -f <name>` if necessary.
 
-### 10) Good practices
+### 10. Good practices
 
 - Pin image tags (avoid implicit `latest` in production).
 - Keep images small (alpine/distroless when appropriate; multi-stage builds).
@@ -367,7 +367,7 @@ docker network inspect <net>
 
 ## Hands-On Lab (Suggested)
 
-1) **Discover**
+1. **Discover**
 
 - Search for a lightweight HTTP server:
 
@@ -375,19 +375,19 @@ docker network inspect <net>
 docker search httpd
 ```
 
-2) **Pull**
+2. **Pull**
 
 ```bash
 docker pull nginx:1.27
 ```
 
-3) **Run**
+3. **Run**
 
 ```bash
 docker run -d --name web -p 8080:80 nginx:1.27
 ```
 
-4) **Inspect & Logs**
+4. **Inspect & Logs**
 
 ```bash
 docker ps
@@ -395,7 +395,7 @@ docker logs -f web
 docker inspect web --format '{{.NetworkSettings.IPAddress}}'
 ```
 
-5) **Exec**
+5. **Exec**
 
 ```bash
 docker exec -it web sh
@@ -403,7 +403,7 @@ ls -la /usr/share/nginx/html
 exit
 ```
 
-6) **Clean Up**
+6. **Clean Up**
 
 ```bash
 docker stop web && docker rm web

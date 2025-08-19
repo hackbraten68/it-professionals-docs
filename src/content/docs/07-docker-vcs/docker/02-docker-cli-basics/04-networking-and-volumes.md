@@ -15,7 +15,7 @@ By the end of this lesson, you will be able to:
 
 ---
 
-# 1) Networking in Docker
+# 1. Networking in Docker
 
 Docker networking connects containers to each other, to the host, and to external networks. Each container gets its own network namespace (its own network stack), and networks are implemented with drivers (e.g., `bridge`, `host`, `overlay`, `macvlan`, `ipvlan`).
 
@@ -176,7 +176,7 @@ Common pitfalls:
 
 ---
 
-# 2) Data Persistence
+# 2. Data Persistence
 
 By default, container filesystems are **ephemeral**. Use **volumes** or **bind mounts** to persist data beyond container lifecycles and to share data between containers.
 
@@ -345,7 +345,7 @@ Data disappears when the container stops.
 
 ---
 
-# 3) `-v` vs `--mount` Syntax
+# 3. `-v` vs `--mount` Syntax
 
 * `-v` (or `--volume`) is short and flexible; supports both volumes and bind mounts.
 * `--mount` is **more explicit**, recommended for production scripts and clarity.
@@ -368,7 +368,7 @@ docker run -d --mount type=bind,src=/srv/nginx/conf,dst=/etc/nginx,readonly ngin
 
 ---
 
-# 4) Operational Tasks
+# 4. Operational Tasks
 
 ## 4.1 Backing Up and Restoring Volumes
 
@@ -431,7 +431,7 @@ docker rm -v some-container
 
 ---
 
-# 5) Patterns and Best Practices
+# 5. Patterns and Best Practices
 
 * Prefer **user-defined bridge networks** for application tiers (e.g., `frontend`, `backend`, `db`) to scope communication.
 * Use **service names** instead of IP addresses; let embedded DNS handle resolution.
@@ -447,7 +447,7 @@ docker rm -v some-container
 
 ---
 
-# 6) Hands-On Lab Checklist
+# 6. Hands-On Lab Checklist
 
 1. Create and inspect a user-defined network:
 

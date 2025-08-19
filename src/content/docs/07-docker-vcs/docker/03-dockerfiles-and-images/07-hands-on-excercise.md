@@ -46,7 +46,7 @@ hello-docker/
 
 ---
 
-## 1) Create a Simple Node.js App
+## 1. Create a Simple Node.js App
 
 **`app.js`**
 
@@ -90,41 +90,41 @@ npm install
 
 ---
 
-## 2) Write the Dockerfile
+## 2. Write the Dockerfile
 
 Start with a clean, fast, and secure base. Use `node:<version>-alpine` or `-slim`. Alpine is smaller; slim is Debian-based (broader compatibility).
 
 **`Dockerfile` (production-ready, small footprint, non-root):**
 
 ```dockerfile
-# 1) Use an official Node base image
+# 1. Use an official Node base image
 FROM node:20-alpine AS base
 
-# 2) Create and use a non-root user for better security
+# 2. Create and use a non-root user for better security
 # - node image already provides a node user and group
 WORKDIR /usr/src/app
 
-# 3) Install dependencies separately for better caching
+# 3. Install dependencies separately for better caching
 #    Copy only package files first, so Docker can reuse this layer if app code changes.
 COPY package*.json ./
 
 # Use npm ci when lockfile exists to ensure clean, reproducible installs
 RUN npm ci --only=production
 
-# 4) Copy application source
+# 4. Copy application source
 COPY app.js ./
 
-# 5) Expose the port your app listens on (documentation hint for humans/tools)
+# 5. Expose the port your app listens on (documentation hint for humans/tools)
 EXPOSE 3000
 
-# 6) Add a simple healthcheck (optional, useful in Compose/K8s)
+# 6. Add a simple healthcheck (optional, useful in Compose/K8s)
 HEALTHCHECK --interval=30s --timeout=3s CMD \
   wget -qO- http://localhost:3000 || exit 1
 
-# 7) Use the non-root node user
+# 7. Use the non-root node user
 USER node
 
-# 8) Define the startup command
+# 8. Define the startup command
 CMD ["node", "app.js"]
 ```
 
@@ -132,7 +132,7 @@ CMD ["node", "app.js"]
 
 ---
 
-## 3) Ignore Unneeded Files
+## 3. Ignore Unneeded Files
 
 **`.dockerignore`**
 
@@ -155,7 +155,7 @@ This prevents large or irrelevant files from bloating your build context and ima
 
 ---
 
-## 4) Build the Image
+## 4. Build the Image
 
 Run:
 
@@ -168,7 +168,7 @@ docker build -t hello-docker .
 
 ---
 
-## 5) Run the Container
+## 5. Run the Container
 
 Map container port **3000** to host port **3000**:
 
@@ -205,7 +205,7 @@ docker stop hello-docker
 
 ---
 
-## 6) Inspect, Logs, and Cleanup
+## 6. Inspect, Logs, and Cleanup
 
 * List images: `docker images`
 * List containers: `docker ps -a`
@@ -214,7 +214,7 @@ docker stop hello-docker
 
 ---
 
-## 7) Development Workflow (Optional Extras)
+## 7. Development Workflow (Optional Extras)
 
 ### A) Live Reload with `nodemon` (dev-only container)
 
@@ -272,7 +272,7 @@ docker compose down
 
 ---
 
-## 8) Multi-Stage Build (Smaller Images)
+## 8. Multi-Stage Build (Smaller Images)
 
 If your app needs to compile native modules or transpile code, you can separate **build** and **runtime**:
 
@@ -303,7 +303,7 @@ Benefits:
 
 ---
 
-## 9) Tagging and (Optionally) Pushing to a Registry
+## 9. Tagging and (Optionally) Pushing to a Registry
 
 Tag your image explicitly (e.g., semantic version):
 
@@ -316,7 +316,7 @@ docker push my-registry.example.com/hello-docker:1.0.0
 
 ---
 
-## 10) Common Pitfalls & Troubleshooting
+## 10. Common Pitfalls & Troubleshooting
 
 * **Port already in use:**
   Error like `bind: address already in use` → change host port mapping (e.g., `-p 8080:3000`) or free up port 3000.
@@ -338,7 +338,7 @@ docker push my-registry.example.com/hello-docker:1.0.0
 
 ---
 
-## 11) Validation Checklist
+## 11. Validation Checklist
 
 * [ ] `docker build -t hello-docker .` completes successfully.
 * [ ] `docker run -p 3000:3000 hello-docker` logs “Server is listening on port 3000”.
@@ -348,7 +348,7 @@ docker push my-registry.example.com/hello-docker:1.0.0
 
 ---
 
-## 12) Stretch Goals (Optional)
+## 12. Stretch Goals (Optional)
 
 * Add an environment variable (e.g., `MESSAGE`) and read it in `app.js`:
 

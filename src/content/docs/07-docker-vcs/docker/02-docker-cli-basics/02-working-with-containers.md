@@ -14,7 +14,7 @@ This lesson teaches the day-to-day Docker CLI you’ll use to **launch, inspect,
 
 ---
 
-## 1) Containers vs. Images (Quick Recap)
+## 1. Containers vs. Images (Quick Recap)
 
 - **Image**: A read-only template (layers) used to create containers (e.g., `nginx:latest`).
 - **Container**: A **running** (or stopped) instance of an image with its own writable layer, process, namespaces, and cgroup limits.
@@ -22,7 +22,7 @@ This lesson teaches the day-to-day Docker CLI you’ll use to **launch, inspect,
 
 ---
 
-## 2) Container Lifecycle in a Nutshell
+## 2. Container Lifecycle in a Nutshell
 
 1. **Create**: Defines container config, but doesn’t start the process.
    - `docker create --name web -p 8080:80 nginx:latest`
@@ -41,7 +41,7 @@ This lesson teaches the day-to-day Docker CLI you’ll use to **launch, inspect,
 
 ---
 
-## 3) Starting & Running Containers
+## 3. Starting & Running Containers
 
 ### 3.1 Basic run
 
@@ -116,7 +116,7 @@ docker run -d --restart unless-stopped --name api -p 3000:3000 myorg/api:1.0
 
 ---
 
-## 4) Networking & Ports
+## 4. Networking & Ports
 
 ### 4.1 Publish ports
 
@@ -150,7 +150,7 @@ docker run -d --name api --network appnet -e DB_HOST=db myorg/api:1.0
 
 ---
 
-## 5) Filesystems, Mounts & Copying
+## 5. Filesystems, Mounts & Copying
 
 ### 5.1 Bind mounts vs. Volumes (quick)
 
@@ -180,7 +180,7 @@ docker cp my-nginx:/var/log/nginx/access.log ./access.log
 
 ---
 
-## 6) Listing, Inspecting & Metadata
+## 6. Listing, Inspecting & Metadata
 
 ### 6.1 List containers
 
@@ -213,7 +213,7 @@ docker stats             # live CPU/mem/IO metrics for all containers
 
 ---
 
-## 7) Logs, Exec & Attach
+## 7. Logs, Exec & Attach
 
 ### 7.1 Logs
 
@@ -243,13 +243,13 @@ docker exec -it my-nginx /bin/sh
 docker attach my-nginx
 ```
 
-* Re-connects your terminal to the **main process** (PID 1).
+* Re-connects your terminal to the **main process** (PID 1..
 * **Caution**: `CTRL+C` may send signals to the main process (could stop it).
 * Prefer `docker logs -f` for viewing output without sending signals.
 
 ---
 
-## 8) Health Checks (Know When “Up” Is Really Up)
+## 8. Health Checks (Know When “Up” Is Really Up)
 
 * Images can define a `HEALTHCHECK` command. Docker evaluates it periodically.
 * Check via `docker ps` (`(healthy)`, `(unhealthy)`) or inspect:
@@ -262,7 +262,7 @@ docker inspect --format '{{json .State.Health}}' my-nginx | jq
 
 ---
 
-## 9) Updating & Recreating Containers (Immutable Config Pattern)
+## 9. Updating & Recreating Containers (Immutable Config Pattern)
 
 * Many flags (ports, env, mounts) **cannot be changed in place**.
 * Pattern: **stop → remove → run** again with new config (idempotent scripts).
@@ -275,7 +275,7 @@ docker run -d --name api -p 3000:3000 --env-file .env --restart unless-stopped m
 
 ---
 
-## 10) Cleaning Up
+## 10. Cleaning Up
 
 ```bash
 # Stop / start
@@ -302,7 +302,7 @@ docker run --rm -it alpine:3.20 sh
 
 ---
 
-## 11) Signals, Exit Codes & Graceful Shutdowns
+## 11. Signals, Exit Codes & Graceful Shutdowns
 
 * `docker stop` sends `SIGTERM`, waits (default 10s), then `SIGKILL`.
 * Applications should **trap `SIGTERM`** to close gracefully (flush logs, close DB).
@@ -314,7 +314,7 @@ docker inspect --format '{{ .State.ExitCode }}' my-job
 
 ---
 
-## 12) Security-Conscious Flags (Quick Wins)
+## 12. Security-Conscious Flags (Quick Wins)
 
 * Run as a non-root user: `-u 1000:1000`.
 * Read-only filesystem: `--read-only` (mount a tmpfs for writable paths if needed).
@@ -324,7 +324,7 @@ docker inspect --format '{{ .State.ExitCode }}' my-job
 
 ---
 
-## 13) Common Patterns & One-Liners
+## 13. Common Patterns & One-Liners
 
 * **Ad-hoc test container**:
 
@@ -358,10 +358,10 @@ docker run -d --hostname web-1 nginx:latest
 
 ---
 
-## 14) Troubleshooting Checklist
+## 14. Troubleshooting Checklist
 
 1. **Container exits immediately**: Is the command a one-shot? Check `docker logs`. Use `-it` if it expects a TTY.
-2. **Port not reachable**: Did you publish the port (`-p`)? Is the app listening on the correct interface (0.0.0.0 not 127.0.0.1)?
+2. **Port not reachable**: Did you publish the port (`-p`)? Is the app listening on the correct interface (0.0.0.0 not 127.0.0.1.?
 3. **Permission denied with bind mounts**: Check host file permissions/SELinux; try `:Z` on SELinux systems or fix ownership (`-u`).
 4. **High CPU/memory**: Inspect with `docker stats`; add `--cpus`/`--memory` limits.
 5. **DNS/connectivity**: Verify the network (`docker inspect`, `docker network ls`), try a user-defined bridge.
@@ -370,7 +370,7 @@ docker run -d --hostname web-1 nginx:latest
 
 ---
 
-## 15) Hands-On Exercises
+## 15. Hands-On Exercises
 
 1. **Hello Nginx**: Run `nginx:latest` on port 8080; verify with browser and `docker logs -f`.
 2. **Interactive Ubuntu**: Start `ubuntu:22.04` with `/bin/bash`, create a file in `/tmp`, exit, `docker ps -a` to see status.
@@ -381,7 +381,7 @@ docker run -d --hostname web-1 nginx:latest
 
 ---
 
-## 16) Quick Reference (Cheat Sheet)
+## 16. Quick Reference (Cheat Sheet)
 
 ```bash
 # Run
@@ -414,7 +414,7 @@ docker cp SRC DEST
 
 ---
 
-## 17) Example Snippets From This Lesson
+## 17. Example Snippets From This Lesson
 
 ### Start & Publish
 
@@ -451,7 +451,7 @@ docker container prune
 
 ---
 
-## 18) Best Practices Summary
+## 18. Best Practices Summary
 
 * **Name containers** for easier scripting and ops.
 * **Pin image tags** (e.g., `nginx:1.25`) for reproducibility.

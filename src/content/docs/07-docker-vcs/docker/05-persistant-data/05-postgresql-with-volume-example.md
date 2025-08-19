@@ -17,7 +17,7 @@ docker run -d \
 
 ---
 
-## 1) What This Setup Achieves
+## 1. What This Setup Achieves
 
 * **Creates a named volume** `pgdata` managed by Docker.
 * **Runs a PostgreSQL container** from the official `postgres` image.
@@ -26,7 +26,7 @@ docker run -d \
 
 ---
 
-## 2) Prerequisites
+## 2. Prerequisites
 
 * Docker installed (Docker Desktop on macOS/Windows, or Docker Engine on Linux).
 * Network access to pull the `postgres` image from Docker Hub.
@@ -34,7 +34,7 @@ docker run -d \
 
 ---
 
-## 3) Command Deep Dive
+## 3. Command Deep Dive
 
 ### 3.1 Create the volume
 
@@ -65,7 +65,7 @@ docker run -d \
 
 ---
 
-## 4) What Happens Under the Hood
+## 4. What Happens Under the Hood
 
 1. Docker **pulls** the `postgres` image if not present.
 2. The container **initializes** a data directory on first run (cluster init).
@@ -75,7 +75,7 @@ docker run -d \
 
 ---
 
-## 5) Verify That Data Persists
+## 5. Verify That Data Persists
 
 ### 5.1 (Optional) Expose a port and create a test table
 
@@ -95,7 +95,7 @@ From your host (needs `psql`):
 
 ```bash
 PGPASSWORD=mysecretpassword psql -h localhost -U postgres -c "CREATE DATABASE demo;"
-PGPASSWORD=mysecretpassword psql -h localhost -U postgres -d demo -c "CREATE TABLE t (id int); INSERT INTO t VALUES (1);"
+PGPASSWORD=mysecretpassword psql -h localhost -U postgres -d demo -c "CREATE TABLE t (id int); INSERT INTO t VALUES (1.;"
 ```
 
 ### 5.2 Stop/remove the container and start a new one
@@ -120,14 +120,14 @@ You should still see your row `1`, proving persistence.
 
 ---
 
-## 6) Useful Day‑to‑Day Commands
+## 6. Useful Day‑to‑Day Commands
 
 * **Inspect the volume**:
 
   ```bash
   docker volume inspect pgdata
   ```
-  
+
 * **List volumes**:
 
   ```bash
@@ -148,7 +148,7 @@ You should still see your row `1`, proving persistence.
 
 ---
 
-## 7) Environment Variables You’ll Commonly Use
+## 7. Environment Variables You’ll Commonly Use
 
 * `POSTGRES_PASSWORD`: Password for the `postgres` superuser (required if `POSTGRES_HOST_AUTH_METHOD` is not set to `trust`).
 * `POSTGRES_USER`: Create a different superuser (default: `postgres`).
@@ -171,7 +171,7 @@ docker run -d \
 
 ---
 
-## 8) Backups and Restores
+## 8. Backups and Restores
 
 ### 8.1 Logical backups (portable, for migrations)
 
@@ -213,7 +213,7 @@ docker run -d \
 
 ---
 
-## 9) Upgrading PostgreSQL Safely
+## 9. Upgrading PostgreSQL Safely
 
 1. **Pin versions** to avoid surprise major upgrades:
 
@@ -221,7 +221,7 @@ docker run -d \
    postgres:16
    ```
 
-2. **Major upgrade** (e.g., 16 → 17) options:
+2. **Major upgrade** (e.g., 16 → 17. options:
 
    * **Dump/restore**: Use `pg_dump`/`pg_restore` into a fresh 17 container/volume.
    * **pg\_upgrade**: Requires both versions and more steps; often easier with a dedicated upgrade container or on a VM.
@@ -234,7 +234,7 @@ docker run -d \
 
 ---
 
-## 10) Security Best Practices
+## 10. Security Best Practices
 
 * **Never** use weak or default passwords; store secrets outside version control.
 * Restrict network exposure: map to `localhost` during development:
@@ -249,7 +249,7 @@ docker run -d \
 
 ---
 
-## 11) Performance Notes
+## 11. Performance Notes
 
 * Named volumes perform well for databases; avoid slow remote filesystems unless designed for DB I/O.
 * Prefer SSD/NVMe storage for lower latency.
@@ -257,7 +257,7 @@ docker run -d \
 
 ---
 
-## 12) Common Pitfalls & Troubleshooting
+## 12. Common Pitfalls & Troubleshooting
 
 * **“permission denied” with bind mounts**: Named volumes usually “just work”. If you bind‑mount a host directory, ensure the directory is owned by (or writable to) the `postgres` user inside the container. On Linux:
 
@@ -283,7 +283,7 @@ docker run -d \
 
 ---
 
-## 13) Docker Compose Equivalent
+## 13. Docker Compose Equivalent
 
 ```yaml
 services:
@@ -310,7 +310,7 @@ volumes:
 
 ---
 
-## 14) Cleaning Up
+## 14. Cleaning Up
 
 * Stop & remove the container:
 
@@ -326,7 +326,7 @@ volumes:
 
 ---
 
-## 15) Quick FAQ
+## 15. Quick FAQ
 
 **Q: Can multiple containers share the same `pgdata` volume?**
 A: Not safely at the same time for PostgreSQL data; it expects exclusive access.

@@ -7,7 +7,7 @@ title: Networks and Communication
 
 ---
 
-## 1) Big Picture
+## 1. Big Picture
 
 * **Compose default:** All services defined in the same `docker-compose.yml` are attached to an **app-scoped bridge network** (named like `<project>_default`).
 * **Service discovery:** Each service can reach others via **DNS** using the **service name** as the hostname.
@@ -15,7 +15,7 @@ title: Networks and Communication
 
 ---
 
-## 2) Default Networking & Service Discovery
+## 2. Default Networking & Service Discovery
 
 Given:
 
@@ -41,7 +41,7 @@ postgres://user:password@db:5432/mydb
 
 ---
 
-## 3) Publishing Ports (Host ↔ Container)
+## 3. Publishing Ports (Host ↔ Container)
 
 * **Internal container-to-container traffic:** no `ports:` needed.
 * **External access (browser, curl from host):** publish a port:
@@ -61,7 +61,7 @@ services:
 
 ---
 
-## 4) Multiple Networks for Segmentation
+## 4. Multiple Networks for Segmentation
 
 Use multiple networks to isolate components:
 
@@ -89,7 +89,7 @@ networks:
 
 ---
 
-## 5) Network Aliases & Custom Hostnames
+## 5. Network Aliases & Custom Hostnames
 
 * **Aliases:** Grant extra DNS names on a network.
 
@@ -108,7 +108,7 @@ networks:
 
 ---
 
-## 6) Drivers You’ll Actually Use
+## 6. Drivers You’ll Actually Use
 
 | Driver    | Where              | What it does                             | Typical Use                                                                |
 | --------- | ------------------ | ---------------------------------------- | -------------------------------------------------------------------------- |
@@ -121,7 +121,7 @@ networks:
 
 ---
 
-## 7) Health, Start Order & Connection Robustness
+## 7. Health, Start Order & Connection Robustness
 
 * `depends_on` **does not** wait for the target service to be **ready**—only for it to **start**.
 * For robust boot sequences, combine:
@@ -148,7 +148,7 @@ services:
 
 ---
 
-## 8) External Networks (Share Across Projects)
+## 8. External Networks (Share Across Projects)
 
 Attach services to an existing user-created network:
 
@@ -171,7 +171,7 @@ Great for sharing a reverse proxy (Traefik/Caddy/Nginx) across multiple Compose 
 
 ---
 
-## 9) IPv6, DNS & MTU Notes
+## 9. IPv6, DNS & MTU Notes
 
 * **IPv6:** Enable via the Docker daemon config (platform/host setting), then create IPv6-enabled networks. Compose can attach services afterward.
 * **DNS:** Docker embeds a DNS server per network; it resolves service names + aliases.
@@ -179,7 +179,7 @@ Great for sharing a reverse proxy (Traefik/Caddy/Nginx) across multiple Compose 
 
 ---
 
-## 10) Security Tips
+## 10. Security Tips
 
 * **Segmentation:** Place databases on a private network (no `ports:` published). Only the backend joins that network.
 * **Least privilege:** Don’t attach every service to every network.
@@ -188,7 +188,7 @@ Great for sharing a reverse proxy (Traefik/Caddy/Nginx) across multiple Compose 
 
 ---
 
-## 11) Practical Patterns
+## 11. Practical Patterns
 
 ### A) Classic 3-Tier with Private DB
 
@@ -237,7 +237,7 @@ networks:
 
 ---
 
-## 12) Troubleshooting & Observability
+## 12. Troubleshooting & Observability
 
 **CLI you’ll use a lot:**
 
@@ -264,7 +264,7 @@ nc -zv db 5432            # netcat test if available
 
 ---
 
-## 13) Environment-Specific Host Access
+## 13. Environment-Specific Host Access
 
 Need the container to call back to your **host** (e.g., webhooks to a dev tool running on your laptop)?
 
@@ -282,7 +282,7 @@ Then call `http://host.docker.internal:<port>` from the container.
 
 ---
 
-## 14) Healthier Startup in App Code (Example)
+## 14. Healthier Startup in App Code (Example)
 
 Even with `service_healthy`, include retry logic:
 
@@ -306,7 +306,7 @@ for (let i = 0; i < 10; i++) {
 
 ---
 
-## 15) Advanced: Network Modes & When to Use Them
+## 15. Advanced: Network Modes & When to Use Them
 
 * `network_mode: "host"` (Linux): container shares host network (no `ports:`). Useful for:
 
@@ -317,7 +317,7 @@ for (let i = 0; i < 10; i++) {
 
 ---
 
-## 16) Exercises (Hands-On)
+## 16. Exercises (Hands-On)
 
 1. **Ping by service name**
 
@@ -342,7 +342,7 @@ for (let i = 0; i < 10; i++) {
 
 ---
 
-## 17) Quick Reference Snippets
+## 17. Quick Reference Snippets
 
 **Create a named bridge network**
 
@@ -384,7 +384,7 @@ networks:
 
 ---
 
-## 18) Best Practices Checklist
+## 18. Best Practices Checklist
 
 * Use **service names** for internal communication.
 * Publish **only** the ports that must be public.
@@ -396,7 +396,7 @@ networks:
 
 ---
 
-## 19) Minimal, Well-Shaped Example
+## 19. Minimal, Well-Shaped Example
 
 ```yaml
 version: "3.9"

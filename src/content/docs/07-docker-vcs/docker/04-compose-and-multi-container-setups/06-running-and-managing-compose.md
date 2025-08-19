@@ -9,7 +9,7 @@ A practical, comprehensive guide for day-to-day use of Docker Compose in develop
 
 ---
 
-## 1) Core Lifecycle Commands
+## 1. Core Lifecycle Commands
 
 ### Start services
 
@@ -59,7 +59,7 @@ Common flags:
 
 ---
 
-## 2) Observability & Diagnostics
+## 2. Observability & Diagnostics
 
 ### Logs
 
@@ -110,7 +110,7 @@ Key differences:
 
 ---
 
-## 3) Day-to-Day Management Cheatsheet
+## 3. Day-to-Day Management Cheatsheet
 
 | Task                        | Command                                                                |
 | --------------------------- | ---------------------------------------------------------------------- |
@@ -125,7 +125,7 @@ Key differences:
 
 ---
 
-## 4) Configuration Controls That Affect Runtime
+## 4. Configuration Controls That Affect Runtime
 
 ### Project name
 
@@ -173,7 +173,7 @@ docker compose --profile ops up -d   # only includes services with profile "ops"
 
 ---
 
-## 5) Health, Restart, and Persistence (Operational Basics)
+## 5. Health, Restart, and Persistence (Operational Basics)
 
 ### Healthchecks (configured in YAML)
 
@@ -208,7 +208,7 @@ services:
 
 ---
 
-## 6) Networking & Names
+## 6. Networking & Names
 
 * Services share a default project network: reach peers via **service name** (e.g., `db:5432`).
 * Expose to host via `ports:` in YAML or `-p` in plain `docker run`.
@@ -216,7 +216,7 @@ services:
 
 ---
 
-## 7) CI/CD & Production Tips
+## 7. CI/CD & Production Tips
 
 * **Deterministic builds:** pin image tags (e.g., `postgres:16.3`) and lock dependency versions.
 * **Build cache in CI:** use `--cache-from` with a remote registry or Docker BuildKit cache exports.
@@ -226,7 +226,7 @@ services:
 
 ---
 
-## 8) Troubleshooting Playbook
+## 8. Troubleshooting Playbook
 
 ### Port is already allocated
 
@@ -267,7 +267,7 @@ docker volume ls | grep <project>    # inspect leftovers
 
 ---
 
-## 9) Helpful Secondary Commands
+## 9. Helpful Secondary Commands
 
 * **`docker compose config`** – validate & print the fully-merged config (great for debugging overrides/profiles).
 * **`docker compose pull [SERVICE]`** – fetch latest images from registry.
@@ -277,7 +277,7 @@ docker volume ls | grep <project>    # inspect leftovers
 
 ---
 
-## 10) Example Workflows
+## 10. Example Workflows
 
 ### Local development
 
@@ -309,7 +309,7 @@ docker compose up -d --build
 
 ---
 
-## 11) Quick Reference
+## 11. Quick Reference
 
 * `docker-compose up` – starts the defined services
 * `docker-compose up -d` – starts in detached mode
@@ -322,7 +322,7 @@ docker compose up -d --build
 
 ---
 
-## 12) Best Practices Summary
+## 12. Best Practices Summary
 
 * Use **named volumes** for state; avoid wiping them casually.
 * Prefer **`docker compose up -d --build --remove-orphans`** after changes.

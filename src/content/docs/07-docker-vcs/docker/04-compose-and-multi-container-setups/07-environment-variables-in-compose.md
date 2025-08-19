@@ -7,7 +7,7 @@ title: Environment Variables in Compose
 
 ---
 
-## 1) Where environment variables can come from
+## 1. Where environment variables can come from
 
 Compose resolves variables from several places. Knowing the **precedence order** helps you predict what value a container actually sees.
 
@@ -25,7 +25,7 @@ Compose resolves variables from several places. Knowing the **precedence order**
 
 ---
 
-## 2) Two different usages of variables (don’t confuse them!)
+## 2. Two different usages of variables (don’t confuse them!)
 
 There are **(A)** variables used by Compose **itself** to *render* the YAML (interpolation), and **(B)** variables injected into the **container** process.
 
@@ -62,7 +62,7 @@ services:
 
 ---
 
-## 3) Using a `.env` file
+## 3. Using a `.env` file
 
 Place a `.env` in the same directory as the Compose file:
 
@@ -93,7 +93,7 @@ services:
 
 ---
 
-## 4) `environment:` vs `env_file:`
+## 4. `environment:` vs `env_file:`
 
 ### `environment:` (inline, explicit, great for a few values)
 
@@ -122,7 +122,7 @@ services:
 
 ---
 
-## 5) Variable syntax & operators
+## 5. Variable syntax & operators
 
 * **Reference:** `${VAR}`
 * **Default if unset or empty:** `${VAR:-default}`
@@ -144,7 +144,7 @@ services:
 
 ---
 
-## 6) Multi-environment setups (dev / staging / prod)
+## 6. Multi-environment setups (dev / staging / prod)
 
 **Option A: multiple `.env` files**
 
@@ -192,7 +192,7 @@ COMPOSE_PROFILES=observability docker compose up -d
 
 ---
 
-## 7) Common patterns & examples
+## 7. Common patterns & examples
 
 ### PostgreSQL + App
 
@@ -233,7 +233,7 @@ volumes:
 
 ---
 
-## 8) Debugging & verification
+## 8. Debugging & verification
 
 * **Show the fully rendered config** (after interpolation):
 
@@ -251,7 +251,7 @@ volumes:
 
 ---
 
-## 9) Security considerations (important!)
+## 9. Security considerations (important!)
 
 * **Do not commit secrets** to VCS. Add `.env` and any secret files to `.gitignore`.
 * `.env` is **not encrypted**. Anyone with filesystem access can read it.
@@ -285,7 +285,7 @@ Consider Vault, AWS Secrets Manager, GCP Secret Manager, 1Password, SOPS, or sea
 
 ---
 
-## 10) Windows, quoting, and formatting tips
+## 10. Windows, quoting, and formatting tips
 
 * **Line endings:** Ensure `.env` uses LF, not CRLF, to avoid parsing issues.
 * **Quoting:** In `.env`, values are plain strings. Avoid quotes if possible; if you include quotes, they become part of the value.
@@ -294,7 +294,7 @@ Consider Vault, AWS Secrets Manager, GCP Secret Manager, 1Password, SOPS, or sea
 
 ---
 
-## 11) Build-time vs run-time: `ARG` vs `ENV`
+## 11. Build-time vs run-time: `ARG` vs `ENV`
 
 * **`ARG`**: available **only during image build**.
 * **`ENV`**: baked into the image at build time and available at run time; can be overridden by `environment:`.
@@ -326,7 +326,7 @@ services:
 
 ---
 
-## 12) Validation patterns
+## 12. Validation patterns
 
 Enforce presence with `?` operator:
 
@@ -341,7 +341,7 @@ Or validate at app startup (preferred for clear error messages).
 
 ---
 
-## 13) Practical checklist
+## 13. Practical checklist
 
 * [ ] Put secrets in `.env` (dev) or a secret manager (prod).
 * [ ] Add `.env` to `.gitignore`.
@@ -353,7 +353,7 @@ Or validate at app startup (preferred for clear error messages).
 
 ---
 
-## 14) Minimal, correct example (from your prompt)
+## 14. Minimal, correct example (from your prompt)
 
 **`.env`**
 
@@ -378,7 +378,7 @@ services:
 
 ---
 
-## 15) Troubleshooting quick hits
+## 15. Troubleshooting quick hits
 
 * **Var not taking effect?** Check `docker compose config`. Make sure you didn’t define a conflicting value in `environment:` or another `env_file`.
 * **Service reading wrong port?** Confirm you aren’t mixing interpolation defaults with container env defaults.

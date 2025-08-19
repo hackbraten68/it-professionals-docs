@@ -88,7 +88,7 @@ docker run --rm \
 
 ## Best‑Practice Patterns
 
-### 1) Use a Fresh Volume for Clean Restores
+### 1. Use a Fresh Volume for Clean Restores
 
 ```bash
 docker volume create myvolume-restored
@@ -102,7 +102,7 @@ docker run --rm \
 
 Point your container to `myvolume-restored` to verify data before swapping over.
 
-### 2) Verify Backups
+### 2. Verify Backups
 
 Create a checksum after backup:
 
@@ -116,7 +116,7 @@ Verify later:
 sha256sum -c backup-2025-08-19-103000.tar.gz.sha256
 ```
 
-### 3) Test Restores Regularly
+### 3. Test Restores Regularly
 
 Spin up a disposable container that mounts the **restored** volume and check files/app behavior before relying on the backup.
 
@@ -255,7 +255,7 @@ Use the same commands as Linux; quoting `$(pwd)` is recommended if paths contain
   # example using OpenSSL (for demos; consider age/gpg/Key Management Service for production)
   openssl enc -aes-256-cbc -salt -in backup.tar.gz -out backup.tar.gz.enc
   ```
-  
+
 * **Store offsite** (cloud bucket, remote server).
 * **Protect keys** and restrict backup directories’ permissions.
 * **Redact secrets** only if safe—remember your app may need them on restore.
@@ -421,7 +421,7 @@ echo "Restored into volume: $VOL"
 * Use `docker run` + `tar` for simple, portable backups of **named volumes**.
 * For **databases**, prefer **logical dumps** (e.g., `pg_dump`) for consistent restores.
 * Verify, encrypt, rotate, and **test restores**—regularly.
-* Mind permissions, SELinux, and environment specifics (Docker Desktop/WSL2).
+* Mind permissions, SELinux, and environment specifics (Docker Desktop/WSL2..
 * For scale and deduplication, consider tools like **restic**.
 
 With these patterns, you can confidently back up and restore Docker volumes in teaching environments and production alike.

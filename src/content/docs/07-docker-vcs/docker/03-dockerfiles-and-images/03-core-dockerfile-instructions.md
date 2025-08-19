@@ -14,7 +14,7 @@ title: Core Dockerfile Instructions
 
 ---
 
-## 1) `FROM` — Set the Base Image
+## 1. `FROM` — Set the Base Image
 
 **Purpose:** Defines the starting filesystem and (optionally) platform and stage name.
 
@@ -46,7 +46,7 @@ FROM nginx:1.27-alpine
 
 ---
 
-## 2) `LABEL` — Add Metadata
+## 2. `LABEL` — Add Metadata
 
 **Purpose:** Attach key/value metadata (maintainer, source, version, licenses, etc.).
 
@@ -76,7 +76,7 @@ LABEL org.opencontainers.image.title="Acme API" \
 
 ---
 
-## 3) `RUN` — Execute Build-Time Commands
+## 3. `RUN` — Execute Build-Time Commands
 
 **Purpose:** Run commands *during build* (e.g., install packages, compile assets).
 
@@ -106,7 +106,7 @@ RUN --mount=type=cache,target=/root/.cache/pip pip install -r requirements.txt
 
 ---
 
-## 4) `COPY` vs. `ADD` — Bring Files into the Image
+## 4. `COPY` vs. `ADD` — Bring Files into the Image
 
 **Purpose:** Transfer files from build context (the directory you `docker build` from) into the image.
 
@@ -145,7 +145,7 @@ COPY --chown=node:node . /app
 
 ---
 
-## 5) `WORKDIR` — Set the Working Directory
+## 5. `WORKDIR` — Set the Working Directory
 
 **Purpose:** Changes the current directory for subsequent instructions.
 
@@ -166,7 +166,7 @@ WORKDIR /app
 
 ---
 
-## 6) `ENV` — Define Environment Variables
+## 6. `ENV` — Define Environment Variables
 
 **Purpose:** Set environment variables available at **build** and **runtime** (depending on usage).
 
@@ -189,7 +189,7 @@ ENV PATH="/opt/bin:${PATH}" PORT=8080
 
 ---
 
-## 7) `EXPOSE` — Document Container Ports
+## 7. `EXPOSE` — Document Container Ports
 
 **Purpose:** Declare which ports the container intends to listen on.
 
@@ -211,7 +211,7 @@ EXPOSE 80/tcp 8443/udp
 
 ---
 
-## 8) `CMD` vs. `ENTRYPOINT` — Define the Container’s Process
+## 8. `CMD` vs. `ENTRYPOINT` — Define the Container’s Process
 
 **Purpose:** Configure the default command/executable when the container starts.
 
@@ -244,7 +244,7 @@ CMD ["node", "server.js"]
 
 **Notes & Pitfalls**
 
-* Prefer **exec form** to avoid shell-processing surprises and to forward signals correctly (PID 1).
+* Prefer **exec form** to avoid shell-processing surprises and to forward signals correctly (PID 1..
 * If you need a shell for variable expansion, handle signals (e.g., use `tini` or `dumb-init`).
 
 **Best Practices**
@@ -254,7 +254,7 @@ CMD ["node", "server.js"]
 
 ---
 
-## 9) `USER` — Drop Privileges
+## 9. `USER` — Drop Privileges
 
 **Purpose:** Set the **user/group** for subsequent `RUN`, `CMD`, and `ENTRYPOINT`.
 
@@ -283,7 +283,7 @@ USER app
 
 ---
 
-## 10) `VOLUME` — Declare Mount Points
+## 10. `VOLUME` — Declare Mount Points
 
 **Purpose:** Mark directories intended for **external storage** (bind mounts or named volumes).
 
@@ -305,7 +305,7 @@ VOLUME /var/lib/postgresql/data
 
 ---
 
-## 11) `HEALTHCHECK` — Report Container Health
+## 11. `HEALTHCHECK` — Report Container Health
 
 **Purpose:** Tell Docker how to determine if the container is **healthy**.
 
@@ -317,7 +317,7 @@ HEALTHCHECK [options] CMD <command>
 # --interval=<duration> (default: 30s)
 # --timeout=<duration>  (default: 30s)
 # --start-period=<dur>  (default: 0s)
-# --retries=<n>         (default: 3)
+# --retries=<n>         (default: 3.
 ```
 
 **Examples:**
@@ -346,7 +346,7 @@ HEALTHCHECK NONE
 ## Putting It All Together — A Minimal, Production-minded Example
 
 ```dockerfile
-# 1) Build stage
+# 1. Build stage
 FROM node:20-alpine AS build
 WORKDIR /app
 # Copy only manifests first for better cache on deps
@@ -355,7 +355,7 @@ RUN npm ci
 COPY . .
 RUN npm run build
 
-# 2) Runtime stage (small, non-root)
+# 2. Runtime stage (small, non-root)
 FROM node:20-alpine
 LABEL org.opencontainers.image.source="https://github.com/acme/webapp"
 ENV NODE_ENV=production PORT=8080

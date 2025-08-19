@@ -153,7 +153,7 @@ This guide collects high-value Docker extras, idiomatic CLI patterns, and produc
 
 ## Best Practices
 
-### 1) Immutability & Configuration
+### 1. Immutability & Configuration
 
 * **Keep containers immutable.** Build once, run anywhere.
 * **Externalize configuration:**
@@ -191,7 +191,7 @@ volumes:
 
 ---
 
-### 2) Minimal & Reproducible Images
+### 2. Minimal & Reproducible Images
 
 * **Choose slim bases** (e.g., `debian:bookworm-slim`, `alpine` when compatible).
 * **Pin versions & checksums** for package installs and language deps.
@@ -228,7 +228,7 @@ CMD ["dist/server.js"]
 
 ---
 
-### 3) Build Performance & Cache
+### 3. Build Performance & Cache
 
 * Enable **BuildKit** (`DOCKER_BUILDKIT=1`) for:
 
@@ -250,7 +250,7 @@ docker build --secret id=npm_token,src=./.secrets/npm_token.txt -t myimg:secure 
 
 ---
 
-### 4) Security Hardening
+### 4. Security Hardening
 
 * **Run as non-root** (`USER` directive) and set ownership during copy/install.
 * **Drop Linux capabilities** unless needed.
@@ -283,7 +283,7 @@ HEALTHCHECK --interval=10s --timeout=2s --retries=3 CMD curl -f http://localhost
 
 ---
 
-### 5) Logging & Observability
+### 5. Logging & Observability
 
 * Prefer **structured logs** (JSON) at stdout/stderr.
 * Choose a suitable **logging driver** and set rotation:
@@ -308,7 +308,7 @@ HEALTHCHECK --interval=10s --timeout=2s --retries=3 CMD curl -f http://localhost
 
 ---
 
-### 6) Resource Limits & Reliability
+### 6. Resource Limits & Reliability
 
 * Set **CPU/memory** limits and **ulimits** to contain blast radius:
 
@@ -330,7 +330,7 @@ HEALTHCHECK --interval=10s --timeout=2s --retries=3 CMD curl -f http://localhost
 
 ---
 
-### 7) Networking Practices
+### 7. Networking Practices
 
 * Use **user-defined bridge networks** for built-in DNS & isolation:
 
@@ -346,7 +346,7 @@ HEALTHCHECK --interval=10s --timeout=2s --retries=3 CMD curl -f http://localhost
 
 ---
 
-### 8) Data Management & Backups
+### 8. Data Management & Backups
 
 * **Never bake persistent data into images.** Use **named volumes**.
 * Plan **backups** of volumes (e.g., `docker run --rm -v vol:/data -v $PWD:/backup alpine tar czf /backup/vol.tgz /data`).
@@ -358,7 +358,7 @@ HEALTHCHECK --interval=10s --timeout=2s --retries=3 CMD curl -f http://localhost
 
 ---
 
-### 9) Tagging, Versioning & Promotion
+### 9. Tagging, Versioning & Promotion
 
 * Avoid relying on `latest` in production.
 * Use **SemVer tags** and **immutable digests** for promotions:
@@ -371,7 +371,7 @@ HEALTHCHECK --interval=10s --timeout=2s --retries=3 CMD curl -f http://localhost
 
 ---
 
-### 10) CI/CD Integration
+### 10. CI/CD Integration
 
 * Build once, then **sign & scan**:
 
@@ -386,7 +386,7 @@ HEALTHCHECK --interval=10s --timeout=2s --retries=3 CMD curl -f http://localhost
 
 ---
 
-### 11) Compose Tips
+### 11. Compose Tips
 
 * Use **profiles** to toggle optional services.
 * Model **dependencies** with healthchecks (`depends_on: condition: service_healthy`).
