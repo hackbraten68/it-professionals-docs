@@ -84,12 +84,12 @@ export default defineConfig({
 						{
 							label: 'Git Branching and Merging',
 							collapsed: true,
-							autogenerate: { directory: '07-docker-vcs/github/03-git-branching-and-merging/' }
+							autogenerate: { directory: '07-docker-vcs/github/03-branching-and-merging' }
 						},
 						{
 							label: 'Introduction to GitHub',
 							collapsed: true,
-							autogenerate: { directory: '07-docker-vcs/github/04-introduction-to-github/' }
+							autogenerate: { directory: '07-docker-vcs/github/04-introduction-github' }
 						},
 						{
 							label: 'Collaboration in GitHub',
