@@ -19,7 +19,7 @@ Restrict a container’s CPU usage. The following example limits a container to 
 
 ```bash
 docker run --cpus="1.5" ubuntu
-````
+```
 
 * Useful in multi-tenant environments.
 * Helps avoid “noisy neighbor” issues.
