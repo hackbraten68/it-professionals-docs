@@ -1,113 +1,133 @@
 ---
-title: Git-Lebenszyklus
+title: Setting Up Git
 ---
+# Git einrichten
 
-## Einführung
-
-Git ist ein **verteiltes Versionskontrollsystem (DVCS)**, das Änderungen an Dateien und Projekten verwaltet.  
-Eines der wichtigsten Konzepte beim Erlernen von Git ist der **Lebenszyklus einer Datei**.  
-Jede Datei in einem Git-Projekt befindet sich in einem von mehreren Zuständen, und Entwickler bewegen Dateien zwischen diesen Zuständen, während sie an Projekten arbeiten.
+Bevor du mit Git arbeiten kannst, musst du es **installieren** und anschließend eine **Grundkonfiguration** vornehmen. Diese Einrichtung stellt sicher, dass Git korrekt funktioniert und deine Arbeit eindeutig mit deiner Identität verknüpft wird.
 
 ---
 
-## Überblick über den Git-Lebenszyklus
+## 1. Installation von Git
 
-Jede Datei in Git durchläuft einen Zyklus, der dabei hilft, Änderungen nachzuverfolgen und zu verwalten. Die drei Hauptphasen sind:
+Git kann auf allen gängigen Betriebssystemen installiert werden. Die Vorgehensweise hängt von deinem System ab:
 
-1. **Arbeitsverzeichnis (Working Directory)** – hier liegen die Projektdateien lokal.  
-2. **Staging-Bereich (Staging Area)** – hier werden Änderungen vorbereitet.  
-3. **Repository** – hier werden die eingespielten Snapshots dauerhaft gespeichert.  
+### Windows
 
-Es ist wichtig zu verstehen, dass Git nicht automatisch jede Änderung speichert. Du entscheidest, was aufgenommen, committet oder verworfen wird.
+* Lade den Installer von der offiziellen Website herunter:
+  [https://git-scm.com/download/win](https://git-scm.com/download/win)
+* Führe den Installer aus und folge den Anweisungen.
+* Optional kannst du **Git Bash** mitinstallieren – ein Terminal mit UNIX-ähnlichen Befehlen, das die Arbeit mit Git unter Windows deutlich erleichtert.
+
+### macOS
+
+* Mit **Homebrew** (Paketmanager) kannst du Git wie folgt installieren:
+
+  ```bash
+  brew install git
+  ```
+* Alternativ kannst du die **Xcode Command Line Tools** installieren, die Git bereits enthalten:
+
+  ```bash
+  xcode-select --install
+  ```
+
+### Linux
+
+* Verwende den Paketmanager deiner Distribution:
+
+  * Debian/Ubuntu:
+
+    ```bash
+    sudo apt update
+    sudo apt install git
+    ```
+  * Fedora:
+
+    ```bash
+    sudo dnf install git
+    ```
+  * Arch Linux:
+
+    ```bash
+    sudo pacman -S git
+    ```
+
+> ✅ **Tipp:** Überprüfe die Installation mit:
+>
+> ```bash
+> git --version
+> ```
+>
+> Damit wird die installierte Git-Version angezeigt.
 
 ---
 
-## 1. Arbeitsverzeichnis (Working Directory)
+## 2. Grundkonfiguration
 
-Das **Arbeitsverzeichnis** ist der lokale Ordner auf deinem Rechner, in dem deine Projektdateien liegen.
+Nach der Installation solltest du Git mit deinen persönlichen Daten konfigurieren. Diese Informationen werden in den Metadaten deiner Commits gespeichert und helfen, deine Änderungen eindeutig zu identifizieren.
 
-- Hier bearbeitest, erstellst oder löschst du Dateien aktiv.  
-- Dateien können unterschiedliche Zustände haben:
-  - **Untracked (nicht verfolgt)**: Dateien, die Git noch nicht überwacht.  
-  - **Modified (geändert)**: Dateien, die bereits unter Versionskontrolle stehen, aber seit dem letzten Commit verändert wurden.  
-  - **Deleted (gelöscht)**: Dateien, die entfernt wurden, aber in Git noch nicht aktualisiert sind.  
+### Name und E-Mail festlegen
 
-### Beispielbefehle
+Führe die folgenden Befehle aus (ersetze durch deine eigenen Daten):
+
 ```bash
-git status       # Zeigt den Zustand der Dateien im Arbeitsverzeichnis
-git add <file>   # Verschiebt Änderungen vom Arbeitsverzeichnis in den Staging-Bereich
+git config --global user.name "Dein Name"
+git config --global user.email "du@example.com"
+```
+
+* `user.name`: Wird als Autor deiner Commits angezeigt.
+* `user.email`: Diese E-Mail-Adresse wird mit deinen Commits verknüpft. Wenn du GitHub oder GitLab nutzt, sollte sie mit der dort hinterlegten Adresse übereinstimmen.
+
+### Weitere nützliche Einstellungen
+
+* Standard-Editor festlegen (Beispiel: Visual Studio Code):
+
+  ```bash
+  git config --global core.editor "code --wait"
+  ```
+* Farbige Ausgabe aktivieren (bessere Lesbarkeit):
+
+  ```bash
+  git config --global color.ui auto
+  ```
+
+---
+
+## 3. Konfiguration überprüfen
+
+Du kannst dir die aktuellen Einstellungen anzeigen lassen mit:
+
+```bash
+git config --list
+```
+
+Oder gezielt einzelne Werte abfragen:
+
+```bash
+git config user.name
+git config user.email
 ```
 
 ---
 
-## 2. Staging-Bereich (Staging Area)
+## 4. Lokale vs. Globale Konfiguration
 
-Der **Staging-Bereich** (auch **Index** genannt) ist wie eine **Vorbereitungsliste**.
-Hier entscheidest du, welche Änderungen im nächsten Commit enthalten sein sollen.
+* **Global** (`--global`): Gilt für das gesamte System (alle Repositories).
+* **Lokal**: Ohne `--global` gilt die Einstellung nur für das aktuelle Repository.
+* **Systemweit** (`--system`): Gilt für alle Benutzer auf dem Rechner.
 
-* Mit `git add` legst du Änderungen in den Staging-Bereich.
-* So kannst du gezielt bestimmen, welche Änderungen übernommen werden.
-* Du kannst mehrere Dateien oder sogar nur Teile einer Datei aufnehmen.
-
-### Beispielbefehle
+Beispiel für eine repository-spezifische E-Mail:
 
 ```bash
-git add file1.txt       # Eine einzelne Datei zum Staging-Bereich hinzufügen
-git add .               # Alle Änderungen im aktuellen Verzeichnis aufnehmen
-git reset file1.txt     # Eine Datei wieder aus dem Staging-Bereich entfernen
+git config user.email "projekt@example.com"
 ```
 
 ---
 
-## 3. Repository
+## 5. Nächste Schritte
 
-Das **Repository** ist die Datenbank, in der Git die **committeten Snapshots** deines Projekts speichert.
+Sobald Git installiert und eingerichtet ist, kannst du:
 
-* Ein **Commit** ist ein dauerhafter Snapshot der Dateien im Staging-Bereich.
-* Commits bilden eine Zeitleiste deiner Projektgeschichte.
-* Jeder Commit enthält:
-
-  * Eine eindeutige ID (SHA-Hash)
-  * Informationen über den Autor
-  * Eine Commit-Nachricht
-  * Referenzen auf vorherige Commits
-
-### Beispielbefehle
-
-```bash
-git commit -m "Neue Funktion hinzugefügt"   # Erzeugt einen neuen Commit mit den gestagten Änderungen
-git log                                     # Zeigt die Commit-Historie
-```
-
----
-
-## Ablauf des Lebenszyklus in der Praxis
-
-So bewegt sich eine Datei typischerweise durch den Lebenszyklus:
-
-1. **Datei erstellen/ändern** → Datei erscheint als *untracked* oder *modified* im **Arbeitsverzeichnis**.
-2. **Änderungen aufnehmen** → Mit `git add` verschiebst du Änderungen in den **Staging-Bereich**.
-3. **Commit** → Mit `git commit` speicherst du die Änderungen dauerhaft im **Repository**.
-
----
-
-## Visualisierung des Git-Lebenszyklus
-
-```bash
-Arbeitsverzeichnis  →  Staging-Bereich  →  Repository
-        (edit)            (git add)          (git commit)
-```
-
-* **Arbeitsverzeichnis** = Sandbox zum Bearbeiten
-* **Staging-Bereich** = Checkliste der Änderungen für den Commit
-* **Repository** = Dauerhafte Historie der Commits
-
----
-
-## Wichtige Erkenntnisse
-
-* Git-Dateien bewegen sich durch **Arbeitsverzeichnis → Staging-Bereich → Repository**.
-* Das **Arbeitsverzeichnis** ist der Ort, an dem du Änderungen machst.
-* Der **Staging-Bereich** erlaubt dir, gezielt vorzubereiten, was in den nächsten Commit soll.
-* Das **Repository** ist die dauerhafte Projekthistorie.
-* Wer diesen Lebenszyklus versteht, hat die volle Kontrolle darüber, was gespeichert und geteilt wird.
+* Ein neues Repository erstellen mit `git init`.
+* Ein bestehendes Repository klonen mit `git clone <url>`.
+* Dateien verfolgen, Änderungen committen und mit anderen zusammenarbeiten.

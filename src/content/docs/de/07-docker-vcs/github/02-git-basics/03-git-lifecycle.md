@@ -1,113 +1,113 @@
 ---
-title: Git Lifecycle
----
-## Introduction
-
-Git is a **Distributed Version Control System (DVCS)** that manages changes to files and projects.  
-One of the most important concepts to understand when learning Git is the **lifecycle of a file**.  
-Every file in a Git project exists in one of several states, and developers move files between these states as they work on their projects.
-
+title: Git-Lebenszyklus
 ---
 
-## Overview of the Git Lifecycle
+## Einführung
 
-Every file in Git goes through a cycle that helps you track and manage changes. The three main stages are:
-
-1. **Working Directory** – where files are created, edited, and deleted.
-2. **Staging Area** – where changes are prepared before being permanently recorded.
-3. **Repository** – where committed snapshots are stored as part of the project history.
-
-Understanding these stages is crucial because Git does not automatically track every change. You decide what to include, commit, or discard.
+Git ist ein **verteiltes Versionskontrollsystem (DVCS)**, das Änderungen an Dateien und Projekten verwaltet.  
+Eines der wichtigsten Konzepte beim Erlernen von Git ist der **Lebenszyklus einer Datei**.  
+Jede Datei in einem Git-Projekt befindet sich in einem von mehreren Zuständen, und Entwickler bewegen Dateien zwischen diesen Zuständen, während sie an Projekten arbeiten.
 
 ---
 
-## 1. Working Directory
+## Überblick über den Git-Lebenszyklus
 
-The **Working Directory** is the local folder on your machine where your project files live.
+Jede Datei in Git durchläuft einen Zyklus, der dabei hilft, Änderungen nachzuverfolgen und zu verwalten. Die drei Hauptphasen sind:
 
-- This is where you actively edit files.
-- Files can have different states in the working directory:
-  - **Untracked**: Files that Git is not yet monitoring.
-  - **Modified**: Files that Git is tracking but have been changed since the last commit.
-  - **Deleted**: Files that were removed but not yet updated in Git.
+1. **Arbeitsverzeichnis (Working Directory)** – hier liegen die Projektdateien lokal.  
+2. **Staging-Bereich (Staging Area)** – hier werden Änderungen vorbereitet.  
+3. **Repository** – hier werden die eingespielten Snapshots dauerhaft gespeichert.  
 
-### Example Commands
+Es ist wichtig zu verstehen, dass Git nicht automatisch jede Änderung speichert. Du entscheidest, was aufgenommen, committet oder verworfen wird.
 
+---
+
+## 1. Arbeitsverzeichnis (Working Directory)
+
+Das **Arbeitsverzeichnis** ist der lokale Ordner auf deinem Rechner, in dem deine Projektdateien liegen.
+
+- Hier bearbeitest, erstellst oder löschst du Dateien aktiv.  
+- Dateien können unterschiedliche Zustände haben:
+  - **Untracked (nicht verfolgt)**: Dateien, die Git noch nicht überwacht.  
+  - **Modified (geändert)**: Dateien, die bereits unter Versionskontrolle stehen, aber seit dem letzten Commit verändert wurden.  
+  - **Deleted (gelöscht)**: Dateien, die entfernt wurden, aber in Git noch nicht aktualisiert sind.  
+
+### Beispielbefehle
 ```bash
-git status       # Show the state of files in the working directory
-git add <file>   # Move changes from the working directory to the staging area
+git status       # Zeigt den Zustand der Dateien im Arbeitsverzeichnis
+git add <file>   # Verschiebt Änderungen vom Arbeitsverzeichnis in den Staging-Bereich
 ```
 
 ---
 
-## 2. Staging Area
+## 2. Staging-Bereich (Staging Area)
 
-The **Staging Area** (also called the **Index**) is like a **preparation zone**.
-You decide which changes should be included in the next commit.
+Der **Staging-Bereich** (auch **Index** genannt) ist wie eine **Vorbereitungsliste**.
+Hier entscheidest du, welche Änderungen im nächsten Commit enthalten sein sollen.
 
-* When you use `git add`, you place changes into the staging area.
-* This allows you to commit specific changes while leaving others uncommitted.
-* You can stage multiple files or just parts of a file.
+* Mit `git add` legst du Änderungen in den Staging-Bereich.
+* So kannst du gezielt bestimmen, welche Änderungen übernommen werden.
+* Du kannst mehrere Dateien oder sogar nur Teile einer Datei aufnehmen.
 
-### Example Commands
+### Beispielbefehle
 
 ```bash
-git add file1.txt       # Stage a single file
-git add .               # Stage all changes in the current directory
-git reset file1.txt     # Remove a file from the staging area
+git add file1.txt       # Eine einzelne Datei zum Staging-Bereich hinzufügen
+git add .               # Alle Änderungen im aktuellen Verzeichnis aufnehmen
+git reset file1.txt     # Eine Datei wieder aus dem Staging-Bereich entfernen
 ```
 
 ---
 
 ## 3. Repository
 
-The **Repository** is the database where Git stores **committed snapshots** of your project.
+Das **Repository** ist die Datenbank, in der Git die **committeten Snapshots** deines Projekts speichert.
 
-* A **commit** is a permanent snapshot of the staged files.
-* Commits create a timeline of project history.
-* Each commit has:
+* Ein **Commit** ist ein dauerhafter Snapshot der Dateien im Staging-Bereich.
+* Commits bilden eine Zeitleiste deiner Projektgeschichte.
+* Jeder Commit enthält:
 
-  * A unique ID (SHA hash)
-  * Author information
-  * A commit message
-  * A reference to its parent commits
+  * Eine eindeutige ID (SHA-Hash)
+  * Informationen über den Autor
+  * Eine Commit-Nachricht
+  * Referenzen auf vorherige Commits
 
-### Example Commands
+### Beispielbefehle
 
 ```bash
-git commit -m "Add new feature"   # Create a new commit with staged changes
-git log                           # Show commit history
+git commit -m "Neue Funktion hinzugefügt"   # Erzeugt einen neuen Commit mit den gestagten Änderungen
+git log                                     # Zeigt die Commit-Historie
 ```
 
 ---
 
-## Lifecycle in Action
+## Ablauf des Lebenszyklus in der Praxis
 
-Here’s how a file typically moves through the lifecycle:
+So bewegt sich eine Datei typischerweise durch den Lebenszyklus:
 
-1. **Create/Edit file** → File appears as *untracked* or *modified* in the **Working Directory**.
-2. **Stage changes** → Use `git add` to move changes to the **Staging Area**.
-3. **Commit** → Use `git commit` to store the staged changes in the **Repository**.
+1. **Datei erstellen/ändern** → Datei erscheint als *untracked* oder *modified* im **Arbeitsverzeichnis**.
+2. **Änderungen aufnehmen** → Mit `git add` verschiebst du Änderungen in den **Staging-Bereich**.
+3. **Commit** → Mit `git commit` speicherst du die Änderungen dauerhaft im **Repository**.
 
 ---
 
-## Visualizing the Git Lifecycle
+## Visualisierung des Git-Lebenszyklus
 
 ```bash
-Working Directory  →  Staging Area  →  Repository
-       (edit)            (git add)        (git commit)
+Arbeitsverzeichnis  →  Staging-Bereich  →  Repository
+        (edit)            (git add)          (git commit)
 ```
 
-* **Working Directory** = Sandbox for editing
-* **Staging Area** = Checklist of changes to commit
-* **Repository** = Permanent history of commits
+* **Arbeitsverzeichnis** = Sandbox zum Bearbeiten
+* **Staging-Bereich** = Checkliste der Änderungen für den Commit
+* **Repository** = Dauerhafte Historie der Commits
 
 ---
 
-## Key Takeaways
+## Wichtige Erkenntnisse
 
-* Git files move through **Working Directory → Staging Area → Repository**.
-* The **Working Directory** is where you make changes.
-* The **Staging Area** allows you to carefully prepare commits.
-* The **Repository** stores your project history permanently.
-* By mastering this lifecycle, you gain precise control over what gets saved and shared.
+* Git-Dateien bewegen sich durch **Arbeitsverzeichnis → Staging-Bereich → Repository**.
+* Das **Arbeitsverzeichnis** ist der Ort, an dem du Änderungen machst.
+* Der **Staging-Bereich** erlaubt dir, gezielt vorzubereiten, was in den nächsten Commit soll.
+* Das **Repository** ist die dauerhafte Projekthistorie.
+* Wer diesen Lebenszyklus versteht, hat die volle Kontrolle darüber, was gespeichert und geteilt wird.

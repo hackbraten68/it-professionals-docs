@@ -2,38 +2,38 @@
 title: .gitignore
 ---
 
-A `.gitignore` file is used in Git projects to specify which files and directories should be ignored by Git. This means Git will not track changes to these files, and they will not be committed to the repository. Ignoring unnecessary or sensitive files helps keep the repository clean, secure, and efficient.
+Eine `.gitignore`-Datei wird in Git-Projekten verwendet, um festzulegen, welche Dateien und Verzeichnisse von Git ignoriert werden sollen. Das bedeutet, dass Git diese Dateien nicht überwacht und sie nicht in das Repository übernommen werden. Das Ignorieren unnötiger oder sensibler Dateien hilft dabei, das Repository sauber, sicher und effizient zu halten.
 
 ---
 
-## Why Use a `.gitignore`?
+## Warum eine `.gitignore` verwenden?
 
-1. **Exclude unnecessary files**  
-   Prevent files such as temporary build outputs, logs, or editor-specific settings from cluttering the repository.
+1. **Unnötige Dateien ausschließen**  
+   Verhindert, dass temporäre Build-Ergebnisse, Logs oder editor-spezifische Einstellungen das Repository überladen.
 
-2. **Protect sensitive information**  
-   Keep environment variables, API keys, and private configuration files (e.g., `.env`) out of version control.
+2. **Sensible Informationen schützen**  
+   Hält Umgebungsvariablen, API-Keys und private Konfigurationsdateien (z. B. `.env`) aus der Versionskontrolle heraus.
 
-3. **Improve performance**  
-   Large directories like `node_modules/` or compiled binaries can drastically slow down Git operations. Ignoring them ensures faster performance.
+3. **Performance verbessern**  
+   Große Verzeichnisse wie `node_modules/` oder kompilierte Binärdateien können Git stark verlangsamen. Das Ignorieren dieser Dateien sorgt für eine bessere Geschwindigkeit.
 
-4. **Maintain consistency across teams**  
-   Using a shared `.gitignore` file helps all team members avoid accidentally committing files that should remain local.
-
----
-
-## Structure of a `.gitignore` File
-
-- Each line represents a pattern.
-- Blank lines are ignored.
-- Lines starting with `#` are treated as comments.
-- Patterns can match individual files, directories, or groups of files using wildcards.
+4. **Konsistenz im Team gewährleisten**  
+   Eine gemeinsame `.gitignore`-Datei stellt sicher, dass alle Teammitglieder dieselben Regeln nutzen und keine unerwünschten Dateien committen.
 
 ---
 
-## Common Patterns
+## Aufbau einer `.gitignore`-Datei
 
-### Ignoring Directories
+- Jede Zeile definiert ein Muster.
+- Leere Zeilen werden ignoriert.
+- Zeilen, die mit `#` beginnen, sind Kommentare.
+- Muster können einzelne Dateien, ganze Verzeichnisse oder Dateigruppen mit Platzhaltern betreffen.
+
+---
+
+## Häufige Muster
+
+### Verzeichnisse ignorieren
 
 ```bash
 node_modules/
@@ -41,18 +41,18 @@ dist/
 build/
 ```
 
-* The trailing `/` indicates an entire directory should be ignored.
+* Der abschließende `/` zeigt an, dass ein komplettes Verzeichnis ignoriert wird.
 
-### Ignoring Specific Files
+### Bestimmte Dateien ignorieren
 
 ```bash
 .env
 config.json
 ```
 
-* Useful for sensitive configuration files.
+* Nützlich für sensible Konfigurationsdateien.
 
-### Ignoring File Types
+### Dateitypen ignorieren
 
 ```bash
 *.log
@@ -60,38 +60,39 @@ config.json
 *.swp
 ```
 
-* The `*` wildcard matches any number of characters, so `*.log` ignores all log files.
+* Das `*` ist ein Platzhalter für beliebig viele Zeichen.
+  Beispiel: `*.log` ignoriert alle Log-Dateien.
 
-### Negating Rules
+### Regeln negieren
 
 ```bash
 *.log
 !important.log
 ```
 
-* The `!` prefix means "do not ignore."
-  In this example, all `.log` files are ignored except for `important.log`.
+* Das Präfix `!` bedeutet „nicht ignorieren“.
+  In diesem Beispiel werden alle `.log`-Dateien ignoriert – außer `important.log`.
 
 ---
 
-## Example `.gitignore` File
+## Beispiel einer `.gitignore`-Datei
 
 ```bash
-# Dependency directories
+# Abhängigkeiten
 node_modules/
 vendor/
 
-# Build output
+# Build-Ausgaben
 dist/
 build/
 
-# Environment variables
+# Umgebungsvariablen
 .env
 
 # Logs
 *.log
 
-# Editor/IDE settings
+# Editor-/IDE-Einstellungen
 .vscode/
 .idea/
 *.swp
@@ -99,16 +100,16 @@ build/
 
 ---
 
-## Global `.gitignore`
+## Globale `.gitignore`
 
-Sometimes, you want to ignore files across **all repositories** on your system, such as operating system files or editor caches.
-You can create a **global gitignore**:
+Manchmal möchte man Dateien **in allen Repositories** ignorieren, z. B. systembedingte oder editor-spezifische Dateien.
+Dafür kann man eine **globale gitignore**-Datei anlegen:
 
 ```bash
 git config --global core.excludesfile ~/.gitignore_global
 ```
 
-Then add rules inside `~/.gitignore_global`. Example:
+In `~/.gitignore_global` können dann Regeln wie folgt hinterlegt werden:
 
 ```bash
 # macOS
@@ -125,18 +126,18 @@ Thumbs.db
 
 ## Best Practices
 
-1. **Keep `.gitignore` updated**: Adjust as your project evolves.
-2. **Do not ignore critical files**: Ensure necessary configs and documentation are included in version control.
-3. **Use templates**: GitHub maintains a collection of `.gitignore` templates for different languages and frameworks:
+1. **Regelmäßig aktualisieren**: Passe die `.gitignore`-Datei an, wenn sich das Projekt weiterentwickelt.
+2. **Keine wichtigen Dateien ignorieren**: Stelle sicher, dass wichtige Konfigurationen und Dokumentationen im Repository bleiben.
+3. **Vorlagen nutzen**: GitHub stellt `.gitignore`-Vorlagen für verschiedene Sprachen und Frameworks bereit:
    [https://github.com/github/gitignore](https://github.com/github/gitignore)
-4. **Share with the team**: Commit the `.gitignore` file so all collaborators benefit from consistent rules.
+4. **Mit dem Team teilen**: Committe die `.gitignore`-Datei ins Repository, sodass alle Teammitglieder dieselben Regeln nutzen.
 
 ---
 
-## Summary
+## Zusammenfassung
 
-* A `.gitignore` file prevents unwanted files and directories from being tracked by Git.
-* It improves performance, security, and collaboration.
-* Patterns can target directories, specific files, file types, or use negation rules.
-* Both project-specific and global `.gitignore` files can be used.
-* Following best practices helps maintain a clean and professional repository.
+* Eine `.gitignore`-Datei legt fest, welche Dateien Git nicht verfolgen soll.
+* Sie sorgt für bessere Performance, mehr Sicherheit und ein sauberes Projekt.
+* Muster können für Verzeichnisse, bestimmte Dateien oder ganze Dateitypen definiert werden – mit der Möglichkeit, Ausnahmen hinzuzufügen.
+* Es gibt sowohl projektbezogene als auch globale `.gitignore`-Dateien.
+* Durch Best Practices bleibt das Repository professionell und übersichtlich.
