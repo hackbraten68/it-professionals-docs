@@ -1,63 +1,63 @@
 ---
 title: Merging Branches
 ---
-# Merging Branches
+# Branches zusammenführen (Merging Branches)
 
-Merging combines the histories of two branches so that the changes from one branch become part of another. In everyday work, you’ll most often merge a **feature branch** into your **main** (or **develop**) branch after the feature is complete.
+Ein Merge kombiniert die Historien zweier Branches, sodass die Änderungen aus einem Branch Teil eines anderen werden. In der täglichen Arbeit wird meist ein **Feature-Branch** in den **main**- (oder **develop**-) Branch gemergt, sobald die Funktion fertig ist.
 
 ---
 
-## Quick Start
+## Schnellstart
 
 ```bash
-# 1) Switch to the branch you want to receive changes
+# 1) In den Branch wechseln, der die Änderungen erhalten soll
 git checkout main
 
-# 2) Merge the feature branch into it
+# 2) Den Feature-Branch hinein mergen
 git merge feature-login
 ```
 
-If Git can combine the changes automatically, you’ll either get a **fast‑forward** (no merge commit) or a **merge commit** (three‑way merge). If there are conflicts, Git will pause and ask you to resolve them.
+Wenn Git die Änderungen automatisch kombinieren kann, entsteht entweder ein **Fast-Forward Merge** (kein Merge-Commit) oder ein **Three-Way Merge** (mit Merge-Commit). Wenn Konflikte auftreten, stoppt Git und fordert dich auf, sie zu lösen.
 
 ---
 
-## Core Concepts
+## Grundkonzepte
 
-### The Merge Base
+### Merge Base
 
-When merging, Git finds a **merge base**—the most recent common ancestor of the two branch tips—and compares changes introduced since that point. This is why the quality of your history (small, focused commits; frequent rebasing of feature branches) affects the ease of merges.
+Beim Mergen sucht Git die **gemeinsame Basis** (Merge Base) – also den letzten gemeinsamen Vorfahren beider Branches – und vergleicht alle Änderungen, die seit diesem Punkt gemacht wurden. Deshalb ist eine saubere Historie (kleine, fokussierte Commits; häufiges Rebasen von Feature-Branches) entscheidend, um Merges einfach zu halten.
 
-### Merge Types
+### Merge-Typen
 
-* **Fast‑forward merge**
-  Occurs when the target branch hasn’t moved since the feature branch diverged. Git simply moves the branch pointer forward—no merge commit is created.
+* **Fast-Forward Merge**
+  Tritt auf, wenn sich der Ziel-Branch nicht verändert hat, seit der Feature-Branch abgezweigt wurde. Git verschiebt einfach den Branch-Zeiger nach vorne – es entsteht **kein Merge-Commit**.
 
   ```bash
   git checkout main
   git merge --ff-only feature-login
-  # Ensures only fast-forward is allowed; fails otherwise
+  # Erzwingt, dass nur ein Fast-Forward ausgeführt wird; sonst Abbruch
   ```
 
-* **Three‑way merge (merge commit)**
-  Happens when both branches have diverged. Git compares **(main, feature, merge base)** and creates a new **merge commit** with two parents.
+* **Three-Way Merge (Merge-Commit)**
+  Tritt auf, wenn beide Branches sich unabhängig weiterentwickelt haben. Git vergleicht **(main, feature, merge base)** und erstellt einen neuen **Merge-Commit** mit zwei Eltern.
 
   ```bash
   git checkout main
   git merge feature-login
-  # Creates a merge commit if necessary
+  # Erstellt einen Merge-Commit, falls notwendig
   ```
 
 ---
 
-## Common Merge Options
+## Wichtige Merge-Optionen
 
 * `--ff`, `--ff-only`, `--no-ff`
 
-  * `--ff-only`: allow merge only if fast‑forward is possible (safe for linear history).
-  * `--no-ff`: always create a merge commit (useful to preserve feature context in history).
+  * `--ff-only`: erlaubt Merge nur, wenn Fast-Forward möglich ist.
+  * `--no-ff`: erzwingt immer einen Merge-Commit (nützlich, um Feature-Kontext zu erhalten).
 
 * `--squash`
-  Combines all commits from the source branch into a single staged change on the target branch **without** creating a merge commit or recording branch topology.
+  Fasst alle Commits des Source-Branches zu einem einzigen Commit zusammen, **ohne Merge-Commit** und ohne Branch-Topologie zu speichern.
 
   ```bash
   git checkout main
@@ -66,83 +66,83 @@ When merging, Git finds a **merge base**—the most recent common ancestor of th
   ```
 
 * `--no-commit`
-  Perform the merge but stop before creating the merge commit, letting you review/edit the staged result.
+  Führt den Merge aus, stoppt aber vor dem Commit, sodass du das Ergebnis noch anpassen kannst.
 
   ```bash
   git merge --no-commit feature-login
-  # Inspect, adjust, then:
+  # Änderungen prüfen, ggf. anpassen, dann:
   git commit
   ```
 
-* `-m "message"`
-  Provide a custom merge commit message.
+* `-m "Nachricht"`
+  Ermöglicht eine eigene Merge-Commit-Nachricht.
 
-* Strategy options:
+* Strategien:
 
-  * `-s ours` (rare; keep the current branch’s content, record merge)
-  * `-X ours` / `-X theirs` (tie‑breaker for content-level conflicts with the default strategy)
+  * `-s ours`: behält nur die aktuelle Branch-Version (selten).
+  * `-X ours` / `-X theirs`: entscheidet bei Konflikten automatisch für eine Seite.
 
 ---
 
-## Conflict Resolution Workflow
+## Konfliktlösung
 
-When changes overlap, Git flags **conflicts** and halts the merge.
+Wenn Änderungen kollidieren, markiert Git **Konflikte** und pausiert den Merge.
 
-1. **Run the merge**
+1. **Merge starten**
 
    ```bash
    git checkout main
    git merge feature-login
-   # CONFLICT (content): Merge conflict in src/auth/login.ts
+   # CONFLICT (content): Merge-Konflikt in src/auth/login.ts
    ```
 
-2. **Inspect conflicts**
-   Open the files and look for conflict markers:
+2. **Konflikte ansehen**
+   Im Editor erscheinen Markierungen:
 
    ```text
    <<<<<<< HEAD
-   current branch version
+   Version des aktuellen Branches
    =======
-   incoming branch version
+   Version des gemergten Branches
    >>>>>>> feature-login
    ```
 
-3. **Resolve conflicts**
-   Edit the file so it contains the correct, combined result. Remove the conflict markers.
+3. **Konflikte lösen**
+   Datei bearbeiten, richtige Inhalte kombinieren, Marker entfernen.
 
-4. **Mark as resolved**
+4. **Als gelöst markieren**
 
    ```bash
    git add src/auth/login.ts
    ```
 
-5. **Continue or abort**
+5. **Fortsetzen oder abbrechen**
 
    ```bash
-   git commit                # completes the merge with a merge commit
-   # or
-   git merge --continue      # if prompted
-   # or to undo the merge attempt entirely:
+   git commit                # Merge-Commit erstellen
+   # oder
+   git merge --continue      # falls Git dies verlangt
+   # oder komplett abbrechen:
    git merge --abort
    ```
 
-### Helpful Tools & Tips
+### Hilfreiche Werkzeuge
 
-* **Diff & status**
+* **Status & Diff**
 
   ```bash
   git status
   git diff
   git diff --staged
   ```
-  
-* **Mergetool**
+
+* **Mergetool starten**
 
   ```bash
   git mergetool
   ```
 
-* **Verify result**
+* **Ergebnis prüfen**
 
   ```bash
   git log --graph --oneline --decorate
@@ -151,180 +151,131 @@ When changes overlap, Git flags **conflicts** and halts the merge.
 
 ---
 
-## Choosing a Merge Strategy
+## Welche Strategie wählen?
 
-### When to prefer fast‑forward
+* **Fast-Forward bevorzugen**, wenn:
 
-* The feature branch is trivial or very short‑lived.
-* You enforce linear history (`--ff-only`), keeping `main` tidy.
+  * Feature klein oder kurzlebig ist.
+  * Du lineare Historie erzwingen willst (`--ff-only`).
 
-### When to prefer merge commits (`--no-ff`)
+* **Merge-Commits (`--no-ff`) bevorzugen**, wenn:
 
-* You want to preserve the **feature branch context** (useful in larger teams).
-* The feature has multiple commits that tell a story and you want that topology visible.
+  * Feature-Kontext erhalten bleiben soll.
+  * Branch mehrere aussagekräftige Commits enthält.
 
-### When to prefer squash merges
+* **Squash-Merge bevorzugen**, wenn:
 
-* You want a **clean, single commit** on `main` but keep the feature branch history only on the side (not recorded in ancestry).
-* Good for large “work-in-progress” histories that would be noisy on `main`.
-
-> **Note:** Squash merges lose branch topology. You cannot later see which individual feature commits created that one change on `main`.
+  * Du nur **einen sauberen Commit** in `main` haben willst.
+  * Feature-Historie nicht im Hauptverlauf erscheinen soll.
 
 ---
 
-## Rebase vs Merge (Short Comparison)
+## Merge vs Rebase (Kurzvergleich)
 
-* **Merge** preserves branch topology; history shows when lines of work converged.
-* **Rebase** rewrites commit bases to create a linear sequence of commits; makes history cleaner but changes commit IDs.
+* **Merge**: bewahrt Branch-Topologie, zeigt Zusammenführungen explizit.
+* **Rebase**: schreibt Historie um, macht sie linear, aber verändert Commit-IDs.
 
-**Typical pattern:**
-Regularly `git fetch` and `git rebase origin/main` on your feature branch to reduce conflicts, then merge into `main` when done.
+**Praxis:**
+Feature-Branch regelmäßig auf `main` rebasen, dann Fast-Forward in `main` mergen:
 
 ```bash
 git checkout feature-login
 git fetch origin
 git rebase origin/main
-# Resolve any conflicts during rebase, then:
 git checkout main
 git merge --ff-only feature-login
 ```
 
 ---
 
-## Advanced Topics
+## Erweiterte Themen
 
-### Handling Unrelated Histories
-
-If two repositories/branches share no common history:
-
-```bash
-git merge other-branch --allow-unrelated-histories
-```
-
-Use with care—review file overlaps thoroughly.
-
-### Binary Files & Custom Merge Drivers
-
-Conflicts in binaries can’t be auto‑merged. Consider:
-
-* Locking workflow (only one person edits the binary at a time).
-* `.gitattributes` with custom **merge drivers**:
+* **Unrelated Histories**:
 
   ```bash
-  *.lockbin merge=binary
+  git merge other-branch --allow-unrelated-histories
   ```
 
-  Then define `binary` driver in your Git config or attributes.
+* **Binärdateien & Merge-Treiber**:
+  Konflikte lassen sich nicht automatisch lösen → `.gitattributes` verwenden.
 
-### Rerere: Reuse Recorded Resolutions
-
-Git can remember how you resolved a conflict and apply it next time:
-
-```bash
-git config --global rerere.enabled true
-```
-
-### Partial Merges with Paths
-
-Merge only specific paths from a branch:
-
-```bash
-git checkout main
-git checkout feature-login -- src/auth/ src/ui/LoginForm.tsx
-git commit -m "chore: merge auth UI pieces from feature-login"
-```
-
-> This is **not** a true merge (no ancestry recorded), but a pragmatic way to cherry‑pick content.
-
-### Octopus Merges (multiple branches)
-
-Useful for unrelated, conflict‑free topic branches:
-
-```bash
-git checkout main
-git merge feature-a feature-b feature-c
-```
-
----
-
-## Team Practices & Governance
-
-* **Protect main**: Require PRs, status checks, code review, and up‑to‑date branches before merging.
-* **Define policy**: Decide when to use `--no-ff`, squash merges, or rebase‑and‑merge in your hosting platform (GitHub/GitLab/Bitbucket).
-* **Consistent messages**: Use conventional commits or a team standard for merge commit messages.
-* **CI first**: Ensure the feature branch is green in CI before merging.
-* **Small, focused branches**: Smaller diffs → fewer conflicts → faster reviews.
-
----
-
-## Troubleshooting
-
-* **“Automatic merge failed; fix conflicts and then commit the result.”**
-  Resolve conflicts, `git add` the fixed files, then `git commit` or `git merge --continue`.
-
-* **“Not possible to fast-forward, aborting.” (with `--ff-only`)**
-  Rebase your feature branch onto the latest `main` or run a regular merge (without `--ff-only`).
+* **Rerere aktivieren** (merkt sich frühere Konfliktlösungen):
 
   ```bash
-  git checkout feature-login
-  git fetch origin
-  git rebase origin/main
+  git config --global rerere.enabled true
+  ```
+
+* **Nur bestimmte Dateien mergen**:
+
+  ```bash
+  git checkout main
+  git checkout feature-login -- src/auth/ src/ui/LoginForm.tsx
+  git commit -m "merge auth UI from feature-login"
+  ```
+
+* **Octopus-Merges (mehrere Branches gleichzeitig)**:
+
+  ```bash
+  git checkout main
+  git merge feature-a feature-b feature-c
+  ```
+
+---
+
+## Best Practices im Team
+
+* `main` schützen (PRs, Reviews, Tests erzwingen).
+* Merge-Strategie im Team klar definieren (`--no-ff`, Squash etc.).
+* Commit-Messages einheitlich halten (z. B. Conventional Commits).
+* Kleine, fokussierte Feature-Branches verwenden.
+* Merge nur, wenn CI erfolgreich ist.
+
+---
+
+## Häufige Probleme
+
+* **“Automatic merge failed”** → Konflikte lösen, `git add`, dann `git commit`.
+* **“Not possible to fast-forward”** → Feature-Branch rebasen.
+* **Falschen Branch gemergt** → `git reset --hard` (falls unpushed) oder Merge-Commit mit `git revert -m 1 <sha>` rückgängig machen.
+* **Nachricht ändern** → `git commit --amend` (falls unpushed).
+
+---
+
+## Beispiele
+
+* **Feature-Kontext behalten (immer Merge-Commit)**:
+
+  ```bash
+  git checkout main
+  git merge --no-ff feature-login -m "merge: integrate feature-login"
+  ```
+
+* **Lineare Historie erzwingen**:
+
+  ```bash
   git checkout main
   git merge --ff-only feature-login
   ```
 
-* **Accidentally merged the wrong branch**
-  If unpushed: `git reset --hard <commit-before-merge>`
-  If pushed: consider a **revert** of the merge commit (use `-m 1` to select the mainline parent):
+* **Squash-Merge für sauberen Commit**:
 
   ```bash
-  git revert -m 1 <merge-commit-sha>
-  ```
-
-* **Merge commit message too generic**
-  Amend right away (unpushed):
-
-  ```bash
-  git commit --amend
+  git checkout main
+  git merge --squash feature-login
+  git commit -m "feat(login): add form, validation, API hook"
   ```
 
 ---
 
-## Practical Examples
+## Historie prüfen
 
-### Preserve Feature Topology (always create a merge commit)
-
-```bash
-git checkout main
-git merge --no-ff feature-login -m "merge: integrate feature-login"
-```
-
-### Enforce Linear History (only accept fast-forward)
-
-```bash
-git checkout main
-git merge --ff-only feature-login
-```
-
-### Squash for a Clean Single Commit
-
-```bash
-git checkout main
-git merge --squash feature-login
-git commit -m "feat(login): add form, validation, API hook"
-```
-
----
-
-## Verification & History Views
-
-* Compact visualization:
+* Grafische Ansicht:
 
   ```bash
   git log --graph --oneline --decorate --all
   ```
 
-* Inspect the merge commit:
+* Merge-Commit anzeigen:
 
   ```bash
   git show <merge-commit-sha>
@@ -332,29 +283,29 @@ git commit -m "feat(login): add form, validation, API hook"
 
 ---
 
-## Mini Checklist (Before Merging)
+## Checkliste vor dem Merge
 
-* [ ] Feature branch rebased or merged with latest `main`.
-* [ ] Tests pass locally and in CI.
-* [ ] Conflicts resolved and code reviewed.
-* [ ] Commit messages are clear (or plan to squash).
-* [ ] Appropriate merge method selected (`--ff-only`, `--no-ff`, or `--squash`).
-
----
-
-## Practice Exercise
-
-1. Create a repo with `main` and `feature-a`; make conflicting edits to the same line.
-2. Attempt `git merge feature-a` on `main`.
-3. Resolve conflicts in your editor, `git add` the files, then `git commit`.
-4. Visualize the history with `git log --graph --oneline --decorate --all`.
-5. Repeat with `--no-ff` and then with `--squash` to see the differences.
+* [ ] Branch mit `main` synchronisiert
+* [ ] Tests laufen grün (lokal & CI)
+* [ ] Konflikte gelöst
+* [ ] Commit-Messages klar
+* [ ] Merge-Strategie bewusst gewählt
 
 ---
 
-### Summary
+## Übung
 
-* **Fast‑forward** merges move the pointer—no merge commit.
-* **Three‑way** merges create a merge commit to record convergence.
-* Choose between **ff-only**, **no-ff**, and **squash** based on your team’s history preferences.
-* Keep branches small and current, resolve conflicts carefully, and verify the final history.
+1. Repo erstellen, Branch `feature-a` anlegen.
+2. In beiden Branches denselben Codeabschnitt ändern → Konflikt provozieren.
+3. Merge versuchen, Konflikte lösen, committen.
+4. Historie mit `git log --graph` anschauen.
+5. Mit `--no-ff` und `--squash` wiederholen und Unterschiede vergleichen.
+
+---
+
+### Zusammenfassung
+
+* **Fast-Forward**: kein Merge-Commit, einfaches Verschieben.
+* **Three-Way Merge**: erstellt Merge-Commit, Historie bleibt vollständig.
+* **Squash**: fasst Änderungen zu einem Commit zusammen.
+* Regel: Branches klein halten, regelmäßig aktualisieren, Merge-Strategie bewusst einsetzen.

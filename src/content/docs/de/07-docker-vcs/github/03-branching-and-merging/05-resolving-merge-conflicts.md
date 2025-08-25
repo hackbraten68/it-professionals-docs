@@ -1,158 +1,160 @@
 ---
-title: Resolving Merge Conflicts
+title: Auflösen von Merge-Konflikten
 ---
 
-When working with Git, **merge conflicts** occur if two branches have made changes to the same part of a file or when Git cannot automatically reconcile differences between branches. Merge conflicts are a natural part of collaborative development and must be resolved manually before completing a merge.
-
----
-
-## What is a Merge Conflict?
-
-A merge conflict arises when Git tries to combine two sets of changes but cannot determine which version should be kept. For example, if two developers edit the same line in a file or if one edits a file while another deletes it, Git will raise a conflict.
+Beim Arbeiten mit Git treten **Merge-Konflikte** auf, wenn zwei Branches denselben Teil einer Datei verändert haben oder wenn Git die Unterschiede zwischen Branches nicht automatisch zusammenführen kann. Merge-Konflikte sind ein normaler Bestandteil kollaborativer Entwicklung und müssen manuell gelöst werden, bevor ein Merge abgeschlossen werden kann.
 
 ---
 
-## How Git Displays Conflicts
+## Was ist ein Merge-Konflikt?
 
-When a conflict occurs, Git stops the merge process and marks the conflicted file. Inside the file, Git inserts special markers that highlight the conflicting sections:
+Ein Merge-Konflikt entsteht, wenn Git versucht, zwei Änderungsstände zu kombinieren, aber nicht weiß, welche Version übernommen werden soll. Typische Fälle sind:
+
+- Zwei Entwickler bearbeiten dieselbe Zeile einer Datei.
+- Ein Entwickler bearbeitet eine Datei, während ein anderer sie löscht.
+
+---
+
+## Wie Git Konflikte darstellt
+
+Wenn ein Konflikt auftritt, stoppt Git den Merge-Vorgang und markiert die betroffene Datei. Git fügt spezielle Marker ein, um die Konfliktstellen sichtbar zu machen:
 
 ```diff
 <<<<<<< HEAD
-This is from the main branch
+Dies ist aus dem main-Branch
 =======
-This is from feature-login
+Dies ist aus feature-login
 >>>>>>> feature-login
 ```
 
 * `<<<<<<< HEAD`
-  Content from the branch you are merging **into** (often `main`).
+  Inhalt aus dem Branch, **in den gemergt wird** (z. B. `main`).
 * `=======`
-  Separator between the two conflicting changes.
+  Trenner zwischen den beiden Änderungen.
 * `>>>>>>> feature-login`
-  Content from the branch you are merging **from** (here: `feature-login`).
+  Inhalt aus dem Branch, **der gemergt wird** (hier: `feature-login`).
 
 ---
 
-## Identifying Conflicted Files
+## Konfliktdateien identifizieren
 
-After a conflict occurs, run:
+Nach Auftreten eines Konflikts:
 
 ```bash
 git status
 ```
 
-Conflicted files will be listed under **"Unmerged paths"**. These files must be resolved before Git can complete the merge.
+Git zeigt alle betroffenen Dateien unter **„Unmerged paths“** an. Diese müssen gelöst werden, bevor der Merge abgeschlossen werden kann.
 
 ---
 
-## Steps to Resolve a Merge Conflict
+## Schritte zum Lösen eines Merge-Konflikts
 
-1. **Open the conflicted file**
-   Review the conflicting sections and decide how to reconcile them.
-   Options include:
+1. **Konfliktdatei öffnen**
+   Die markierten Abschnitte prüfen und entscheiden, welche Änderungen behalten werden sollen. Möglichkeiten:
 
-   * Keeping one side (e.g., `HEAD` or `feature-login`)
-   * Combining changes from both sides
-   * Writing a new solution that incorporates both perspectives
+   * Eine Seite übernehmen (`HEAD` oder `feature-login`)
+   * Beide Änderungen kombinieren
+   * Eine komplett neue Lösung schreiben
 
-2. **Edit the file manually**
-   Remove the conflict markers (`<<<<<<<`, `=======`, `>>>>>>>`) and keep only the desired content.
-   Example resolved file:
+2. **Datei manuell bearbeiten**
+   Konfliktmarker (`<<<<<<<`, `=======`, `>>>>>>>`) entfernen und den finalen gewünschten Inhalt behalten.
+   Beispiel einer gelösten Datei:
 
    ```text
-   This is the final content after resolving the conflict.
+   Dies ist der endgültige Inhalt nach der Konfliktlösung.
    ```
 
-3. **Stage the resolved file**
+3. **Datei als gelöst markieren (stagen)**
 
    ```bash
-   git add filename
+   git add dateiname
    ```
 
-   This tells Git the conflict has been addressed.
+   Dadurch weiß Git, dass der Konflikt behoben wurde.
 
-4. **Commit the merge**
+4. **Merge committen**
 
    ```bash
    git commit
    ```
 
-   If the conflict arose during a merge, this commit finalizes the merge process. Git may provide a default commit message indicating the merge resolution.
+   Git erstellt automatisch eine Commit-Nachricht, die den Merge und die Konfliktlösung dokumentiert.
 
 ---
 
-## Practical Example
+## Praktisches Beispiel
 
-Imagine both branches modified the same `login.js` file:
+Angenommen, beide Branches ändern dieselbe Datei `login.js`:
 
-* **`main` branch version:**
-
-  ```javascript
-  console.log("Logging in user...");
-  ```
-
-* **`feature-login` branch version:**
+* **`main`-Branch Version:**
 
   ```javascript
-  console.log("Authenticating user...");
+  console.log("Benutzer wird eingeloggt...");
   ```
 
-After merging, Git inserts conflict markers:
+* **`feature-login`-Branch Version:**
+
+  ```javascript
+  console.log("Benutzer wird authentifiziert...");
+  ```
+
+Nach dem Merge zeigt Git:
 
 ```javascript
 <<<<<<< HEAD
-console.log("Logging in user...");
+console.log("Benutzer wird eingeloggt...");
 =======
-console.log("Authenticating user...");
+console.log("Benutzer wird authentifiziert...");
 >>>>>>> feature-login
 ```
 
-### Possible resolutions:
+### Mögliche Lösungen:
 
-* Keep `main`:
+* Nur `main` behalten:
 
   ```javascript
-  console.log("Logging in user...");
+  console.log("Benutzer wird eingeloggt...");
   ```
 
-* Keep `feature-login`:
+* Nur `feature-login` behalten:
 
   ```javascript
-  console.log("Authenticating user...");
+  console.log("Benutzer wird authentifiziert...");
   ```
   
-* Combine both:
+* Beide Änderungen kombinieren:
 
   ```javascript
-  console.log("Logging in and authenticating user...");
+  console.log("Benutzer wird eingeloggt und authentifiziert...");
   ```
 
 ---
 
-## Tools for Resolving Conflicts
+## Werkzeuge zur Konfliktlösung
 
-* **Manual editing** (in a code editor or IDE)
-* **Git GUI tools** (e.g., GitKraken, SourceTree, GitHub Desktop)
-* **Editor integrations** (e.g., VS Code, IntelliJ, Vim with plugins)
+* **Manuelle Bearbeitung** (z. B. in VS Code, IntelliJ, Vim)
+* **Git-GUIs** (z. B. GitKraken, SourceTree, GitHub Desktop)
+* **Editor-Integrationen** (z. B. visuelle Merge-Tools in VS Code)
 
-These tools often provide visual interfaces to select which changes to keep or to merge lines interactively.
+Diese Tools helfen oft, Konflikte übersichtlich darzustellen und die Auswahl per Klick vorzunehmen.
 
 ---
 
 ## Best Practices
 
-* **Pull frequently** to reduce the chance of conflicts by keeping your branch up to date.
-* **Keep commits small and focused**, which makes conflicts easier to resolve.
-* **Communicate with your team** if you anticipate conflicts in critical files.
-* **Use rebase carefully**: Rebasing can also introduce conflicts, but it helps maintain a cleaner commit history.
+* **Regelmäßig pullen**, um die eigene Branch aktuell zu halten und Konflikte zu reduzieren.
+* **Kleine, fokussierte Commits** erstellen – das erleichtert die Konfliktlösung.
+* **Im Team kommunizieren**, wenn an denselben Dateien gearbeitet wird.
+* **Rebase bewusst einsetzen**: Rebase kann ebenfalls Konflikte erzeugen, hilft aber, eine saubere Historie zu bewahren.
 
 ---
 
-## Summary
+## Zusammenfassung
 
-* Merge conflicts occur when Git cannot automatically reconcile changes.
-* Git marks conflicts with `<<<<<<<`, `=======`, and `>>>>>>>`.
-* Resolve by editing files, removing conflict markers, staging changes, and committing.
-* Use tools and best practices to minimize and simplify conflict resolution.
+* Merge-Konflikte entstehen, wenn Git Änderungen nicht automatisch zusammenführen kann.
+* Git markiert Konfliktstellen mit `<<<<<<<`, `=======`, `>>>>>>>`.
+* Lösung: Datei bearbeiten → Marker entfernen → Datei stagen → Merge committen.
+* Tools und Best Practices helfen, Konflikte zu vermeiden oder schneller zu lösen.
 
-By understanding and practicing conflict resolution, developers ensure smoother collaboration and maintain a clean, functional codebase.
+Durch das Verständnis von Merge-Konflikten und deren Auflösung können Entwickler effektiv im Team arbeiten und eine saubere Codebasis beibehalten.

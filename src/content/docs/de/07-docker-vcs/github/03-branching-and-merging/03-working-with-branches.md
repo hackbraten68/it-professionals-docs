@@ -1,175 +1,168 @@
 ---
-title: Working with Branches
+title: Arbeiten mit Branches
 ---
-# Working with Branches
+# Arbeiten mit Branches
 
-> Branches let you develop features, fix bugs, and experiment **without touching `main`**. Your commits stay isolated on the branch until you intentionally integrate them (merge or rebase).
+> Branches ermöglichen es dir, Features zu entwickeln, Bugs zu beheben oder zu experimentieren, **ohne `main` zu verändern**. Deine Commits bleiben isoliert auf dem Branch, bis du sie absichtlich integrierst (merge oder rebase).
 
 ---
 
-## 1) Quick Start (from your prompt)
+## 1) Schnellstart (aus deinem Input)
 
-Once you’re on a branch (e.g., `feature-login`):
+Sobald du dich auf einem Branch befindest (z. B. `feature-login`):
 
 ```bash
-# Make and stage changes
+# Änderungen machen und zum Staging hinzufügen
 git add .
-git commit -m "Add login form"
+git commit -m "Login-Formular hinzufügen"
 
-# Push your branch to the remote
+# Deinen Branch ins Remote-Repository hochladen
 git push origin feature-login
 ```
 
-These commits **do not** affect `main` until you merge them.
+Diese Commits **beeinflussen `main` nicht**, bis du sie zusammenführst.
 
 ---
 
-## 2) Core Concepts
+## 2) Grundkonzepte
 
-* **Current branch**: The branch your HEAD points to; commits go here.
-* **Isolation**: Work in parallel lines of development; no impact on `main` until integration.
-* **Integration**: Bring branch work back to `main` with a **merge** (keeps history) or **rebase** (rewrites history into a linear sequence).
+* **Aktueller Branch**: Der Branch, auf den dein HEAD zeigt; hier landen deine Commits.
+* **Isolation**: Entwicklungslinien laufen parallel, `main` bleibt unangetastet.
+* **Integration**: Einbringen der Branch-Arbeit nach `main` mittels **merge** (bewahrt Historie) oder **rebase** (schreibt Historie linear um).
 
 ---
 
-## 3) Essential Commands You’ll Use Daily
+## 3) Wichtige Befehle im Alltag
 
-### Create / Switch
+### Erstellen / Wechseln
 
 ```bash
-# Create and switch (modern)
+# Neu erstellen und direkt wechseln (modern)
 git switch -c feature-login
 
-# Switch to existing
+# Zu existierendem wechseln
 git switch feature-login
 
-# Legacy equivalent
+# Ältere Variante
 git checkout -b feature-login
 git checkout feature-login
 ```
 
-### Inspect
+### Überblick
 
 ```bash
-git status            # What changed?
-git branch            # List local branches; * marks current
-git branch -vv        # Show upstream tracking info
-git log --oneline --graph --decorate --all  # Visualize history
+git status            # Welche Dateien haben sich geändert?
+git branch            # Lokale Branches anzeigen; * markiert den aktuellen
+git branch -vv        # Upstream-Infos anzeigen
+git log --oneline --graph --decorate --all  # Historie visualisieren
 ```
 
 ### Commit
 
 ```bash
 git add .
-git commit -m "Describe what and why, not just what"
+git commit -m "Beschreibe was und warum, nicht nur was"
 ```
 
-### Push (first time vs. subsequent)
+### Push (erstes Mal vs. danach)
 
 ```bash
-# First push: set upstream (-u) so future pushes can be just `git push`
+# Erstes Push: Upstream setzen (-u)
 git push -u origin feature-login
 
-# After upstream is set
+# Danach reicht einfach
 git push
 ```
 
 ---
 
-## 4) Typical Feature Workflow (Recommended)
+## 4) Typischer Feature-Workflow (Empfohlen)
 
-1. **Start from fresh `main`**
+1. **`main` aktualisieren**
 
    ```bash
    git switch main
    git pull --ff-only
    ```
 
-2. **Branch off**
+2. **Neuen Branch erstellen**
 
    ```bash
    git switch -c feature/login-form
    ```
 
-3. **Develop & commit**
+3. **Entwickeln & committen**
 
    ```bash
    git add .
-   git commit -m "Add login form UI with basic validation"
+   git commit -m "Login-Formular mit Basisvalidierung hinzufügen"
    ```
 
-4. **Publish branch**
+4. **Branch veröffentlichen**
 
    ```bash
    git push -u origin feature/login-form
    ```
 
-5. **Open a Pull Request (PR)** on your remote platform (GitHub/GitLab).
-6. **Keep your branch up to date** (see §6) while the PR is open.
-7. **Merge** via PR (squash/rebase/merge—see §7).
-8. **Clean up** local/remote branches (see §9).
+5. **Pull Request (PR) öffnen** auf GitHub/GitLab.
+6. **Branch aktuell halten** (siehe §6).
+7. **Merge** über PR (Squash/Merge/Rebase).
+8. **Aufräumen**: Branch löschen (siehe §9).
 
 ---
 
-## 5) Working Locally on a Branch
+## 5) Arbeiten lokal im Branch
 
-* Commit often with **small, focused** commits.
-* Use **descriptive messages**:
+* Oft committen, **kleine, fokussierte Schritte**.
+* **Aussagekräftige Nachrichten** schreiben:
 
   ```bash
-  feat(auth): add login form with email+password
-  fix(auth): handle empty password edge case
-  refactor(ui): extract <FormRow/> component
+  feat(auth): Login-Formular mit E-Mail+Passwort hinzufügen
+  fix(auth): Leeres Passwort korrekt behandeln
+  refactor(ui): <FormRow/> Komponente extrahieren
   ```
 
-* Run tests/linters before pushing (CI will run again on the PR).
+* Vor dem Pushen Tests und Linter laufen lassen.
 
 ---
 
-## 6) Syncing Your Branch with `main`
+## 6) Branch mit `main` synchronisieren
 
-Keeping your branch current reduces conflict pain.
-
-### Option A: Merge `main` into your branch (safe, non-destructive)
+### A) Merge (sicher, nicht destruktiv)
 
 ```bash
 git switch feature/login-form
 git fetch origin
 git merge origin/main
-# Resolve conflicts if any, then commit the merge.
+# Konflikte lösen und mergen
 ```
 
-### Option B: Rebase your branch onto `main` (linear history)
+### B) Rebase (lineare Historie)
 
 ```bash
 git switch feature/login-form
 git fetch origin
 git rebase origin/main
-# Resolve conflicts, then:
+# Konflikte lösen, dann:
 git rebase --continue
 
-# If you already pushed this branch:
+# Wenn Branch schon gepusht war:
 git push --force-with-lease
 ```
 
-**Rule of thumb:** Only rebase your **own** branches. Avoid rebasing shared branches unless everyone agrees.
+**Merke:** Rebase nur auf **eigenen Branches**, nicht auf gemeinsam genutzten.
 
 ---
 
-## 7) Bringing Work Back to `main`
+## 7) Änderungen nach `main` bringen
 
-### Merge Strategies (via PR UI or CLI)
+### Merge-Strategien
 
-* **Merge commit** (default): preserves full history and branch structure.
-* **Squash merge**: condenses all branch commits into one clean commit on `main`. Great for tidy history.
-* **Rebase and merge**: replays commits onto `main` for a linear history without a merge commit.
+* **Merge-Commit**: Bewahrt Historie + Branch-Struktur.
+* **Squash-Merge**: Alle Commits zu einem zusammenfassen → saubere Historie.
+* **Rebase & Merge**: Commits linear in `main` einfügen.
 
-**Tips:**
-
-* Use **squash** for noisy WIP branches.
-* Use **merge commit** when the branch contains meaningful grouped commits or when you want to preserve the branching context.
-
-### CLI example (fast-forward)
+### CLI-Beispiel
 
 ```bash
 git switch main
@@ -178,7 +171,7 @@ git merge --ff-only feature/login-form
 git push
 ```
 
-If fast-forward isn’t possible:
+Falls kein Fast-Forward möglich:
 
 ```bash
 git merge --no-ff feature/login-form
@@ -187,19 +180,19 @@ git push
 
 ---
 
-## 8) Tracking Branches & Upstreams
+## 8) Tracking-Branches & Upstream
 
-A **tracking branch** knows its remote counterpart (upstream), enabling simple `git pull` and `git push`.
+Ein **Tracking-Branch** kennt sein Remote-Pendant → erleichtert `git pull` & `git push`.
 
 ```bash
-# Set upstream on first push
+# Beim ersten Push
 git push -u origin feature-login
 
-# Verify upstream
+# Upstream prüfen
 git branch -vv
 ```
 
-Configure Git to automatically create an upstream on first push:
+Automatisch Upstream setzen:
 
 ```bash
 git config --global push.autoSetupRemote true
@@ -207,58 +200,52 @@ git config --global push.autoSetupRemote true
 
 ---
 
-## 9) Renaming & Deleting Branches
+## 9) Branches umbenennen & löschen
 
-### Rename (local and remote)
+### Umbenennen
 
 ```bash
-# Rename local
 git branch -m feature-login feature-auth-login
-
-# Update remote: push new name and delete old remote branch
 git push -u origin feature-auth-login
 git push origin --delete feature-login
 ```
 
-### Delete
+### Löschen
 
 ```bash
-# Local: safe delete (won’t delete if unmerged)
+# Lokal (sicher)
 git branch -d feature-auth-login
 
-# Local: force delete (be careful)
+# Lokal (erzwingen)
 git branch -D feature-auth-login
 
-# Remote: delete
+# Remote
 git push origin --delete feature-auth-login
 ```
 
 ---
 
-## 10) Handling Conflicts (Quick Guide)
+## 10) Konflikte lösen (Kurz)
 
-Conflicts happen when the same lines changed differently on two branches.
+Konflikte entstehen, wenn dieselben Zeilen unterschiedlich geändert wurden:
 
-```bash
-# During merge or rebase, Git marks conflicts in files:
+```text
 <<<<<<< HEAD
-current branch changes
+aktueller Branch
 =======
-incoming changes
+eingehender Branch
 >>>>>>> other-branch
 ```
 
-**Resolve** by editing the file to the intended final content, then:
+**Lösen:** Datei anpassen → speichern → dann:
 
 ```bash
-git add <resolved-file>
-# For merge:
-git commit
-# For rebase:
-git rebase --continue
+git add <datei>
+git commit             # bei merge
+git rebase --continue  # bei rebase
 ```
 
-Helpful tools:
+Hilfreich:
 
 ```bash
 git mergetool
@@ -269,110 +256,105 @@ git diff --merge
 
 ## 11) Cherry-Picking & Hotfixes
 
-Apply a specific commit from another branch:
+Einzelnen Commit übernehmen:
 
 ```bash
-# Copy a single commit onto the current branch
 git cherry-pick <commit-sha>
 ```
 
-Use for hotfixes or when you need **just one** change without merging the whole branch.
+Nützlich für Hotfixes oder wenn du **nur eine Änderung** brauchst.
 
 ---
 
-## 12) Branch Naming Conventions (Keep It Predictable)
+## 12) Namenskonventionen
 
-* Prefix by type: `feature/`, `bugfix/`, `hotfix/`, `chore/`, `docs/`.
-* Keep short, kebab-case or slash-separated:
+* Prefixe nutzen: `feature/`, `bugfix/`, `hotfix/`, `chore/`, `docs/`.
+* Kurze Namen, **kebab-case** oder mit `/` trennen:
 
   * `feature/login-form`
   * `bugfix/auth-null-check`
+* Mit Ticket-ID:
 
-If you use issue trackers, include IDs:
-
-* `feature/123-user-login-form`
-
----
-
-## 13) Collaboration Best Practices
-
-* **Small PRs**: Easier to review and merge.
-* **Draft PR early**: Get feedback while you work.
-* **CI green**: Keep tests passing before asking for review.
-* **Review etiquette**: Explain *why* in commit messages and PR descriptions.
+  * `feature/123-user-login-form`
 
 ---
 
-## 14) Safety Nets & Policies
+## 13) Best Practices für Zusammenarbeit
 
-* Protect `main`:
+* **Kleine PRs** → leichter reviewbar.
+* **Draft PR früh öffnen** → Feedback im Prozess.
+* **CI grün halten** (Tests bestehen).
+* **Review-Etikette**: In Commit- und PR-Beschreibungen das *Warum* erklären.
 
-  * Require PR reviews and green CI before merge.
-  * Disallow force-push to `main`.
-* Require branch to be **up to date** with `main` before merge.
-* Use **CODEOWNERS** to route reviews to the right people.
+---
+
+## 14) Sicherheitsnetze & Richtlinien
+
+* **`main` schützen**:
+
+  * Review & CI vor Merge verpflichtend.
+  * Force-Push auf `main` verbieten.
+* Branch muss vor Merge **aktuell** sein.
+* **CODEOWNERS** nutzen → Reviewer automatisch zuordnen.
 
 ---
 
 ## 15) Troubleshooting
 
-* **“fatal: The current branch has no upstream branch”**
+* **Kein Upstream gesetzt**
 
   ```bash
-  git push -u origin my-branch
+  git push -u origin mein-branch
   ```
-* **Accidentally committed to `main`**
+
+* **Aus Versehen in `main` committed**
 
   ```bash
-  # Create a branch at current HEAD with those commits
   git switch -c feature/extract-commits
-  # Reset main to the last good commit (if safe to do so)
   git switch main
   git reset --hard origin/main
   ```
 
-* **Need to undo the last commit but keep changes staged**
+* **Letzten Commit rückgängig machen, aber Änderungen behalten**
 
   ```bash
   git reset --soft HEAD~1
   ```
-
-* **Clean working tree if you want to discard local changes**
+  
+* **Arbeitsverzeichnis zurücksetzen**
 
   ```bash
   git restore --source=HEAD --staged --worktree .
-  # or older:
-  git checkout -- .
   ```
 
 ---
 
-## 16) Example End-to-End Session
+## 16) Beispiel-Session
 
 ```bash
-# 1) Start clean
+# 1) main aktualisieren
 git switch main
 git pull --ff-only
 
-# 2) Branch off
+# 2) Branch erstellen
 git switch -c feature/login-form
 
-# 3) Work & commit
+# 3) Arbeiten & committen
 git add .
-git commit -m "feat(auth): add login form (email + password)"
+git commit -m "feat(auth): Login-Formular (E-Mail + Passwort)"
 
-# 4) Publish
+# 4) Pushen
 git push -u origin feature/login-form
 
-# 5) Keep updated with main (merge-based)
+# 5) Mit main synchronisieren
 git fetch origin
 git merge origin/main
 
-# 6) Open PR, get review, CI passes
+# 6) PR öffnen, reviewen, CI prüfen
 
-# 7) Merge PR on the platform (squash or merge)
+# 7) PR mergen
 
-# 8) Cleanup
+# 8) Aufräumen
 git switch main
 git pull --ff-only
 git branch -d feature/login-form
@@ -381,12 +363,13 @@ git push origin --delete feature/login-form
 
 ---
 
-## 17) Key Takeaways
+## 17) Wichtigste Punkte
 
-* Do all your work on a **topic branch**; keep `main` stable.
-* **Push with `-u`** on first publish to set upstream.
-* Regularly **sync with `main`** (merge or rebase).
-* **Integrate via PR**, then **clean up** branches.
-* Favor **small, well-described commits** and **small PRs**.
+* Arbeite immer in einem **Feature-Branch**, `main` bleibt stabil.
+* **`git push -u`** beim ersten Mal, danach einfacher push.
+* Branch regelmäßig mit `main` abgleichen.
+* Änderungen per **PR** integrieren.
+* Branch nach Merge löschen.
+* **Kleine, saubere Commits & PRs** schreiben.
 
-With this flow, your team gets safer collaboration, clearer history, and fewer merge headaches.
+Mit diesem Ablauf bleibt Zusammenarbeit sicherer, die Historie übersichtlicher und Konflikte seltener.

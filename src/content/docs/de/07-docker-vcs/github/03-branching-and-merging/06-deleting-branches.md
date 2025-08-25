@@ -1,97 +1,97 @@
 ---
-title: Deleting Branches
+title: Branches löschen
 ---
-# Deleting Branches
+# Branches löschen
 
-Cleaning up branches is a key part of keeping a Git repository tidy and easy to navigate. This guide explains when and how to delete branches—locally and on remotes—plus safety checks, recovery options, and automation tips.
-
----
-
-## Why delete branches?
-
-* **Reduce clutter:** Fewer stale branches in `git branch -a` and in your remote UI.
-* **Signal completion:** Deleting a feature branch communicates that work is finished and merged.
-* **Avoid mistakes:** Old branches can confuse collaborators or hide outdated work.
+Das Aufräumen von Branches ist ein wichtiger Teil, um ein Git-Repository übersichtlich und leicht navigierbar zu halten. Dieser Leitfaden erklärt, **wann** und **wie** man Branches löscht – sowohl lokal als auch auf Remotes – inklusive Sicherheitsprüfungen, Wiederherstellungsoptionen und Automatisierungstipps.
 
 ---
 
-## Prerequisites & terminology
+## Warum Branches löschen?
 
-* **Local branch:** Lives only in your local clone (e.g., `feature-login`).
-* **Remote branch:** Lives on a remote server (e.g., `origin/feature-login`).
-* **Tracking branch:** Your local branch that tracks a remote branch (e.g., local `feature-login` tracking `origin/feature-login`).
-
-> You cannot delete the branch you’re currently on. Check out another branch first (e.g., `git switch main`).
+* **Weniger Unordnung:** Weniger alte Branches in `git branch -a` und im Remote-UI.
+* **Signal für Abschluss:** Das Löschen eines Feature-Branches zeigt, dass die Arbeit abgeschlossen und gemerged ist.
+* **Fehler vermeiden:** Alte Branches können zu Verwirrung führen oder veraltete Arbeit verstecken.
 
 ---
 
-## Deleting a local branch
+## Voraussetzungen & Begriffe
 
-### Safe delete (only if merged)
+* **Lokaler Branch:** Existiert nur im lokalen Clone (z. B. `feature-login`).
+* **Remote Branch:** Existiert auf einem Remote-Server (z. B. `origin/feature-login`).
+* **Tracking Branch:** Ein lokaler Branch, der einen Remote-Branch verfolgt.
+
+> Du kannst den Branch, auf dem du dich gerade befindest, **nicht löschen**. Wechsle vorher auf einen anderen Branch, z. B. `git switch main`.
+
+---
+
+## Lokale Branches löschen
+
+### Sicheres Löschen (nur wenn gemerged)
 
 ```bash
 git branch -d feature-login
 ```
 
-* Fails with a warning if `feature-login` is not fully merged into your current branch (typically `main`).
-* Use when you’re confident the branch has been merged via PR or a clean merge.
+* Bricht mit einer Warnung ab, falls `feature-login` nicht vollständig in den aktuellen Branch (z. B. `main`) gemerged ist.
+* Verwende dies, wenn du sicher bist, dass der Branch über einen PR oder Merge integriert wurde.
 
-### Force delete (even if unmerged)
+### Erzwingen des Löschens (auch ungemergt)
 
 ```bash
 git branch -D feature-login
 ```
 
-* `-D` is short for `--delete --force`.
-* Use with caution: you may lose unmerged work (recoverable via reflog if needed, see **Recovery**).
+* `-D` ist Kurzform für `--delete --force`.
+* Vorsicht: Nicht gemergte Arbeit kann verloren gehen (über Reflog aber wiederherstellbar, siehe **Wiederherstellung**).
 
-### Common errors
+### Häufige Fehler
 
-* **“error: Cannot delete branch 'X' checked out at '…'”**
-  Switch to another branch first:
+* **„error: Cannot delete branch 'X' checked out …“**
+  → Zuerst den Branch wechseln:
 
   ```bash
   git switch main
   git branch -d X
   ```
-  
-* **“The branch 'X' is not fully merged.”**
-  Either merge it or use `-D` if you’re sure.
+
+* **„The branch 'X' is not fully merged.“**
+  → Entweder mergen oder mit `-D` löschen (Risiko beachten).
 
 ---
 
-## Deleting a remote branch
+## Remote Branches löschen
 
-### Using the modern syntax
+### Moderne Syntax
 
 ```bash
 git push origin --delete feature-login
 ```
 
-### Legacy equivalent (still works)
+### Ältere Variante (funktioniert noch)
 
 ```bash
 git push origin :feature-login
 ```
 
-**Notes**
+**Hinweise:**
 
-* Deleting the remote branch does **not** delete your local branch automatically.
-* You typically cannot delete the remote’s **default branch** (e.g., `main`) and may be blocked by branch protection rules.
+* Das Löschen des Remote-Branches löscht **nicht automatisch** deinen lokalen Branch.
+* Standard- oder geschützte Branches (z. B. `main`) können nicht so einfach gelöscht werden.
 
 ---
 
-## Cleaning up local references to deleted remote branches
+## Lokale Referenzen zu gelöschten Remote-Branches aufräumen
 
-After a remote branch is deleted, your local clone may still show `origin/feature-login` until you prune:
+Nach dem Entfernen eines Remote-Branches kann er lokal noch angezeigt werden, bis du prune ausführst:
 
 ```bash
 git fetch --prune
-# or shorter:
+# oder kurz:
 git fetch -p
 ```
 
-You can also prune while listing:
+Alternativ:
 
 ```bash
 git remote prune origin
@@ -99,47 +99,47 @@ git remote prune origin
 
 ---
 
-## Verify before deleting
+## Vor dem Löschen prüfen
 
-### List merged branches into your current branch
+### Gemergte Branches anzeigen
 
 ```bash
 git branch --merged
 ```
 
-### List branches not yet merged
+### Nicht gemergte Branches anzeigen
 
 ```bash
 git branch --no-merged
 ```
 
-> Best practice: Delete only branches visible in `--merged` unless you intentionally force-delete.
+> Best Practice: Lösche nur Branches, die in `--merged` erscheinen.
 
 ---
 
-## Typical workflow (feature branch)
+## Typischer Workflow (Feature-Branch)
 
-1. Update main and merge feature (or complete PR):
+1. Hauptbranch aktualisieren & Feature mergen:
 
    ```bash
    git switch main
    git pull
-   git merge --no-ff feature-login   # or merge via PR on your platform
+   git merge --no-ff feature-login   # oder PR-Merge
    ```
 
-2. Delete local branch:
+2. Lokalen Branch löschen:
 
    ```bash
    git branch -d feature-login
    ```
 
-3. Delete remote branch:
+3. Remote-Branch löschen:
 
    ```bash
    git push origin --delete feature-login
    ```
 
-4. Prune stale references:
+4. Stale References aufräumen:
 
    ```bash
    git fetch -p
@@ -147,63 +147,55 @@ git branch --no-merged
 
 ---
 
-## Recovering an accidentally deleted branch
+## Gelöschte Branches wiederherstellen
 
-If you deleted locally:
+Falls lokal gelöscht:
 
-1. Find the last commit (via reflog):
+1. Commit über Reflog suchen:
 
    ```bash
    git reflog
-   # Note the commit hash for the branch tip
    ```
 
-2. Recreate the branch at that commit:
+2. Branch neu erstellen:
 
    ```bash
    git branch feature-login <commit-hash>
    ```
 
-3. (Optional) Re-publish to the remote:
+3. (Optional) wieder auf Remote pushen:
 
    ```bash
    git push -u origin feature-login
    ```
 
-If you deleted on the remote but still have the branch locally:
+Falls nur Remote gelöscht, aber lokal vorhanden:
 
 ```bash
 git push -u origin feature-login
 ```
 
-If both local and remote are gone and you don’t know the commit:
-
-* Search reflogs (`git reflog`) across machines used for the work.
-* Check the PR merge commit; you might cherry-pick or branch from it if needed.
+Falls komplett verloren: Reflog prüfen oder Merge-Commit als Basis nutzen.
 
 ---
 
-## Protected and default branches
+## Geschützte und Standard-Branches
 
-* **Default branch** (e.g., `main`) is usually protected and cannot be deleted from the server UI or via push.
-* **Branch protection rules** may prevent deletion or require reviews/status checks. Adjust settings in your platform (GitHub/GitLab/Bitbucket) if necessary.
-
----
-
-## Deleting via Git hosting UIs
-
-Most platforms provide a “Delete branch” button on a merged pull/merge request. This:
-
-* Deletes the remote branch.
-* Does **not** delete local clones—developers still need to prune or delete locally.
+* **Standard-Branch** (z. B. `main`) ist meist geschützt.
+* **Branch-Schutzregeln** (GitHub/GitLab/Bitbucket) verhindern oft Löschung oder erzwingen Reviews/Checks.
 
 ---
 
-## Bulk cleanup: delete all local branches merged into `main`
+## Löschen über Git-Plattformen (UI)
 
-> **Careful:** Review the list before executing destructive commands.
+* Meist gibt es im Pull/Merge Request einen Button **„Branch löschen“**.
+* Dies betrifft nur den Remote, lokale Branches bleiben bestehen.
 
-**Preview what would be deleted:**
+---
+
+## Bulk-Cleanup: Alle lokal gemergten Branches löschen
+
+**Liste anzeigen (Vorschau):**
 
 ```bash
 git checkout main
@@ -211,7 +203,7 @@ git fetch -p
 git branch --merged main | egrep -v "^\*|main|master|develop"
 ```
 
-**Delete them (UNIX shell):**
+**Automatisch löschen:**
 
 ```bash
 git branch --merged main \
@@ -219,64 +211,68 @@ git branch --merged main \
   | xargs -n 1 git branch -d
 ```
 
-To include unmerged branches (risky), change `-d` to `-D`.
-
 ---
 
-## Housekeeping tips
+## Tipps zur Ordnung
 
-* **Name clearly:** Use prefixes like `feat/`, `fix/`, `chore/` to make cleanup safer with patterns.
-* **Delete after merge:** Make it part of your PR checklist.
-* **Automate reminders:** Periodically run `git fetch -p` and prune stale branches.
-* **Avoid long‑lived feature branches:** Prefer small, frequent merges to reduce conflicts and cleanup load.
+* **Namenskonventionen nutzen:** z. B. `feat/`, `fix/`, `chore/`.
+* **Direkt nach Merge löschen:** Teil der PR-Checkliste machen.
+* **Automatisiert aufräumen:** Regelmäßig `git fetch -p` nutzen.
+* **Kurze Feature-Branches:** Lieber kleine, schnelle Merges statt lange Branches.
 
 ---
 
 ## FAQ
 
-**Q: Do I need to delete both local and remote branches?**
-**A:** Yes—if you used both. Deleting the remote doesn’t remove your local branch (and vice versa).
+**Muss ich sowohl lokal als auch Remote löschen?**
+Ja, beide existieren unabhängig voneinander.
 
-**Q: Can I delete the branch I’m on?**
-**A:** No. Switch to another branch first.
+**Kann ich den aktiven Branch löschen?**
+Nein, vorher wechseln.
 
-**Q: What’s the difference between `-d` and `-D`?**
-**A:** `-d` deletes **only if merged**. `-D` force-deletes regardless of merge status.
+**Unterschied `-d` vs. `-D`?**
 
-**Q: Will deleting a branch remove the commits?**
-**A:** Commits reachable from other references (e.g., `main`) remain. If the commits exist **only** on that branch, you risk losing access unless you recover via reflog.
+* `-d`: löscht nur, wenn gemergt.
+* `-D`: erzwingt Löschung.
 
-**Q: How do I see what remote branches exist?**
-**A:** `git branch -r` (remote only) or `git branch -a` (all).
+**Werden die Commits gelöscht?**
+Nur, wenn sie nirgendwo referenziert sind. Ansonsten bleiben sie erhalten.
+
+**Wie sehe ich Remote-Branches?**
+
+```bash
+git branch -r   # nur Remote
+git branch -a   # alle
+```
 
 ---
 
-## Quick reference (copy/paste)
+## Schnellreferenz
 
 ```bash
-# Delete local (safe)
+# Lokal löschen (sicher)
 git branch -d <branch>
 
-# Delete local (force)
+# Lokal löschen (erzwingen)
 git branch -D <branch>
 
-# Delete remote
+# Remote löschen
 git push origin --delete <branch>
-# or
+# oder
 git push origin :<branch>
 
-# Prune stale remote refs
+# Aufräumen
 git fetch -p
 
-# Check merged vs unmerged
+# Gemergte / ungemergte anzeigen
 git branch --merged
 git branch --no-merged
 
-# Recover via reflog
+# Wiederherstellung über Reflog
 git reflog
 git branch <branch> <commit>
 ```
 
 ---
 
-With these practices, your repositories will stay clean, understandable, and safer to collaborate in.
+Mit diesen Praktiken bleiben Repositories **aufgeräumt, verständlich und sicher für die Zusammenarbeit**. ✅

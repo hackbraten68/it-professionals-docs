@@ -3,167 +3,168 @@ title: Best Practices
 ---
 # Best Practices
 
-A practical, opinionated guide for collaborating with Git and remote platforms (GitHub/GitLab). Use this as a reference and a checklist during daily work.
+Ein praktischer, meinungsstarker Leitfaden für die Zusammenarbeit mit Git und Remote-Plattformen (GitHub/GitLab). Verwende ihn als Referenz und Checkliste im täglichen Arbeiten.
 
 ---
 
-## Why Best Practices Matter
+## Warum Best Practices wichtig sind
 
-* **Consistency:** Teams move faster when conventions are predictable.
-* **Traceability:** Clear branches, commits, and PRs make it easy to review and debug.
-* **Safety:** Guardrails (PRs, CI, protected branches) prevent costly mistakes.
+- **Konsistenz:** Teams arbeiten schneller, wenn Konventionen vorhersehbar sind.  
+- **Nachvollziehbarkeit:** Klare Branches, Commits und PRs erleichtern Reviews und Debugging.  
+- **Sicherheit:** Leitplanken (PRs, CI, geschützte Branches) verhindern teure Fehler.  
 
 ---
 
-## Branch Naming Conventions
+## Branch-Namenskonventionen
 
-Use descriptive, scoped names. Prefer lowercase with slashes and hyphens.
+Verwende beschreibende, klar abgegrenzte Namen. Nutze Kleinbuchstaben mit Schrägstrichen und Bindestrichen.
 
 **Format**
 
 ```php
-<type>/<scope>-<short-summary>
+<typ>/<scope>-<kurze-zusammenfassung>
 ```
 
-**Examples**
+**Beispiele**
 
-* `feature/auth-oauth2`
-* `bugfix/login-issue-500-on-empty-pw`
-* `chore/deps-bump-axios-1-7`
-* `docs/readme-installation`
+- `feature/auth-oauth2`  
+- `bugfix/login-issue-500-on-empty-pw`  
+- `chore/deps-bump-axios-1-7`  
+- `docs/readme-installation`
 
-**Tips**
+**Tipps**
 
-* Keep it under \~50 characters if possible.
-* Avoid spaces and special characters.
-* Include an issue ID when available: `feature/1234-auth-oauth2`.
-
----
-
-## Keep Branches Short-Lived
-
-Long-running branches drift, causing heavy conflict resolution later.
-
-* Aim for **1–5 days** of work per branch.
-* Prefer a sequence of small PRs over a single massive change.
-* Use **feature flags** for incremental delivery when changes are large.
+- Möglichst unter ~50 Zeichen bleiben.  
+- Keine Leerzeichen oder Sonderzeichen.  
+- Falls vorhanden, Issue-ID hinzufügen: `feature/1234-auth-oauth2`.  
 
 ---
 
-## Pull the Latest Changes Before Merging
+## Branches kurzlebig halten
 
-Keep your work in sync with the mainline to minimize conflicts.
+Langfristige Branches driften auseinander und verursachen komplizierte Merge-Konflikte.
 
-**Basic sync**
+- Ziel: **1–5 Tage** Arbeit pro Branch.  
+- Lieber mehrere kleine PRs als einen riesigen.  
+- Bei großen Änderungen: **Feature Flags** nutzen.  
+
+---
+
+## Vor dem Mergen die neuesten Änderungen holen
+
+Halte deine Arbeit synchron mit der Hauptlinie, um Konflikte zu minimieren.
+
+**Grundlegende Synchronisierung**
 
 ```bash
-# From your feature branch:
+# Von deinem Feature-Branch aus:
 git fetch origin
 git merge origin/main
-# or (if your team prefers rebase for a cleaner history):
+# oder (wenn das Team Rebase bevorzugt):
 git rebase origin/main
 ```
 
-**When to rebase vs. merge**
+**Wann Rebase vs. Merge**
 
-* **Rebase** before opening a PR to create a clean, linear history.
-* **Merge** for integrating reviewed PRs into protected branches.
-* Never rebase **public** (already-pushed, shared) branches unless your team agrees.
-
----
-
-## Use Pull Requests (PRs) for Review
-
-PRs are the hub for discussion, quality checks, and visibility.
-
-**Before opening a PR**
-
-* Ensure branch is up-to-date with `main`.
-* Pass all tests locally.
-* Squash or curate commits into meaningful units.
-
-**Opening a PR**
-
-* **Title:** concise and action-oriented.
-* **Description:** include context, motivation, screenshots, and testing steps.
-* **Scope:** small and focused (\~200–400 lines changed is a good target).
-* **Link issues:** “Closes #123” to auto-close on merge.
-* **Labels:** help triage (e.g., `feature`, `bug`, `security`).
-
-**During review**
-
-* Respond to every comment (resolve or explain).
-* Prefer code changes over long debates; push an update and explain.
-* Be respectful, specific, and constructive.
-
-**Merging**
-
-* Use **squash merge** for small PRs to keep history clean.
-* Use **merge commit** for larger multi-commit PRs that matter historically.
-* Avoid **force-push** after reviews unless you notify reviewers.
+* **Rebase** vor dem Öffnen eines PRs für eine saubere, lineare History.
+* **Merge** beim Integrieren geprüfter PRs in geschützte Branches.
+* Niemals **öffentliche Branches** (bereits geteilte) rebaseden, außer es ist teamweit abgesprochen.
 
 ---
 
-## Commit Message Guidelines
+## Pull Requests (PRs) für Reviews nutzen
 
-Good commits tell a story of *why* and *what*.
+PRs sind der zentrale Ort für Diskussion, Qualitätsprüfung und Sichtbarkeit.
 
-**Style**
+**Vor dem Öffnen eines PRs**
 
-* **Subject line:** ≤ 72 chars, imperative mood (“Add”, not “Added”).
-* **Body:** explain the motivation, approach, and trade-offs.
-* **Reference:** include issue IDs.
+* Branch ist aktuell mit `main`.
+* Alle Tests lokal bestanden.
+* Commits ggf. squashen oder sinnvoll ordnen.
 
-**Examples**
+**PR eröffnen**
 
-```sql
+* **Titel:** kurz und handlungsorientiert.
+* **Beschreibung:** Kontext, Motivation, Screenshots, Testschritte.
+* **Scope:** klein und fokussiert (\~200–400 geänderte Zeilen sind ideal).
+* **Issues verlinken:** “Closes #123”.
+* **Labels:** helfen bei der Einordnung (`feature`, `bug`, `security`).
+
+**Während des Reviews**
+
+* Auf jeden Kommentar eingehen.
+* Änderungen pushen statt lange Diskussionen führen.
+* Respektvoll, spezifisch und konstruktiv bleiben.
+
+**Mergen**
+
+* **Squash Merge** für kleine PRs (saubere History).
+* **Merge Commit** für größere PRs mit mehreren Commits.
+* **Force-Push** nach Reviews vermeiden (nur nach Absprache).
+
+---
+
+## Commit-Nachrichten
+
+Gute Commits erklären *warum* und *was* geändert wurde.
+
+**Stil**
+
+* **Betreffzeile:** ≤ 72 Zeichen, im Imperativ (“Add”, nicht “Added”).
+* **Body:** Motivation, Ansatz, Abwägungen.
+* **Referenzen:** Issue-IDs angeben.
+
+**Beispiele**
+
+```
 Fix login redirect loop on expired sessions
 
-The session check ran after router guards, causing an infinite redirect
-when tokens expired. Moved validation into the guard and added a test.
+Die Session-Überprüfung lief nach den Router-Guards,
+was bei abgelaufenen Tokens eine Endlosschleife verursachte.
+Validierung in den Guard verschoben und Test hinzugefügt.
 
 Closes #456.
 ```
 
-```sql
+```
 Add OAuth2 PKCE flow for mobile clients
 
-Implements code verifier/challenge generation and token exchange.
-Includes config docs and integration tests for the token endpoint.
+Implementiert Code Verifier/Challenge-Generierung und Token-Austausch.
+Enthält Konfigurationsdokumentation und Integrationstests.
 
 Refs #789.
 ```
 
 ---
 
-## Keep PRs Small and Focused
+## PRs klein und fokussiert halten
 
-* One logical change per PR (feature, bugfix, refactor).
-* Avoid mixing refactors and feature changes—review becomes harder.
-* If a PR grows too big, split it:
+* Pro PR nur **eine logische Änderung** (Feature, Bugfix, Refactor).
+* Keine Vermischung von Refactor + Feature.
+* Wenn zu groß → splitten in:
 
-  * **Prep PRs:** pure refactors/moves.
-  * **Feature PR:** the actual change.
-
----
-
-## Testing and CI
-
-Automate quality gates.
-
-* **Pre-commit hooks:** lint/format/tests (e.g., Husky, pre-commit).
-* **CI checks:** run unit/integration tests, linting, type checks, security scans.
-* **Required checks:** configure protected branches so PRs can’t merge while red.
-* Add **repro steps** for bugs and **test coverage** for fixes.
+  * **Prep PRs:** nur Refactor/Umstrukturierung.
+  * **Feature PR:** eigentliche Änderung.
 
 ---
 
-## Handling Merge Conflicts Gracefully
+## Tests & CI
 
-* Pull/rebase frequently to reduce conflict size.
-* Resolve conflicts **locally** with context, then run the full test suite.
-* If conflict resolution is non-trivial, **pair review** the resolution commit.
-* Never commit conflict markers:
+Automatisierte Qualitätskontrollen sind Pflicht.
+
+* **Pre-Commit Hooks:** Linting, Formatierung, Tests.
+* **CI Checks:** Unit-/Integrationstests, Typprüfungen, Security-Scans.
+* **Geschützte Branches:** nur Merge, wenn alles grün.
+* **Bugfixes:** mit Testabdeckung einchecken.
+
+---
+
+## Merge-Konflikte sauber lösen
+
+* Häufig syncen, um Konflikte klein zu halten.
+* Konflikte **lokal** mit Kontext lösen, dann Tests laufen lassen.
+* Bei schwierigen Konflikten: **Pair Review** für die Auflösung.
+* Niemals Konfliktmarker einchecken:
 
   ```bash
   <<<<<<< HEAD
@@ -173,87 +174,87 @@ Automate quality gates.
 
 ---
 
-## Protected Branches & Permissions
+## Geschützte Branches & Rechte
 
-* Protect `main`/`release/*` branches:
+* `main`/`release/*` schützen:
 
-  * Require PR reviews (≥1–2 reviewers).
-  * Require green CI.
-  * Disallow force-push and direct commits.
-* Use **CODEOWNERS** for critical areas to route reviews to the right people.
+  * PR-Reviews (mind. 1–2 Reviewer).
+  * CI muss grün sein.
+  * Kein Force-Push oder direkte Commits.
+* **CODEOWNERS** nutzen, um Reviewer automatisch zuzuweisen.
 
 ---
 
-## Release Hygiene
+## Release-Hygiene
 
-* **Tags:** create annotated tags for releases.
+* **Tags:** für Releases
 
   ```bash
   git tag -a v1.4.0 -m "Release 1.4.0"
   git push origin v1.4.0
   ```
 
-* **Changelog:** human-readable changes since last release (auto-generate if possible).
-* **Release branches:** `release/1.4.x` for stabilization; cherry-pick urgent fixes.
+* **Changelog:** Änderungen seit letztem Release dokumentieren.
+* **Release-Branches:** `release/1.4.x` für Stabilisierung, Hotfixes per Cherry-Pick.
 
 ---
 
-## Documentation & Developer UX
+## Dokumentation & Developer UX
 
-* Update **README/Docs** when behavior or APIs change.
-* Add **migration notes** for breaking changes.
-* Include **examples** and **env samples** (`.env.example`).
-
----
-
-## Security & Secrets
-
-* Never commit secrets; use vaults or platform secrets.
-* Add common secret patterns to `.gitignore`.
-* Rotate credentials if exposure is suspected.
-* Run dependency vulnerability checks (e.g., `npm audit`, `pip-audit`, Snyk).
+* **README/Docs** aktualisieren bei API- oder Verhaltensänderungen.
+* **Migration Notes** bei Breaking Changes.
+* **Beispiele & `.env.example`** bereitstellen.
 
 ---
 
-## Collaboration Etiquette
+## Sicherheit & Secrets
 
-* Prefer **async communication** in PRs and issues; summarize decisions.
-* Use **draft PRs** for early feedback.
-* Be explicit about **ownership** and **handoffs**.
-* When stuck >30–60 minutes, **ask for help** with context and what you tried.
+* Niemals Secrets committen.
+* `.gitignore` für lokale Dateien und Schlüssel anpassen.
+* Verdacht auf Leaks → Schlüssel sofort rotieren.
+* Abhängigkeiten auf Schwachstellen prüfen (`npm audit`, `pip-audit`).
 
 ---
 
-## Example Daily Workflow
+## Kollaborations-Etikette
+
+* **Asynchron** in PRs/Issues kommunizieren; Entscheidungen zusammenfassen.
+* **Draft PRs** für frühes Feedback.
+* **Ownership & Übergaben** klar benennen.
+* Feststecken >30–60 Min → Hilfe holen mit Kontext.
+
+---
+
+## Beispiel-Workflow (täglich)
 
 ```bash
-# 1) Sync local main
+# 1) Main synchronisieren
 git checkout main
 git pull origin main
 
-# 2) Create a focused branch
+# 2) Neuen Feature-Branch erstellen
 git checkout -b feature/auth-oauth2
 
-# 3) Work with small commits; run tests
+# 3) Kleine Commits, Tests laufen lassen
 git add .
 git commit -m "Add PKCE helper and token exchange"
 npm test
 
-# 4) Keep in sync
+# 4) Regelmäßig synchronisieren
 git fetch origin
 git rebase origin/main
 
-# 5) Push and open a PR
+# 5) Push & PR eröffnen
 git push -u origin feature/auth-oauth2
-# Open PR with clear title/description, link issue, mark as draft if WIP
+# Im PR: Titel, Beschreibung, Issue, ggf. Draft
 
-# 6) Address review; keep commits clean
-git commit --fixup <sha>  # optional; later squash on merge
+# 6) Review einarbeiten, Commits sauber halten
+git commit --fixup <sha>
 
-# 7) Merge through the platform once CI is green and reviews are approved
-# Choose squash/merge based on team policy
+# 7) Merge über Plattform nach grünem CI & Review
+# Squash/Merge je nach Teamregel
 
-# 8) Clean up
+# 8) Aufräumen
 git checkout main
 git pull origin main
 git branch -d feature/auth-oauth2
@@ -266,44 +267,45 @@ git push origin --delete feature/auth-oauth2
 
 **Do**
 
-* Use descriptive branches and commits.
-* Sync frequently (`fetch` + `rebase/merge`).
-* Keep PRs small and focused.
-* Enforce CI and reviews on protected branches.
-* Document user-facing changes.
+* Beschreibende Branches & Commits.
+* Häufig syncen.
+* PRs klein & fokussiert.
+* CI & Reviews erzwingen.
+* Dokumentation aktuell halten.
 
 **Don’t**
 
-* Force-push shared branches without alignment.
-* Mix refactors with features in one PR.
-* Merge red (failing) CI.
-* Leave PR feedback unresolved.
-* Commit secrets or local artifacts.
+* Force-Push ohne Absprache.
+* Refactor + Feature in einem PR.
+* Merge mit rotem CI.
+* PR-Kommentare offen lassen.
+* Secrets oder Artefakte committen.
 
 ---
 
-## Quick Checklist (Paste into PR Template)
+## PR-Checkliste (für Templates)
 
-* [ ] Branch name follows convention
-* [ ] Small, focused scope
-* [ ] Up-to-date with `main` (rebased/merged)
-* [ ] Tests added/updated and passing
-* [ ] Lint/type/security checks passing
-* [ ] Docs/README updated (if applicable)
-* [ ] Screenshots/recordings added (UI changes)
-* [ ] Linked issues (Closes/Refs)
-* [ ] Reviewers requested / CODEOWNERS satisfied
-
----
-
-## Team Policy Add‑Ons (Optional)
-
-* **Conventional Commits:** `feat:`, `fix:`, `chore:`, enables automated changelogs.
-* **Trunk-Based Development:** tiny PRs to `main` with feature flags.
-* **WIP Limits:** cap concurrent branches/PRs to reduce context switching.
+* [ ] Branchname korrekt
+* [ ] Kleiner, fokussierter Scope
+* [ ] Up-to-date mit `main`
+* [ ] Tests grün
+* [ ] Linting/Checks bestanden
+* [ ] Docs/README aktualisiert
+* [ ] Screenshots (bei UI)
+* [ ] Verlinkte Issues
+* [ ] Reviewer angefragt
 
 ---
 
-## Final Notes
+## Team-Policies (optional)
 
-These guidelines are meant to be **practical**. If a rule slows you down without improving quality, propose an adjustment—then document the decision so the whole team benefits.
+* **Conventional Commits:** `feat:`, `fix:`, `chore:` → automatische Changelogs.
+* **Trunk-Based Development:** kleine PRs direkt nach `main`.
+* **WIP Limits:** begrenzte parallele PRs zur Reduzierung von Kontextwechseln.
+
+---
+
+## Schlusswort
+
+Diese Regeln sind **praktische Leitplanken**.
+Falls etwas bremst, ohne Qualität zu verbessern: **Vorschlagen, anpassen, dokumentieren.**
