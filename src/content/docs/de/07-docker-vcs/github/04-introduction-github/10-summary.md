@@ -12,23 +12,28 @@ Indem man die **Grundlagen von Git** versteht und erkennt, wie GitHub diese erwe
 ## Zentrale Erkenntnisse
 
 ### 1. GitHub als Plattform
+
 - Bietet Cloud-Hosting für Git-Repositories.  
 - Ermöglicht Zusammenarbeit in Teams jeder Größe.  
 - Stellt Werkzeuge für Code-Review, Automatisierung und Projektmanagement bereit.  
 
 ### 2. Git-Grundlagen
+
 Um GitHub effektiv zu nutzen, muss man die Kernfunktionen von Git verstehen:
+
 - **Commits** speichern Momentaufnahmen deiner Arbeit.  
 - **Branches** ermöglichen es, unabhängig an Features zu arbeiten.  
 - **Merging** integriert Änderungen wieder in den Hauptzweig.  
 - **Verlaufsverfolgung** sorgt für Transparenz darüber, was, wann und warum geändert wurde.  
 
 ### 3. Erstellen von Repositories
+
 - Beginne mit dem Anlegen eines **Repositories** (lokal oder auf GitHub).  
 - Repositories sind der zentrale Speicherort für deinen Projektcode.  
 - Sie enthalten auch wichtige Dateien wie README, Lizenz und `.gitignore`.  
 
 ### 4. Branches und Pull Requests
+
 - **Branches** ermöglichen es, zu experimentieren oder Features zu entwickeln, ohne den Hauptzweig zu beeinflussen.  
 - **Pull Requests (PRs)** bieten einen strukturierten Workflow, um Änderungen zusammenzuführen, inklusive:  
   - Diskussion über den Code  
@@ -37,6 +42,7 @@ Um GitHub effektiv zu nutzen, muss man die Kernfunktionen von Git verstehen:
   - Freigabe vor dem Merge  
 
 ### 5. Zusammenarbeit mit Issues und Projekt-Boards
+
 - **Issues**: Verfolge Bugs, Feature-Requests oder Aufgaben strukturiert.  
 - **Projekt-Boards**: Visualisiere Aufgaben mit Kanban-ähnlichen Boards, um den Fortschritt zu überwachen.  
 - Zusammen bringen sie agile Workflows direkt in deine GitHub-Repositories.  
@@ -66,6 +72,7 @@ Nachdem du die Grundlagen beherrschst, kannst du die erweiterten Funktionen von 
 ## Fazit
 
 Indem du die Git-Grundlagen mit den Kollaborationsfunktionen von GitHub kombinierst, kannst du:
+
 - Projekte effektiv managen.  
 - Nahtlos im Team zusammenarbeiten.  
 - Wiederkehrende Aufgaben automatisieren.  
