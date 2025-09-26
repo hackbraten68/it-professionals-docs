@@ -1,0 +1,354 @@
+/* Cascade layer for embed-specific overrides */
+@layer embed-overrides {
+    /* ── Base typography ─────────────────────────────────────────── */
+    html[data-embed] body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      line-height: 1.7;
+      font-size: 1rem;
+      color: #222;
+      background-color: #fff;
+      padding: 2rem;
+      display: block; /* override the flex from inline style if needed */
+    }
+  
+    html[data-embed] main {
+      max-width: 750px;
+      margin: 0 auto;
+    }
+  
+    /* Headings */
+    html[data-embed] h1,
+    html[data-embed] h2,
+    html[data-embed] h3,
+    html[data-embed] h4,
+    html[data-embed] h5,
+    html[data-embed] h6 {
+      font-weight: 600;
+      line-height: 1.3;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      color: #111;
+    }
+  
+    html[data-embed] h1 { font-size: 2rem; border-bottom: 2px solid #eee; padding-bottom: .5rem; }
+    html[data-embed] h2 { font-size: 1.5rem; border-bottom: 1px solid #eee; padding-bottom: .3rem; }
+    html[data-embed] h3 { font-size: 1.25rem; }
+  
+    /* Paragraphs */
+    html[data-embed] p {
+      margin: 1rem 0;
+      color: #333;
+    }
+  
+    /* Links */
+    html[data-embed] a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+    html[data-embed] a:hover {
+      text-decoration: underline;
+    }
+  
+    /* ── Inline code (lighter so it doesn't look like a button) ─── */
+    html[data-embed] code {
+      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+      background: #f0f0f0;
+      color: #222;
+      padding: 0.15em 0.35em;
+      border-radius: 4px;
+      font-size: 0.9rem;
+    }
+  
+    /* ── Code blocks ─────────────────────────────────────────── */
+    html[data-embed] pre {
+      background: #2d2d2d;
+      color: #f8f8f2;
+      padding: 1rem 1.25rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin: 1.5rem 0;
+    }
+  
+    html[data-embed] pre code {
+      background: none;
+      color: inherit;
+      padding: 0;
+      border-radius: 0;
+    }
+  
+    /* ── Figure + figcaption (modern code card) ─────────────────── */
+    html[data-embed] figure {
+      margin: 2rem 0;
+      border: 1px solid #222;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #1e1e1e;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+      position: relative;
+    }
+  
+    html[data-embed] figcaption {
+      background: linear-gradient(90deg, #111 0%, #1a1a1a 100%);
+      font-size: 0.85rem;
+      padding: 0.6rem 0.9rem;
+      font-family: system-ui, sans-serif;
+      border-bottom: 1px solid #222;
+  
+      /* Header typography/layout */
+      color: #eee;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+  
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      justify-content: space-between;
+    }
+  
+    html[data-embed] figcaption .title {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #eee;
+    }
+  
+    /* Language pill (add <span class="lang">YAML</span> inside figcaption) */
+    html[data-embed] figcaption .lang {
+      background: #2d2d2d;
+      color: #ccc;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      line-height: 1;
+      display: inline-flex;
+      align-items: center;
+      white-space: nowrap;
+    }
+  
+    html[data-embed] figure pre {
+      margin: 0;
+      border-radius: 0 0 8px 8px;
+    }
+  
+    /* ── “Frame” figures rendered by Expressive Code ────────────── */
+    html[data-embed] figure.frame.has-title {
+      border-radius: 10px;
+    }
+    html[data-embed] figure.frame.has-title > figcaption.header {
+      /* header already styled by generic figcaption above; keep class hook for specificity if needed */
+    }
+    html[data-embed] figure.frame.has-title > figcaption.header .title {
+      /* inherits .title styles */
+    }
+  
+    /* Copy button inside figure header */
+    html[data-embed] figure .copy {
+      position: absolute;
+      top: 0.45rem;
+      right: 0.6rem;
+      z-index: 2;
+    }
+  
+    html[data-embed] figure .copy button {
+      appearance: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  
+      width: 32px;
+      height: 32px;
+  
+      background: #2a2a2a !important;
+      border: 1px solid #444 !important;
+      border-radius: 6px;
+      cursor: pointer;
+  
+      transition: background .15s ease, border-color .15s ease, transform .02s ease;
+      overflow: hidden;
+    }
+  
+    /* hide injected empty child */
+    html[data-embed] figure .copy button > div { display: none !important; }
+  
+    /* centered white clipboard SVG icon */
+    html[data-embed] figure .copy button::before {
+      content: "";
+      width: 70%;
+      height: 70%;
+      background: no-repeat center / contain
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='9' y='7' width='13' height='15' rx='2' ry='2'/%3E%3Cpath d='M5 15H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v1'/%3E%3C/svg%3E");
+    }
+  
+    /* hover/active */
+    html[data-embed] figure .copy button:hover {
+      background: #3a3a3a !important;
+      border-color: #555 !important;
+    }
+    html[data-embed] figure .copy button:active {
+      transform: translateY(1px);
+    }
+  
+    /* ── Expressive Code (Starlight fenced blocks) ──────────────── */
+    html[data-embed] .expressive-code {
+      margin: 1.75rem 0;
+      border: 1px solid #222;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #1e1e1e;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+  
+    html[data-embed] .expressive-code .ec-toolbar {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      justify-content: space-between;
+      padding: .5rem .75rem;
+      background: #111;
+      border-bottom: 1px solid #222;
+    }
+  
+    html[data-embed] .expressive-code .ec-title,
+    html[data-embed] .expressive-code .ec-language {
+      font: 500 0.85rem system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      color: #ccc;
+      letter-spacing: .2px;
+      display: inline-flex;
+      align-items: center;
+      gap: .375rem;
+    }
+  
+    html[data-embed] .expressive-code .ec-language {
+      background: #2d2d2d;
+      color: #ccc;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      line-height: 1;
+    }
+  
+    html[data-embed] .expressive-code .ec-copy button,
+    html[data-embed] .expressive-code .ec-copy[role="button"] {
+      appearance: none;
+      border: 1px solid #2a2a2a;
+      background: #181818;
+      color: #ddd;
+      border-radius: 6px;
+      padding: .35rem .6rem;
+      font: 500 0.8rem system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      cursor: pointer;
+      transition: background .15s ease, border-color .15s ease, transform .02s ease;
+    }
+    html[data-embed] .expressive-code .ec-copy button:hover,
+    html[data-embed] .expressive-code .ec-copy[role="button"]:hover {
+      background: #202020; border-color: #3a3a3a;
+    }
+    html[data-embed] .expressive-code .ec-copy button:active,
+    html[data-embed] .expressive-code .ec-copy[role="button"]:active {
+      transform: translateY(1px);
+    }
+    html[data-embed] .expressive-code .ec-copy button:focus-visible,
+    html[data-embed] .expressive-code .ec-copy[role="button"]:focus-visible {
+      outline: 2px solid #4da3ff; outline-offset: 2px;
+    }
+  
+    html[data-embed] .expressive-code pre {
+      background: #1e1e1e;
+      color: #f8f8f2;
+      margin: 0;
+      padding: 1rem 1.25rem;
+      border-radius: 0 0 10px 10px;
+      overflow-x: auto;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+  
+    html[data-embed] .expressive-code pre code {
+      background: none;
+      color: inherit;
+      padding: 0;
+      border-radius: 0;
+    }
+  
+    html[data-embed] .expressive-code .ec-gutter {
+      color: #a9a9a9;
+      opacity: .6;
+    }
+  
+    html[data-embed] .expressive-code .ec-line.is-highlighted {
+      background: rgba(255,255,255,0.05);
+    }
+  
+    /* Fallback wrappers (Astro/Shiki/Prism) */
+    html[data-embed] .astro-code,
+    html[data-embed] pre.astro-code,
+    html[data-embed] .starlight-code-block {
+      margin: 1.75rem 0;
+      border: 1px solid #222;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #1e1e1e;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+  
+    html[data-embed] .astro-code .toolbar,
+    html[data-embed] .starlight-code-block .toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: .5rem;
+      padding: .5rem .75rem;
+      background: #111;
+      border-bottom: 1px solid #222;
+    }
+  
+    html[data-embed] .astro-code .toolbar .language,
+    html[data-embed] .starlight-code-block .toolbar .language,
+    html[data-embed] .astro-code .toolbar .title,
+    html[data-embed] .starlight-code-block .toolbar .title {
+      font: 500 0.85rem system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      color: #ccc;
+    }
+  
+    html[data-embed] .astro-code .toolbar .language {
+      background: #2d2d2d;
+      color: #ccc;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      line-height: 1;
+    }
+  
+    html[data-embed] .astro-code .toolbar .copy,
+    html[data-embed] .starlight-code-block .toolbar .copy {
+      appearance: none;
+      border: 1px solid #2a2a2a;
+      background: #181818;
+      color: #ddd;
+      border-radius: 6px;
+      padding: .35rem .6rem;
+      cursor: pointer;
+    }
+    html[data-embed] .astro-code .toolbar .copy:hover,
+    html[data-embed] .starlight-code-block .toolbar .copy:hover {
+      background: #202020; border-color: #3a3a3a;
+    }
+  
+    /* ── Hide heading anchor links/icons (Starlight) ────────────── */
+    html[data-embed] :is(.sl-anchor-link, .header-anchor),
+    html[data-embed] :is(h1,h2,h3,h4,h5,h6) > a[href^="#"],
+    html[data-embed] a[href^="#"][aria-hidden="true"] {
+      display: none !important;
+    }
+}

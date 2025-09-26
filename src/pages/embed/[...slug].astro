@@ -28,7 +28,12 @@
  * License:     MIT
  */
 import { getCollection } from 'astro:content';
-import '../../styles/custom.css';
+
+// Uncomment if you need global CSS in embeds as well
+// import '../../styles/custom.css';
+
+// Embed-specific styles
+import embedUrl from '../../styles/embed.css?url';
 
 // Dynamic Route: Generate static paths for all slugs
 export async function getStaticPaths() {
@@ -57,33 +62,20 @@ if (!entry) {
 const { Content } = await entry.render();
 ---
 
-<html lang="en">
+<html lang="en" data-embed>
   <head>
     <meta charset="UTF-8" />
     <title>{entry.data.title}</title>
+
+    <!-- Load embed-specific CSS last so it overrides theme defaults -->
+    <link rel="stylesheet" href={embedUrl} />
+
+    <!-- Small inline reset (can also be moved to embed.css if preferred) -->
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: sans-serif;
-            background: white;
-            color: black;
-            display: flex;
-        }
-
-        main {
-            box-sizing: border-box;
-            width: 100%;
-        }
-
-        img {
-            width: 100% !important;
-            max-width: 100% !important;
-            height: auto !important;
-            display: block;
-  }
-</style>
-
+      body { margin: 0; padding: 0; font-family: sans-serif; background: white; color: black; display: flex; }
+      main { box-sizing: border-box; width: 100%; }
+      img { width: 100% !important; max-width: 100% !important; height: auto !important; display: block; }
+    </style>
   </head>
   <body>
     <main>

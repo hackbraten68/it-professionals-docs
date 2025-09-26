@@ -1,7 +1,16 @@
-/* Gilt für alle Bilder im Content-Bereich */
-p > img {
-  max-width: 1024px;
-  width: 100%;
-  height: auto;
-  display: block;
+/* custom.css greift nur auf /embed Seiten */
+
+html[data-embed] p > img {
+    max-width: 1024px;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+html[data-embed] .sl-anchor-link {
+    display: none !important;
+}
+
+html[data-embed] .sr-only {
+  display: none !important;
 }
